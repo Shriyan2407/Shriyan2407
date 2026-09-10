@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/command-center.svg" width="100%" alt="SHRIYAN BOHRA — personal engineering command center" />
+<img src="./assets/profile-interface.svg" width="100%" alt="SHRIYAN BOHRA — personal engineering command center" />
 
 <br/>
 
