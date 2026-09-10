@@ -4,23 +4,23 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=17&duration=2800&pause=900&color=F6C453&center=true&vCenter=true&width=760&lines=CYBERSECURITY+%2B+AI+%2B+SYSTEMS;BUILDING+IDEAS+INTO+REAL+PRODUCTS;SECURE.+INTELLIGENT.+IMMERSIVE.;WELCOME+TO+THE+SHRIYAN+BOHRA+PROFILE." alt="Typing introduction" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2600&pause=850&color=00D9FF&center=true&vCenter=true&width=820&lines=CYBERSECURITY+%2B+AI+%2B+SYSTEMS;SECURE.+INTELLIGENT.+IMMERSIVE.;ENGINEERING+IDEAS+INTO+REAL+PRODUCTS;WELCOME+TO+THE+SHRIYAN+BOHRA+PROFILE." alt="Typing introduction" />
 
 <br/>
 
-<a href="https://github.com/Shriyan2407"><img src="https://img.shields.io/badge/GITHUB-050505?style=for-the-badge&logo=github&logoColor=F6C453&labelColor=050505" /></a>
-<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="https://img.shields.io/badge/LINKEDIN-120B1F?style=for-the-badge&logo=linkedin&logoColor=D8B4FE&labelColor=120B1F" /></a>
-<a href="https://xr-vision-pro.vercel.app/"><img src="https://img.shields.io/badge/PORTFOLIO-1B1028?style=for-the-badge&logo=vercel&logoColor=F6C453&labelColor=1B1028" /></a>
+<a href="https://github.com/Shriyan2407"><img src="https://img.shields.io/badge/GITHUB-050505?style=for-the-badge&logo=github&logoColor=00D9FF" /></a>
+<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="https://img.shields.io/badge/LINKEDIN-050505?style=for-the-badge&logo=linkedin&logoColor=00D9FF" /></a>
+<a href="https://xr-vision-pro.vercel.app/"><img src="https://img.shields.io/badge/PORTFOLIO-050505?style=for-the-badge&logo=vercel&logoColor=F5D76E" /></a>
 
 </div>
 
 ---
 
-## ⚡ `SYSTEM // IDENTITY`
+## `SYSTEM // IDENTITY`
 
 <table>
 <tr>
-<td width="55%" valign="top">
+<td width="56%" valign="top">
 
 ### `shriyan@github:~$ whoami`
 
@@ -28,105 +28,91 @@
 ┌──────────────────────────────────────────────────────┐
 │  SHRIYAN BOHRA                                       │
 │  ──────────────────────────────────────────────────  │
-│  > B.Tech CSE Student                                │
-│  > Cybersecurity Aspirant                            │
-│  > AI / ML Builder                                   │
-│  > Full-Stack Developer                              │
-│  > Creative Technologist                             │
-│  > Always Curious                                    │
-│                                                      │
-│  STATUS: BUILDING THE FUTURE... █                   │
+│  ROLE      Computer Science Engineer                 │
+│  FOCUS     Cybersecurity / AI / Systems              │
+│  BUILD     Full-Stack / ML / XR                      │
+│  MINDSET   Security-first • Product-minded           │
+│  STATUS    ● ALWAYS BUILDING                         │
 └──────────────────────────────────────────────────────┘
 ```
 
 </td>
-<td width="45%" valign="top">
+<td width="44%" valign="top">
 
 ### `CORE DIRECTIVES`
 
-**🔐 SECURE** — think like an attacker, build like a defender.
+**01 / SECURE**  — think like an attacker. build like a defender.
 
-**🧠 INTELLIGENT** — turn data into decisions.
+**02 / INTELLIGENT** — turn data into decisions.
 
-**⚡ SHIP** — ideas matter when they become real.
+**03 / ENGINEER** — make ambitious ideas executable.
 
-**🥽 EXPLORE** — XR, 3D and new interfaces.
+**04 / EXPLORE** — XR, 3D and emerging interfaces.
 
-**🏆 COMPETE** — hackathons, datathons and rapid builds.
+**05 / SHIP** — prototypes become products through iteration.
 
 </td>
 </tr>
 </table>
 
-> ### **I BUILD SYSTEMS THAT SHOULDN'T BE EASY TO BREAK.**
-> *Cybersecurity × Artificial Intelligence × Software Engineering × XR*
-
----
-
-## 🟣 `01 // WHAT I BUILD`
-
 <div align="center">
 
-| 🔐 CYBERSECURITY | 🧠 AI / ML | ⚡ SOFTWARE | 🥽 XR / 3D |
-|:---:|:---:|:---:|:---:|
-| Defensive tooling<br/>Secure systems<br/>Security thinking | Prediction<br/>Data intelligence<br/>Applied ML | Full-stack apps<br/>Modern web<br/>Product UX | Immersive tech<br/>3D experiences<br/>Future interfaces |
+### **I DON'T JUST WRITE CODE. I ENGINEER SYSTEMS.**
+
+`CYBERSECURITY` &nbsp; `ARTIFICIAL INTELLIGENCE` &nbsp; `SOFTWARE ENGINEERING` &nbsp; `XR`
 
 </div>
 
 ---
 
-## 🟡 `02 // FEATURED SYSTEMS`
+## `01 // FEATURED SYSTEMS`
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🌫️ **AeroPure**
-> *Tell a city when tomorrow's air turns dangerous.*
+<a href="https://github.com/Shriyan2407/VAUlT-Z"><img src="./assets/projects/mineshield.svg" width="100%" alt="Mine-Shield" /></a>
 
-An AI/ML air-quality intelligence system focused on prediction, data and actionable insight.
+**MINE-SHIELD**  ·  `SECURITY / IOT / AI`
 
-`PYTHON` `ML` `DATA` `PREDICTION`
+AI-powered mine subsidence monitoring concept for safer operations.
 
-<a href="https://github.com/Shriyan2407/aerova">↗ VIEW SYSTEM</a>
+<a href="https://github.com/Shriyan2407/VAUlT-Z">VIEW SYSTEM →</a>
 
 </td>
 <td width="50%" valign="top">
 
-### 🛡️ **VAUlT-Z**
-> *Security is a design requirement.*
+<a href="https://github.com/Shriyan2407/aerova"><img src="./assets/projects/aeropure.svg" width="100%" alt="AeroPure" /></a>
 
-A security-focused project exploring defensive workflows and secure digital systems.
+**AEROPURE**  ·  `AI / ML / DATA`
 
-`SECURITY` `WEB` `SYSTEMS`
+Predict tomorrow's air before it becomes dangerous.
 
-<a href="https://github.com/Shriyan2407/VAUlT-Z">↗ VIEW SYSTEM</a>
+<a href="https://github.com/Shriyan2407/aerova">VIEW SYSTEM →</a>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### ⛏️ **Pattern Mining System**
-> *Find structure inside the noise.*
+<a href="https://github.com/Shriyan2407/DOCCARE"><img src="./assets/projects/doccare.svg" width="100%" alt="DocCare" /></a>
 
-A data-mining project built around extracting meaningful patterns from datasets.
+**DOCCARE**  ·  `AI / HEALTHCARE / WEB`
 
-`PYTHON` `DATA MINING` `ALGORITHMS`
+AI-oriented healthcare experience focused on simpler digital support.
 
-<a href="https://github.com/Shriyan2407/Pattern-Mining-System">↗ VIEW SYSTEM</a>
+<a href="https://github.com/Shriyan2407/DOCCARE">VIEW SYSTEM →</a>
 
 </td>
 <td width="50%" valign="top">
 
-### 🥽 **SPECTRUM / XR Vision**
-> *The interface is the experience.*
+<a href="https://github.com/Shriyan2407/xrvision"><img src="./assets/projects/spectrum.svg" width="100%" alt="Spectrum" /></a>
 
-Exploring educational VR, immersive interfaces, 3D experiences and next-gen interaction.
+**SPECTRUM**  ·  `XR / 3D / PRODUCT`
 
-`XR` `3D` `WEB` `CREATIVE DEV`
+Educational XR headset and platform concept for immersive learning.
 
-<a href="https://github.com/Shriyan2407/xrvision">↗ VIEW SYSTEM</a>
+<a href="https://github.com/Shriyan2407/xrvision">VIEW SYSTEM →</a>
 
 </td>
 </tr>
@@ -134,16 +120,13 @@ Exploring educational VR, immersive interfaces, 3D experiences and next-gen inte
 
 <div align="center">
 
-### 🏥 **DOCCARE**
-AI-oriented healthcare web experience exploring simpler digital healthcare workflows.
-
-<a href="https://github.com/Shriyan2407/DOCCARE"><img src="https://img.shields.io/badge/OPEN_PROJECT-F6C453?style=for-the-badge&labelColor=0B0710&color=F6C453" /></a>
+<a href="https://github.com/Shriyan2407/Pattern-Mining-System"><b>⛏ PATTERN MINING SYSTEM</b></a> — extracting structure from data and turning noise into insight.
 
 </div>
 
 ---
 
-## 💻 `03 // TECH ARSENAL`
+## `02 // TECHNOLOGY`
 
 <div align="center">
 
@@ -151,77 +134,57 @@ AI-oriented healthcare web experience exploring simpler digital healthcare workf
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/PYTHON-0B0710?style=for-the-badge&logo=python&logoColor=F6C453" />
-<img src="https://img.shields.io/badge/JAVA-0B0710?style=for-the-badge&logo=openjdk&logoColor=D8B4FE" />
-<img src="https://img.shields.io/badge/JAVASCRIPT-0B0710?style=for-the-badge&logo=javascript&logoColor=F6C453" />
-<img src="https://img.shields.io/badge/REACT-0B0710?style=for-the-badge&logo=react&logoColor=A855F7" />
-<img src="https://img.shields.io/badge/LINUX-0B0710?style=for-the-badge&logo=linux&logoColor=F6C453" />
-<img src="https://img.shields.io/badge/ML_&_DATA-0B0710?style=for-the-badge&logo=tensorflow&logoColor=D8B4FE" />
+`PYTHON` · `JAVA` · `JAVASCRIPT` · `REACT` · `NODE.JS` · `LINUX` · `GIT` · `MACHINE LEARNING` · `DATA MINING` · `XR / 3D`
 
 </div>
 
 ---
 
-## 📊 `04 // GITHUB TELEMETRY`
+## `03 // GITHUB TELEMETRY`
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Shriyan2407&show_icons=true&hide_border=true&bg_color=0B0710&title_color=F6C453&text_color=E5E7EB&icon_color=A855F7&ring_color=A855F7&rank_icon=github" height="180" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shriyan2407&layout=compact&hide_border=true&bg_color=0B0710&title_color=D8B4FE&text_color=E5E7EB" height="180" />
+<img src="https://github-readme-stats.vercel.app/api?username=Shriyan2407&show_icons=true&hide_border=true&bg_color=050505&title_color=F5D76E&text_color=E5E7EB&icon_color=00D9FF&ring_color=00D9FF&rank_icon=github" height="180" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shriyan2407&layout=compact&hide_border=true&bg_color=050505&title_color=F5D76E&text_color=E5E7EB" height="180" />
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=Shriyan2407&hide_border=true&background=0B0710&ring=F6C453&fire=A855F7&currStreakLabel=F6C453&sideLabels=D8B4FE&dates=9CA3AF&sideNums=FFFFFF&currStreakNum=FFFFFF" width="72%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Shriyan2407&bg_color=050505&color=00D9FF&line=D4AF37&point=F5D76E&area=true&hide_border=true" width="94%" />
 
 </div>
 
 ---
 
-## 🚀 `05 // CURRENTLY IN THE LAB`
-
-```diff
-+ Deepening cybersecurity foundations
-+ Building practical AI / ML systems
-+ Exploring OSINT + security workflows
-+ Improving full-stack engineering
-+ Experimenting with XR + 3D
-+ Turning hackathon prototypes into real products
-```
-
----
-
-## 🏆 `06 // ACHIEVEMENTS & SIGNALS`
+## `04 // CURRENT OPERATIONS`
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
-🏆 **AlgoMath Datathon**
+```text
+01  SECURITY
+    Deepening cybersecurity foundations
 
-Competitive problem solving + data-driven building.
+02  INTELLIGENCE
+    Building practical AI / ML systems
 
-🎯 **Hackathons**
-
-Rapid prototyping under real constraints.
-
-🥽 **SPECTRUM**
-
-Educational VR product exploration.
+03  ENGINEERING
+    Shipping stronger full-stack products
+```
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
-⚙️ **Technical Teams**
+```text
+04  IMMERSION
+    Exploring XR + 3D experiences
 
-IEEE / CUDA program / Sports Committee.
+05  RESEARCH
+    Hackathons + experimentation
 
-🎨 **Creative Development**
-
-Interfaces, 3D, animation and visual storytelling.
-
-🧪 **Builder Mindset**
-
-Learn → build → break → improve → ship.
+06  PRODUCT
+    Turning prototypes into real systems
+```
 
 </td>
 </tr>
@@ -229,52 +192,27 @@ Learn → build → break → improve → ship.
 
 ---
 
-## 🧬 `07 // THE BUILD LOOP`
+## `05 // SIGNALS`
 
 <div align="center">
 
-```text
-       ┌───────────┐
-       │  OBSERVE  │
-       └─────┬─────┘
-             ↓
-       ┌───────────┐
-       │  QUESTION │
-       └─────┬─────┘
-             ↓
-       ┌───────────┐
-       │   BUILD   │
-       └─────┬─────┘
-             ↓
-       ┌───────────┐
-       │   BREAK   │
-       └─────┬─────┘
-             ↓
-       ┌───────────┐
-       │   LEARN   │
-       └─────┬─────┘
-             ↓
-       ┌───────────┐
-       │   SHIP    │
-       └─────┬─────┘
-             │
-             └──────────────→ REPEAT
-```
+**🏆 ALGOMATH DATATHON — WINNER**  &nbsp; · &nbsp; **IEEE — TECHNICAL TEAM**  &nbsp; · &nbsp; **CUDA PROGRAM — TECHNICAL TEAM**
+
+**SPORTS COMMITTEE — TECHNICAL TEAM**  &nbsp; · &nbsp; **HACKATHONS — BUILDER**
 
 </div>
 
 ---
 
-## 🌐 `08 // SELECTED WORK`
+## `06 // THE BUILD LOOP`
 
 <div align="center">
 
-<a href="https://github.com/Shriyan2407/aerova">🌫️ AEROVA</a> &nbsp; • &nbsp;
-<a href="https://github.com/Shriyan2407/VAUlT-Z">🛡️ VAUlT-Z</a> &nbsp; • &nbsp;
-<a href="https://github.com/Shriyan2407/Pattern-Mining-System">⛏️ PATTERN MINING</a> &nbsp; • &nbsp;
-<a href="https://github.com/Shriyan2407/xrvision">🥽 XR VISION</a> &nbsp; • &nbsp;
-<a href="https://github.com/Shriyan2407/DOCCARE">🏥 DOCCARE</a> &nbsp; • &nbsp;
-<a href="https://github.com/Shriyan2407/spectrum">🔮 SPECTRUM</a>
+`OBSERVE`  →  `QUESTION`  →  `BUILD`  →  `BREAK`  →  `LEARN`  →  `SHIP`  →  `REPEAT`
+
+<br/><br/>
+
+> **Consistency is a form of self-respect.**
 
 </div>
 
@@ -282,14 +220,15 @@ Learn → build → break → improve → ship.
 
 <div align="center">
 
-<img src="./assets/footer.svg" width="100%" alt="Let's build a more secure tomorrow" />
+<img src="./assets/footer.svg" width="100%" alt="Let's build what's next" />
 
 <br/>
 
-<a href="https://github.com/Shriyan2407"><img src="https://img.shields.io/badge/FOLLOW_FOR_MORE-0B0710?style=for-the-badge&logo=github&logoColor=F6C453&labelColor=0B0710&color=A855F7" /></a>
+<a href="https://github.com/Shriyan2407"><img src="https://img.shields.io/badge/FOLLOW-050505?style=for-the-badge&logo=github&logoColor=00D9FF&labelColor=050505&color=D4AF37" /></a>
+<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="https://img.shields.io/badge/CONNECT-050505?style=for-the-badge&logo=linkedin&logoColor=00D9FF&labelColor=050505&color=00BFFF" /></a>
 
 ### `BUILD → BREAK → LEARN → REBUILD`
 
-<sub>Designed & engineered by Shriyan Bohra • Cybersecurity × AI × Systems</sub>
+<sub>SHRIYAN BOHRA • CYBERSECURITY × AI × SYSTEMS</sub>
 
 </div>
