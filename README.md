@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/command-center.svg" width="100%" alt="Shriyan Bohra — cinematic cybersecurity and AI command center portfolio" />
+<img src="./assets/command-center.svg" width="100%" alt="SHRIYAN BOHRA — personal engineering command center" />
 
 <br/>
 
@@ -12,8 +12,14 @@
 
 <br/><br/>
 
-<a href="https://github.com/Shriyan2407"><img src="https://img.shields.io/badge/GITHUB-050505?style=for-the-badge&logo=github&logoColor=00D9FF" /></a>
-<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="https://img.shields.io/badge/LINKEDIN-050505?style=for-the-badge&logo=linkedin&logoColor=00D9FF" /></a>
-<a href="https://xr-vision-pro.vercel.app/"><img src="https://img.shields.io/badge/PORTFOLIO-050505?style=for-the-badge&logo=vercel&logoColor=F5D76E" /></a>
+<a href="https://github.com/Shriyan2407">GITHUB</a>
+&nbsp;&nbsp;•&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/">LINKEDIN</a>
+&nbsp;&nbsp;•&nbsp;&nbsp;
+<a href="https://xr-vision-pro.vercel.app/">PORTFOLIO</a>
+
+<br/><br/>
+
+<sub>BUILD → BREAK → LEARN → REBUILD</sub>
 
 </div>
