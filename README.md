@@ -41,7 +41,7 @@
 
 ### `CORE DIRECTIVES`
 
-**01 / SECURE**  — think like an attacker. build like a defender.
+**01 / SECURE** — think like an attacker. build like a defender.
 
 **02 / INTELLIGENT** — turn data into decisions.
 
@@ -71,11 +71,11 @@
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Shriyan2407/VAUlT-Z"><img src="./assets/projects/mineshield.svg" width="100%" alt="Mine-Shield" /></a>
+<a href="https://github.com/Shriyan2407/VAUlT-Z"><img src="./assets/projects/vaultz.svg" width="100%" alt="VAUlT-Z" /></a>
 
-**MINE-SHIELD**  ·  `SECURITY / IOT / AI`
+**VAUlT-Z**  ·  `SECURITY / DEFENSE / SYSTEMS`
 
-AI-powered mine subsidence monitoring concept for safer operations.
+Security-focused project exploring defensive workflows and secure digital system design.
 
 <a href="https://github.com/Shriyan2407/VAUlT-Z">VIEW SYSTEM →</a>
 
