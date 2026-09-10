@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2850" viewBox="0 0 1400 2850">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020305"/><stop offset=".52" stop-color="#071017"/><stop offset="1" stop-color="#030405"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff0a8"/><stop offset=".42" stop-color="#d4af37"/><stop offset="1" stop-color="#8f7020"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00eaff"/><stop offset="1" stop-color="#168cff"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#00cfff" stop-opacity=".25"/><stop offset="1" stop-color="#00cfff" stop-opacity="0"/></radialGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+ <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#17303a" stroke-opacity=".35"/></pattern>
+</defs>
+<rect width="1400" height="2850" fill="url(#bg)"/>
+<rect x="20" y="20" width="1360" height="2810" rx="26" fill="url(#grid)" stroke="#26343c"/>
+<circle cx="1120" cy="280" r="330" fill="url(#glow)" filter="url(#soft)"/>
+
+<!-- TOP BAR -->
+<rect x="55" y="55" width="1290" height="58" rx="12" fill="#05080b" stroke="#31414a"/>
+<text x="82" y="91" fill="#00d9ff" font-family="monospace" font-size="13" letter-spacing="4">SHRIYAN BOHRA / PERSONAL SYSTEM</text>
+<text x="1055" y="91" fill="#d4af37" font-family="monospace" font-size="12" letter-spacing="2">STATUS ● ONLINE</text>
+
+<!-- HERO -->
+<rect x="55" y="145" width="1290" height="610" rx="22" fill="#030608" stroke="#d4af37" stroke-opacity=".7"/>
+<text x="92" y="195" fill="#00d9ff" font-family="monospace" font-size="12" letter-spacing="5">SYSTEM / IDENTITY / 001</text>
+<text x="92" y="315" fill="url(#gold)" font-family="Georgia,serif" font-size="88" font-weight="700" letter-spacing="3">SHRIYAN</text>
+<text x="92" y="402" fill="#f4f6f8" font-family="Georgia,serif" font-size="88" font-weight="700" letter-spacing="3">BOHRA</text>
+<text x="96" y="450" fill="#00d9ff" font-family="monospace" font-size="14" letter-spacing="5">CYBERSECURITY  ×  AI  ×  SYSTEMS  ×  WEB  ×  XR</text>
+<text x="96" y="500" fill="#d8dde1" font-family="monospace" font-size="16">I DON'T JUST WRITE CODE. I ENGINEER SYSTEMS.</text>
+
+<!-- orbit -->
+<ellipse cx="1085" cy="365" rx="205" ry="78" fill="none" stroke="#00bfff" stroke-width="2" transform="rotate(-18 1085 365)"/>
+<ellipse cx="1085" cy="365" rx="205" ry="78" fill="none" stroke="#00bfff" stroke-width="2" transform="rotate(35 1085 365)"/>
+<ellipse cx="1085" cy="365" rx="120" ry="205" fill="none" stroke="#d4af37" stroke-width="1.5" opacity=".75" transform="rotate(90 1085 365)"/>
+<circle cx="1085" cy="365" r="44" fill="none" stroke="#d4af37" stroke-width="2"/><circle cx="1085" cy="365" r="8" fill="#00d9ff"/>
+<text x="96" y="590" fill="#68747b" font-family="monospace" font-size="11">INDIA / 2026</text>
+<text x="1120" y="590" fill="#00d9ff" font-family="monospace" font-size="11">BUILDING / ONLINE</text>
+<rect x="96" y="625" width="190" height="38" rx="19" fill="url(#gold)"/><text x="125" y="649" fill="#030405" font-family="monospace" font-size="11" font-weight="700">EXPLORE WORK →</text>
+<rect x="300" y="625" width="165" height="38" rx="19" fill="none" stroke="#00bfff"/><text x="334" y="649" fill="#00d9ff" font-family="monospace" font-size="11">CONNECT →</text>
+<rect x="480" y="625" width="130" height="38" rx="19" fill="none" stroke="#d4af37"/><text x="515" y="649" fill="#d4af37" font-family="monospace" font-size="11">RESUME</text>
+
+<!-- IDENTITY / PHILOSOPHY -->
+<rect x="55" y="785" width="800" height="330" rx="20" fill="#040709" stroke="#25343c"/>
+<text x="88" y="830" fill="#00d9ff" font-family="monospace" font-size="12" letter-spacing="4">TERMINAL / WHOAMI</text>
+<text x="88" y="878" fill="#8d9aa1" font-family="monospace" font-size="14">shriyan@github:~$ whoami</text>
+<text x="88" y="930" fill="url(#gold)" font-family="Georgia,serif" font-size="40" font-weight="700">CYBERSECURITY × AI BUILDER</text>
+<text x="88" y="970" fill="#e4e8eb" font-family="monospace" font-size="15">B.Tech CSE  /  Developer  /  Systems Thinker</text>
+<line x1="88" y1="1000" x2="810" y2="1000" stroke="#1d2c33"/>
+<text x="88" y="1035" fill="#00d9ff" font-family="monospace" font-size="13">ROLE</text><text x="180" y="1035" fill="#d8dde1" font-family="monospace" font-size="13">BUILD SECURE, INTELLIGENT PRODUCTS</text>
+<text x="88" y="1065" fill="#00d9ff" font-family="monospace" font-size="13">FOCUS</text><text x="180" y="1065" fill="#d8dde1" font-family="monospace" font-size="13">SECURITY / AI / FULL-STACK / XR</text>
+
+<rect x="885" y="785" width="460" height="330" rx="20" fill="#040709" stroke="#d4af37" stroke-opacity=".65"/>
+<text x="920" y="830" fill="#d4af37" font-family="monospace" font-size="12" letter-spacing="4">PHILOSOPHY / 002</text>
+<text x="920" y="900" fill="#f5f7fa" font-family="Georgia,serif" font-size="31" font-weight="700">I DON'T JUST</text>
+<text x="920" y="940" fill="#f5f7fa" font-family="Georgia,serif" font-size="31" font-weight="700">WRITE CODE.</text>
+<text x="920" y="1000" fill="url(#gold)" font-family="Georgia,serif" font-size="34" font-weight="700">I ENGINEER</text>
+<text x="920" y="1042" fill="#00d9ff" font-family="Georgia,serif" font-size="34" font-weight="700">SYSTEMS.</text>
+
+<!-- PROJECT HEADER -->
+<text x="55" y="1190" fill="#00d9ff" font-family="monospace" font-size="12" letter-spacing="5">03 / FEATURED SYSTEMS</text>
+<line x1="310" y1="1185" x2="1345" y2="1185" stroke="#27383f"/>
+
+<!-- PROJECT 1 -->
+<rect x="55" y="1220" width="630" height="390" rx="20" fill="#040709" stroke="#00bfff" stroke-opacity=".55"/>
+<rect x="75" y="1240" width="590" height="210" rx="14" fill="#020507" stroke="#1c343e"/>
+<path d="M130 1410 L180 1345 L235 1380 L300 1290 L365 1370 L440 1315 L520 1400 L610 1340" fill="none" stroke="#00d9ff" stroke-width="3"/>
+<path d="M110 1430 Q250 1340 390 1410 T650 1360" fill="none" stroke="#d4af37" stroke-opacity=".6"/>
+<circle cx="300" cy="1290" r="7" fill="#d4af37"/><circle cx="440" cy="1315" r="6" fill="#00d9ff"/>
+<text x="95" y="1490" fill="#00d9ff" font-family="monospace" font-size="11" letter-spacing="3">SECURITY / DEFENSE</text>
+<text x="95" y="1530" fill="url(#gold)" font-family="Georgia,serif" font-size="38" font-weight="700">VAUlT-Z</text>
+<text x="95" y="1562" fill="#b8c0c5" font-family="monospace" font-size="13">Defensive digital workflows & secure system design</text>
+
+<!-- PROJECT 2 -->
+<rect x="715" y="1220" width="630" height="390" rx="20" fill="#040709" stroke="#d4af37" stroke-opacity=".6"/>
+<rect x="735" y="1240" width="590" height="210" rx="14" fill="#020507" stroke="#1c343e"/>
+<circle cx="1135" cy="1335" r="90" fill="url(#glow)"/>
+<path d="M760 1415 Q850 1340 940 1385 T1120 1360 T1320 1300" fill="none" stroke="#00d9ff" stroke-width="3"/>
+<path d="M760 1430 Q900 1400 1010 1415 T1320 1360" fill="none" stroke="#d4af37" stroke-width="2" opacity=".75"/>
+<text x="755" y="1490" fill="#00d9ff" font-family="monospace" font-size="11" letter-spacing="3">AI / ENVIRONMENT</text>
+<text x="755" y="1530" fill="url(#gold)" font-family="Georgia,serif" font-size="38" font-weight="700">AEROPURE</text>
+<text x="755" y="1562" fill="#b8c0c5" font-family="monospace" font-size="13">Predict tomorrow's air before it becomes dangerous</text>
+
+<!-- PROJECT 3 -->
+<rect x="55" y="1640" width="630" height="390" rx="20" fill="#040709" stroke="#d4af37" stroke-opacity=".6"/>
+<rect x="75" y="1660" width="590" height="210" rx="14" fill="#020507" stroke="#1c343e"/>
+<circle cx="375" cy="1765" r="64" fill="none" stroke="#00d9ff" stroke-width="2"/><circle cx="375" cy="1765" r="38" fill="none" stroke="#d4af37"/>
+<path d="M375 1701 V1829 M311 1765 H439 M330 1720 L420 1810 M420 1720 L330 1810" stroke="#00d9ff" stroke-width="2" opacity=".8"/>
+<path d="M120 1840 H260 M490 1840 H630" stroke="#d4af37" stroke-width="2"/>
+<text x="95" y="1910" fill="#00d9ff" font-family="monospace" font-size="11" letter-spacing="3">AI / HEALTHCARE / WEB</text>
+<text x="95" y="1950" fill="url(#gold)" font-family="Georgia,serif" font-size="38" font-weight="700">DOCCARE</text>
+<text x="95" y="1982" fill="#b8c0c5" font-family="monospace" font-size="13">Digital healthcare experience with intelligent support</text>
+
+<!-- PROJECT 4 -->
+<rect x="715" y="1640" width="630" height="390" rx="20" fill="#040709" stroke="#00bfff" stroke-opacity=".55"/>
+<rect x="735" y="1660" width="590" height="210" rx="14" fill="#020507" stroke="#1c343e"/>
+<path d="M860 1810 Q820 1730 900 1705 Q1010 1670 1120 1710 Q1200 1740 1260 1810" fill="none" stroke="#d4af37" stroke-width="3"/>
+<path d="M900 1780 Q1010 1715 1170 1780" fill="none" stroke="#00d9ff" stroke-width="4"/>
+<ellipse cx="1080" cy="1765" rx="135" ry="55" fill="none" stroke="#00bfff" opacity=".5"/>
+<text x="755" y="1910" fill="#00d9ff" font-family="monospace" font-size="11" letter-spacing="3">XR / 3D / PRODUCT</text>
+<text x="755" y="1950" fill="url(#gold)" font-family="Georgia,serif" font-size="38" font-weight="700">SPECTRUM</text>
+<text x="755" y="1982" fill="#b8c0c5" font-family="monospace" font-size="13">Immersive educational XR platform concept</text>
+
+<!-- DATA STRIP -->
+<rect x="55" y="2065" width="1290" height="145" rx="18" fill="#05080b" stroke="#273840"/>
+<text x="88" y="2108" fill="#00d9ff" font-family="monospace" font-size="11" letter-spacing="4">ADDITIONAL SYSTEM</text>
+<text x="88" y="2158" fill="url(#gold)" font-family="Georgia,serif" font-size="30" font-weight="700">PATTERN MINING SYSTEM</text>
+<text x="565" y="2158" fill="#b8c0c5" font-family="monospace" font-size="13">Extracting structure from data and turning noise into insight.</text>
+
+<!-- TECH / TELEMETRY -->
+<text x="55" y="2280" fill="#00d9ff" font-family="monospace" font-size="12" letter-spacing="5">04 / TECHNOLOGY TELEMETRY</text>
+<line x1="345" y1="2275" x2="1345" y2="2275" stroke="#27383f"/>
+<rect x="55" y="2310" width="1290" height="205" rx="20" fill="#040709" stroke="#273840"/>
+<text x="88" y="2355" fill="#d4af37" font-family="monospace" font-size="12">LANGUAGES</text>
+<text x="88" y="2395" fill="#f5f7fa" font-family="monospace" font-size="18">PYTHON  /  JAVA  /  JAVASCRIPT  /  HTML  /  CSS</text>
+<text x="88" y="2440" fill="#d4af37" font-family="monospace" font-size="12">SYSTEMS</text>
+<text x="88" y="2480" fill="#f5f7fa" font-family="monospace" font-size="18">REACT  /  NODE.JS  /  LINUX  /  GIT  /  ML  /  XR  /  BLENDER</text>
+<text x="1040" y="2355" fill="#00d9ff" font-family="monospace" font-size="12">SIGNAL</text>
+<text x="1040" y="2400" fill="#f5f7fa" font-family="monospace" font-size="17">BUILD → BREAK</text>
+<text x="1040" y="2440" fill="#f5f7fa" font-family="monospace" font-size="17">LEARN → REBUILD</text>
+<text x="1040" y="2480" fill="#d4af37" font-family="monospace" font-size="17">SHIP → REPEAT</text>
+
+<!-- OPERATIONS -->
+<rect x="55" y="2550" width="1290" height="185" rx="20" fill="#040709" stroke="#d4af37" stroke-opacity=".55"/>
+<text x="88" y="2595" fill="#00d9ff" font-family="monospace" font-size="12" letter-spacing="4">05 / CURRENT OPERATIONS</text>
+<text x="88" y="2640" fill="#e5e9ec" font-family="monospace" font-size="14">01 SECURITY  •  02 INTELLIGENCE  •  03 ENGINEERING  •  04 IMMERSION</text>
+<text x="88" y="2678" fill="#e5e9ec" font-family="monospace" font-size="14">05 RESEARCH  •  06 PRODUCT  •  TURNING PROTOTYPES INTO REAL SYSTEMS</text>
+<text x="1090" y="2640" fill="#d4af37" font-family="monospace" font-size="11">BUILDING</text><text x="1090" y="2678" fill="#00d9ff" font-family="monospace" font-size="13">WHAT'S NEXT_</text>
+
+<!-- FOOTER -->
+<line x1="90" y1="2790" x2="1310" y2="2790" stroke="#d4af37" stroke-opacity=".5"/>
+<text x="90" y="2818" fill="url(#gold)" font-family="Georgia,serif" font-size="24" font-weight="700">LET'S BUILD WHAT'S NEXT.</text>
+<text x="1040" y="2818" fill="#00d9ff" font-family="monospace" font-size="11" letter-spacing="2">SECURITY • INTELLIGENCE • IMPACT</text>
+</svg>
