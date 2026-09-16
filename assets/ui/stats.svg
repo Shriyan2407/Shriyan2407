@@ -1,54 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 85" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 95" width="100%" height="auto">
   
     <g transform="translate(0, 0)">
-      <rect width="208" height="85" rx="10" fill="#080B10" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.35" />
-      <rect x="1" y="1" width="206" height="2" fill="#D4AF37" fill-opacity="0.3" rx="1" />
-      <g transform="translate(20, 24) scale(0.88)">
+      <rect width="206" height="95" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.4" />
+      <rect x="1" y="1" width="204" height="2" fill="#D4AF37" fill-opacity="0.35" rx="1" />
+      <g transform="translate(20, 28) scale(0.95)">
         <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
       </g>
-      <text x="56" y="38" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="22" font-weight="800" letter-spacing="0.5">
+      <text x="64" y="44" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="26" font-weight="800" letter-spacing="0.5">
         10
       </text>
-      <text x="56" y="58" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.4">
+      <text x="64" y="66" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="600" letter-spacing="0.4">
         Repositories
       </text>
     </g>
     <g transform="translate(224, 0)">
-      <rect width="208" height="85" rx="10" fill="#080B10" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.35" />
-      <rect x="1" y="1" width="206" height="2" fill="#D4AF37" fill-opacity="0.3" rx="1" />
-      <g transform="translate(20, 24) scale(0.88)">
+      <rect width="206" height="95" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.4" />
+      <rect x="1" y="1" width="204" height="2" fill="#D4AF37" fill-opacity="0.35" rx="1" />
+      <g transform="translate(20, 28) scale(0.95)">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
       </g>
-      <text x="56" y="38" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="22" font-weight="800" letter-spacing="0.5">
+      <text x="64" y="44" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="26" font-weight="800" letter-spacing="0.5">
         2
       </text>
-      <text x="56" y="58" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.4">
+      <text x="64" y="66" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="600" letter-spacing="0.4">
         Followers
       </text>
     </g>
     <g transform="translate(448, 0)">
-      <rect width="208" height="85" rx="10" fill="#080B10" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.35" />
-      <rect x="1" y="1" width="206" height="2" fill="#D4AF37" fill-opacity="0.3" rx="1" />
-      <g transform="translate(20, 24) scale(0.88)">
+      <rect width="206" height="95" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.4" />
+      <rect x="1" y="1" width="204" height="2" fill="#D4AF37" fill-opacity="0.35" rx="1" />
+      <g transform="translate(20, 28) scale(0.95)">
         <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M8.5 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M17 11l2 2 4-4" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
       </g>
-      <text x="56" y="38" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="22" font-weight="800" letter-spacing="0.5">
+      <text x="64" y="44" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="26" font-weight="800" letter-spacing="0.5">
         2
       </text>
-      <text x="56" y="58" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.4">
+      <text x="64" y="66" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="600" letter-spacing="0.4">
         Following
       </text>
     </g>
     <g transform="translate(672, 0)">
-      <rect width="208" height="85" rx="10" fill="#080B10" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.35" />
-      <rect x="1" y="1" width="206" height="2" fill="#D4AF37" fill-opacity="0.3" rx="1" />
-      <g transform="translate(20, 24) scale(0.88)">
+      <rect width="206" height="95" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.4" />
+      <rect x="1" y="1" width="204" height="2" fill="#D4AF37" fill-opacity="0.35" rx="1" />
+      <g transform="translate(20, 28) scale(0.95)">
         <path d="M18 20V10 M12 20V4 M6 20v-6" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
       </g>
-      <text x="56" y="38" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="22" font-weight="800" letter-spacing="0.5">
+      <text x="64" y="44" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="26" font-weight="800" letter-spacing="0.5">
         123
       </text>
-      <text x="56" y="58" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.4">
+      <text x="64" y="66" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="600" letter-spacing="0.4">
         Total Contributions
       </text>
     </g>

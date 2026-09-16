@@ -63,49 +63,49 @@
 
     <!-- Roles -->
     <g>
-      <text x="44" y="46" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace" font-size="9.5" font-weight="600" letter-spacing="2">// DEVELOPER</text>
-<text x="44" y="61" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace" font-size="9.5" font-weight="600" letter-spacing="2">// CYBERSECURITY ENTHUSIAST</text>
-<text x="44" y="76" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace" font-size="9.5" font-weight="600" letter-spacing="2">// AI EXPLORER</text>
+      <text x="44" y="46" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace" font-size="10" font-weight="600" letter-spacing="2">// DEVELOPER</text>
+<text x="44" y="61" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace" font-size="10" font-weight="600" letter-spacing="2">// CYBERSECURITY ENTHUSIAST</text>
+<text x="44" y="76" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace" font-size="10" font-weight="600" letter-spacing="2">// AI EXPLORER</text>
 
     </g>
 
     <!-- Main Title: SHRIYAN BOHRA -->
     <g transform="translate(44, 126)">
-      <text x="0" y="0" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="50" font-weight="900" letter-spacing="5">
+      <text x="0" y="0" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="5">
         SHRIYAN
       </text>
-      <text x="0" y="44" fill="url(#goldGrad)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="50" font-weight="900" letter-spacing="5" filter="url(#goldGlow)">
+      <text x="0" y="46" fill="url(#goldGrad)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="5" filter="url(#goldGlow)">
         BOHRA
       </text>
     </g>
 
     <!-- Tagline -->
-    <g transform="translate(44, 194)">
-      <text x="0" y="0" fill="#E6EDF3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10" font-weight="700" letter-spacing="2.5">
+    <g transform="translate(44, 196)">
+      <text x="0" y="0" fill="#E6EDF3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.5">
         BUILD <tspan fill="#D4AF37">›</tspan> LEARN <tspan fill="#D4AF37">›</tspan> EXPLORE <tspan fill="#D4AF37">›</tspan> REPEAT
       </text>
     </g>
 
     <!-- Callout Box -->
-    <g transform="translate(44, 212)">
-      <rect width="275" height="38" rx="6" fill="url(#calloutGrad)" stroke="#D4AF37" stroke-width="0.9" stroke-opacity="0.5" />
-      <text x="18" y="17" fill="#D4AF37" font-family="SFMono-Regular,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="1.5">
+    <g transform="translate(44, 214)">
+      <rect width="285" height="40" rx="6" fill="url(#calloutGrad)" stroke="#D4AF37" stroke-width="0.9" stroke-opacity="0.5" />
+      <text x="18" y="17" fill="#D4AF37" font-family="SFMono-Regular,Consolas,monospace" font-size="9" font-weight="700" letter-spacing="1.5">
         I DON&apos;T JUST WRITE CODE.
       </text>
-      <text x="18" y="29" fill="#E6EDF3" font-family="SFMono-Regular,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="1.5">
+      <text x="18" y="30" fill="#E6EDF3" font-family="SFMono-Regular,Consolas,monospace" font-size="9" font-weight="700" letter-spacing="1.5">
         I ENGINEER SYSTEMS.
       </text>
     </g>
 
     <!-- Top Right Quotes -->
     <g transform="translate(836, 46)" text-anchor="end">
-      <text x="0" y="0" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9.5" font-style="italic" font-weight="500" letter-spacing="1.5">
+      <text x="0" y="0" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" font-style="italic" font-weight="500" letter-spacing="1.5">
         &quot;SAME MIND DIFFERENT PERSPECTIVE&quot;
       </text>
-      <text x="0" y="38" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="8" font-weight="600" letter-spacing="2">
+      <text x="0" y="40" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="8.5" font-weight="600" letter-spacing="2">
         IDEAS • SECURITY • TECHNOLOGY • IMPACT
       </text>
-      <text x="0" y="90" fill="#D4AF37" font-family="SFMono-Regular,Consolas,monospace" font-size="9" font-weight="700" letter-spacing="2">
+      <text x="0" y="94" fill="#D4AF37" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" font-weight="700" letter-spacing="2">
         // 24/7
       </text>
     </g>
@@ -113,10 +113,10 @@
     <!-- Bottom Status -->
     <g transform="translate(836, 270)" text-anchor="end">
       <circle cx="-85" cy="-3" r="3" fill="#3FB950" class="beacon" />
-      <text x="-74" y="0" fill="#3FB950" font-family="SFMono-Regular,Consolas,monospace" font-size="9" font-weight="700" letter-spacing="1.5">
+      <text x="-74" y="0" fill="#3FB950" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" font-weight="700" letter-spacing="1.5">
         ONLINE
       </text>
-      <text x="0" y="0" fill="#8B949E" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.5">
+      <text x="0" y="0" fill="#8B949E" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.5">
         | NODE_01
       </text>
     </g>

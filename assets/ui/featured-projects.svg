@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 230" width="100%" height="auto">
+  <!-- Top Bar -->
+  <g transform="translate(4, 24)">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -10) scale(0.9)" />
+    <text x="28" y="2" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="19" font-weight="700" letter-spacing="0.5">
+      Featured Repositories
+    </text>
+    <text x="872" y="1" text-anchor="end" fill="#D4AF37" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="13.5" font-weight="600" letter-spacing="0.4">
+      View all →
+    </text>
+  </g>
+
+  <!-- 4 Cards -->
+  
+    <g transform="translate(0, 44)">
+      <rect width="206" height="175" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.35" />
+      
+      <!-- Title + Public Badge -->
+      <text x="18" y="32" fill="#58A6FF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="700">
+        nebula-voltage
+      </text>
+      <rect x="142" y="18" width="46" height="18" rx="9" fill="#121720" stroke="#30363D" stroke-width="0.8" />
+      <text x="165" y="31" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" font-weight="600">
+        Public
+      </text>
+
+      <!-- Description -->
+      <text x="18" y="56" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        Exploring modern web
+      </text>
+      <text x="18" y="74" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        technologies and creative development.
+      </text>
+
+      <!-- Language & Topics -->
+      
+          <circle cx="22" cy="112" r="4" fill="#B07219" />
+          <text x="31" y="116" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="500">Java</text>
+        
+          <rect x="69.0" y="103" width="33.5" height="18" rx="9" fill="#161B22" stroke="#30363D" stroke-width="0.8" />
+          <text x="85.75" y="116" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10.5" font-weight="500">Web</text>
+        
+
+      <!-- Stars & Forks -->
+      <g transform="translate(18, 148)">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#D4AF37" stroke="#D4AF37" stroke-width="1" transform="scale(0.55) translate(0, -18)" />
+        <text x="18" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+
+        <g transform="translate(50, -14) scale(0.55)">
+          <path d="M18 9v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9 M12 12v3" fill="none" stroke="#8B949E" stroke-width="2" stroke-linecap="round" />
+          <circle cx="12" cy="18" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="6" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="18" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+        </g>
+        <text x="68" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+      </g>
+    </g>
+    <g transform="translate(224, 44)">
+      <rect width="206" height="175" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.35" />
+      
+      <!-- Title + Public Badge -->
+      <text x="18" y="32" fill="#58A6FF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="700">
+        sameer
+      </text>
+      <rect x="142" y="18" width="46" height="18" rx="9" fill="#121720" stroke="#30363D" stroke-width="0.8" />
+      <text x="165" y="31" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" font-weight="600">
+        Public
+      </text>
+
+      <!-- Description -->
+      <text x="18" y="56" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        A collection of experiments
+      </text>
+      <text x="18" y="74" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        and learning projects.
+      </text>
+
+      <!-- Language & Topics -->
+      
+          <rect x="18" y="103" width="40.0" height="18" rx="9" fill="#161B22" stroke="#30363D" stroke-width="0.8" />
+          <text x="38.0" y="116" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10.5" font-weight="500">Misc</text>
+        
+
+      <!-- Stars & Forks -->
+      <g transform="translate(18, 148)">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#D4AF37" stroke="#D4AF37" stroke-width="1" transform="scale(0.55) translate(0, -18)" />
+        <text x="18" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+
+        <g transform="translate(50, -14) scale(0.55)">
+          <path d="M18 9v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9 M12 12v3" fill="none" stroke="#8B949E" stroke-width="2" stroke-linecap="round" />
+          <circle cx="12" cy="18" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="6" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="18" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+        </g>
+        <text x="68" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+      </g>
+    </g>
+    <g transform="translate(448, 44)">
+      <rect width="206" height="175" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.35" />
+      
+      <!-- Title + Public Badge -->
+      <text x="18" y="32" fill="#58A6FF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="700">
+        xrvizion
+      </text>
+      <rect x="142" y="18" width="46" height="18" rx="9" fill="#121720" stroke="#30363D" stroke-width="0.8" />
+      <text x="165" y="31" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" font-weight="600">
+        Public
+      </text>
+
+      <!-- Description -->
+      <text x="18" y="56" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        Experimental projects and
+      </text>
+      <text x="18" y="74" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        innovative ideas in spatial computing.
+      </text>
+
+      <!-- Language & Topics -->
+      
+          <rect x="18" y="103" width="40.0" height="18" rx="9" fill="#161B22" stroke="#30363D" stroke-width="0.8" />
+          <text x="38.0" y="116" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10.5" font-weight="500">Misc</text>
+        
+
+      <!-- Stars & Forks -->
+      <g transform="translate(18, 148)">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#D4AF37" stroke="#D4AF37" stroke-width="1" transform="scale(0.55) translate(0, -18)" />
+        <text x="18" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+
+        <g transform="translate(50, -14) scale(0.55)">
+          <path d="M18 9v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9 M12 12v3" fill="none" stroke="#8B949E" stroke-width="2" stroke-linecap="round" />
+          <circle cx="12" cy="18" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="6" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="18" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+        </g>
+        <text x="68" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+      </g>
+    </g>
+    <g transform="translate(672, 44)">
+      <rect width="206" height="175" rx="12" fill="#080B10" stroke="#D4AF37" stroke-width="1.1" stroke-opacity="0.35" />
+      
+      <!-- Title + Public Badge -->
+      <text x="18" y="32" fill="#58A6FF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="700">
+        r-h-i-t-h
+      </text>
+      <rect x="142" y="18" width="46" height="18" rx="9" fill="#121720" stroke="#30363D" stroke-width="0.8" />
+      <text x="165" y="31" text-anchor="middle" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" font-weight="600">
+        Public
+      </text>
+
+      <!-- Description -->
+      <text x="18" y="56" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        Personal repository for
+      </text>
+      <text x="18" y="74" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="400">
+        learning and practice.
+      </text>
+
+      <!-- Language & Topics -->
+      
+          <circle cx="22" cy="112" r="4" fill="#3178C6" />
+          <text x="31" y="116" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="500">TypeScript</text>
+        
+
+      <!-- Stars & Forks -->
+      <g transform="translate(18, 148)">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#D4AF37" stroke="#D4AF37" stroke-width="1" transform="scale(0.55) translate(0, -18)" />
+        <text x="18" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+
+        <g transform="translate(50, -14) scale(0.55)">
+          <path d="M18 9v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9 M12 12v3" fill="none" stroke="#8B949E" stroke-width="2" stroke-linecap="round" />
+          <circle cx="12" cy="18" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="6" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+          <circle cx="18" cy="6" r="3" fill="none" stroke="#8B949E" stroke-width="2" />
+        </g>
+        <text x="68" y="-2" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11.5" font-weight="500">
+          0
+        </text>
+      </g>
+    </g>
+</svg>

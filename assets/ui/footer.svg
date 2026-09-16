@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 130" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 145" width="100%" height="auto">
   <defs>
     <linearGradient id="footerBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.6" />
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.65" />
       <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.2" />
     </linearGradient>
     <filter id="vortexGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="glow" />
+      <feGaussianBlur stdDeviation="3.5" result="glow" />
       <feMerge>
         <feMergeNode in="glow" />
         <feMergeNode in="SourceGraphic" />
@@ -13,49 +13,49 @@
     </filter>
   </defs>
 
-  <rect width="880" height="130" rx="12" fill="#080B10" stroke="url(#footerBorder)" stroke-width="1.1" />
+  <rect width="880" height="145" rx="14" fill="#080B10" stroke="url(#footerBorder)" stroke-width="1.2" />
 
   <!-- Swirling Golden Vortex -->
-  <g transform="translate(100, 65)" filter="url(#vortexGlow)">
-    <ellipse cx="0" cy="0" rx="55" ry="20" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.8" transform="rotate(-15)" />
-    <ellipse cx="0" cy="0" rx="46" ry="15" fill="none" stroke="#F2D06B" stroke-width="1.5" stroke-opacity="0.9" transform="rotate(35)" />
-    <ellipse cx="0" cy="0" rx="34" ry="10" fill="none" stroke="#FFF5C0" stroke-width="1.6" transform="rotate(85)" />
-    <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+  <g transform="translate(110, 72)" filter="url(#vortexGlow)">
+    <ellipse cx="0" cy="0" rx="60" ry="22" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-opacity="0.85" transform="rotate(-15)" />
+    <ellipse cx="0" cy="0" rx="50" ry="16" fill="none" stroke="#F2D06B" stroke-width="1.6" stroke-opacity="0.9" transform="rotate(35)" />
+    <ellipse cx="0" cy="0" rx="36" ry="11" fill="none" stroke="#FFF5C0" stroke-width="1.8" transform="rotate(85)" />
+    <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
   </g>
 
   <!-- Quote -->
-  <g transform="translate(440, 58)" text-anchor="middle">
-    <text x="0" y="0" fill="#F0F6FC" font-family="Georgia,serif,'Times New Roman'" font-size="20" font-style="italic" font-weight="700" letter-spacing="0.8">
+  <g transform="translate(440, 64)" text-anchor="middle">
+    <text x="0" y="0" fill="#F0F6FC" font-family="Georgia,serif,'Times New Roman'" font-size="23" font-style="italic" font-weight="700" letter-spacing="0.8">
       &quot;Let&apos;s build what&apos;s next.&quot;
     </text>
   </g>
 
   <!-- Social Icons -->
-  <g transform="translate(730, 48)">
+  <g transform="translate(718, 52)">
     <g transform="translate(0, 0)">
-      <circle cx="8" cy="8" r="13" fill="#121720" stroke="#30363D" stroke-width="0.9" />
-      <path d="M10 3a7 7 0 0 0-2.2 13.6c.35.06.48-.15.48-.34v-1.2c-1.95.42-2.36-.94-2.36-.94-.32-.8-.78-1.02-.78-1.02-.63-.44.05-.43.05-.43.7.05 1.07.72 1.07.72.62 1.07 1.64.76 2.04.58.06-.45.24-.76.44-.94-1.56-.18-3.2-1-3.2-3.5 0-.77.27-1.4.72-1.9-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72a6.7 6.7 0 0 1 3.52 0c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.5.72 1.13.72 1.9 0 2.51-1.64 3.32-3.2 3.5.25.22.47.65.47 1.3v1.93c0 .19.13.4.48.34A7 7 0 0 0 10 3z" fill="#D4AF37" transform="scale(0.7) translate(1, 1)" />
+      <circle cx="10" cy="10" r="15" fill="#121720" stroke="#30363D" stroke-width="1" />
+      <path d="M10 3a7 7 0 0 0-2.2 13.6c.35.06.48-.15.48-.34v-1.2c-1.95.42-2.36-.94-2.36-.94-.32-.8-.78-1.02-.78-1.02-.63-.44.05-.43.05-.43.7.05 1.07.72 1.07.72.62 1.07 1.64.76 2.04.58.06-.45.24-.76.44-.94-1.56-.18-3.2-1-3.2-3.5 0-.77.27-1.4.72-1.9-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72a6.7 6.7 0 0 1 3.52 0c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.5.72 1.13.72 1.9 0 2.51-1.64 3.32-3.2 3.5.25.22.47.65.47 1.3v1.93c0 .19.13.4.48.34A7 7 0 0 0 10 3z" fill="#D4AF37" transform="scale(0.8) translate(2.5, 2.5)" />
     </g>
-    <g transform="translate(34, 0)">
-      <circle cx="8" cy="8" r="13" fill="#121720" stroke="#30363D" stroke-width="0.9" />
-      <path d="M5 3h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m2 11V9H5v5h2m-1-6a1 1 0 1 0 0-2 1 1 0 0 0 0 2m9 6v-3a2 2 0 0 0-2-2c-.6 0-1.2.3-1.5.8V9h-2v5h2v-3a1 1 0 0 1 1-1 1 1 0 0 1 1 1v3h2z" fill="#D4AF37" transform="scale(0.7) translate(1, 1)" />
+    <g transform="translate(38, 0)">
+      <circle cx="10" cy="10" r="15" fill="#121720" stroke="#30363D" stroke-width="1" />
+      <path d="M5 3h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m2 11V9H5v5h2m-1-6a1 1 0 1 0 0-2 1 1 0 0 0 0 2m9 6v-3a2 2 0 0 0-2-2c-.6 0-1.2.3-1.5.8V9h-2v5h2v-3a1 1 0 0 1 1-1 1 1 0 0 1 1 1v3h2z" fill="#D4AF37" transform="scale(0.8) translate(2.5, 2.5)" />
     </g>
-    <g transform="translate(68, 0)">
-      <circle cx="8" cy="8" r="13" fill="#121720" stroke="#30363D" stroke-width="0.9" />
-      <path d="M14.25 4h2.45l-5.36 6.13L17.63 17h-4.94l-3.87-5.06L4.4 17H1.94l5.73-6.55L1.5 4h5.06l3.5 4.63L14.25 4zm-.86 11.53h1.36L5.8 5.4H4.34l9.05 10.13z" fill="#D4AF37" transform="scale(0.7) translate(1, 1)" />
+    <g transform="translate(76, 0)">
+      <circle cx="10" cy="10" r="15" fill="#121720" stroke="#30363D" stroke-width="1" />
+      <path d="M14.25 4h2.45l-5.36 6.13L17.63 17h-4.94l-3.87-5.06L4.4 17H1.94l5.73-6.55L1.5 4h5.06l3.5 4.63L14.25 4zm-.86 11.53h1.36L5.8 5.4H4.34l9.05 10.13z" fill="#D4AF37" transform="scale(0.8) translate(2.5, 2.5)" />
     </g>
-    <g transform="translate(102, 0)">
-      <circle cx="8" cy="8" r="13" fill="#121720" stroke="#30363D" stroke-width="0.9" />
-      <path d="M4 6h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2l6 4 6-4" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="scale(0.7) translate(1, 1)" />
+    <g transform="translate(114, 0)">
+      <circle cx="10" cy="10" r="15" fill="#121720" stroke="#30363D" stroke-width="1" />
+      <path d="M4 6h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2l6 4 6-4" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="scale(0.8) translate(2.5, 2.5)" />
     </g>
   </g>
 
   <!-- Subtitle -->
-  <g transform="translate(440, 102)" text-anchor="middle">
-    <text x="0" y="0" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="11" font-weight="500" letter-spacing="1">
+  <g transform="translate(440, 114)" text-anchor="middle">
+    <text x="0" y="0" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="500" letter-spacing="1">
       Thank you for visiting! <tspan fill="#D4AF37">★</tspan>
     </text>
-    <text x="0" y="14" fill="#6E7681" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="9.5" font-weight="500" letter-spacing="0.8">
+    <text x="0" y="16" fill="#6E7681" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.8">
       Always learning. Always building. Always improving.
     </text>
   </g>

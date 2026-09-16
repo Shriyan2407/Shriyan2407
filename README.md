@@ -15,61 +15,22 @@
 
 <br/><br/>
 
-<!-- ROW 2: ABOUT ME & CURRENTLY (2-COLUMN GRID) -->
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none;">
-  <tr>
-    <td width="50%" valign="top" align="center" style="padding-right: 6px; border: none;">
-      <a href="https://www.linkedin.com/in/shriyan-bohra-647057386/">
-        <img src="./assets/ui/about.svg" alt="About Me" width="100%" />
-      </a>
-    </td>
-    <td width="50%" valign="top" align="center" style="padding-left: 6px; border: none;">
-      <a href="https://github.com/Shriyan2407">
-        <img src="./assets/ui/currently.svg" alt="Currently Status" width="100%" />
-      </a>
-    </td>
-  </tr>
-</table>
+<!-- ROW 2: ABOUT ME & CURRENTLY (SEAMLESS DUAL-CARD HUD) -->
+<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/">
+  <img src="./assets/ui/about-currently.svg" alt="About Me and Currently Status" width="100%" />
+</a>
 
-<br/>
+<br/><br/>
 
 <!-- ROW 3: TECH STACK COMMAND CENTER -->
 <img src="./assets/ui/tech-stack.svg" alt="Engineering Tech Stack" width="100%" />
 
 <br/><br/>
 
-<!-- ROW 4: FEATURED REPOSITORIES -->
+<!-- ROW 4: FEATURED REPOSITORIES (SEAMLESS 4-PROJECT GRID) -->
 <a href="https://github.com/Shriyan2407?tab=repositories">
-  <img src="./assets/ui/featured-header.svg" alt="Featured Repositories" width="100%" />
+  <img src="./assets/ui/featured-projects.svg" alt="Featured Repositories" width="100%" />
 </a>
-
-<br/>
-
-<!-- 4 FEATURED REPOSITORY CARDS -->
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none;">
-  <tr>
-    <td width="25%" valign="top" align="center" style="padding: 3px; border: none;">
-      <a href="https://github.com/Shriyan2407/nebulavoltage">
-        <img src="./assets/projects/card-0.svg" alt="Repository Card 1" width="100%" />
-      </a>
-    </td>
-    <td width="25%" valign="top" align="center" style="padding: 3px; border: none;">
-      <a href="https://github.com/Shriyan2407/sameer">
-        <img src="./assets/projects/card-1.svg" alt="Repository Card 2" width="100%" />
-      </a>
-    </td>
-    <td width="25%" valign="top" align="center" style="padding: 3px; border: none;">
-      <a href="https://github.com/Shriyan2407/xrvision">
-        <img src="./assets/projects/card-2.svg" alt="Repository Card 3" width="100%" />
-      </a>
-    </td>
-    <td width="25%" valign="top" align="center" style="padding: 3px; border: none;">
-      <a href="https://github.com/Shriyan2407/r-h-t-i-h">
-        <img src="./assets/projects/card-3.svg" alt="Repository Card 4" width="100%" />
-      </a>
-    </td>
-  </tr>
-</table>
 
 <br/><br/>
 
@@ -80,21 +41,10 @@
 
 <br/><br/>
 
-<!-- ROW 6: RECENT ACTIVITY & CONTRIBUTION STATS -->
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none;">
-  <tr>
-    <td width="50%" valign="top" align="center" style="padding-right: 6px; border: none;">
-      <a href="https://github.com/Shriyan2407?tab=overview">
-        <img src="./assets/ui/activity.svg" alt="Recent GitHub Activity" width="100%" />
-      </a>
-    </td>
-    <td width="50%" valign="top" align="center" style="padding-left: 6px; border: none;">
-      <a href="https://github.com/Shriyan2407">
-        <img src="./assets/ui/donut-stats.svg" alt="Contribution Statistics" width="100%" />
-      </a>
-    </td>
-  </tr>
-</table>
+<!-- ROW 6: RECENT ACTIVITY & CONTRIBUTION STATS (SEAMLESS DUAL-CARD HUD) -->
+<a href="https://github.com/Shriyan2407?tab=overview">
+  <img src="./assets/ui/activity-stats.svg" alt="Recent Activity &amp; Contribution Statistics" width="100%" />
+</a>
 
 <br/><br/>
 
