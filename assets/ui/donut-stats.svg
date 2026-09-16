@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 685 240" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 185" width="100%" height="auto">
   <defs>
     <linearGradient id="donutBorder" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.6" />
       <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.15" />
     </linearGradient>
     <filter id="goldRingGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="glow" />
+      <feGaussianBlur stdDeviation="2.5" result="glow" />
       <feMerge>
         <feMergeNode in="glow" />
         <feMergeNode in="SourceGraphic" />
@@ -13,45 +13,39 @@
     </filter>
   </defs>
 
-  <!-- Background Card -->
-  <rect width="685" height="240" rx="14" fill="#080B10" stroke="url(#donutBorder)" stroke-width="1.2" />
+  <rect width="430" height="185" rx="12" fill="#080B10" stroke="url(#donutBorder)" stroke-width="1.1" />
 
-  <!-- Header -->
-  <g transform="translate(36, 42)">
-    <path d="M18 20V10 M12 20V4 M6 20v-6" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -12)" />
-    <text x="32" y="2" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="19" font-weight="700" letter-spacing="0.5">
+  <g transform="translate(24, 32)">
+    <path d="M18 20V10 M12 20V4 M6 20v-6" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -10) scale(0.9)" />
+    <text x="26" y="2" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">
       Contribution Stats
     </text>
   </g>
 
   <!-- Circular Donut Chart -->
-  <g transform="translate(180, 135)">
-    <!-- Track Circle -->
-    <circle cx="0" cy="0" r="48" fill="none" stroke="#161B22" stroke-width="12" />
-    <!-- Active Gold Arc -->
-    <circle cx="0" cy="0" r="48" fill="none" stroke="#D4AF37" stroke-width="12" stroke-linecap="round" stroke-dasharray="211.1150263212341 301.59289474462014" transform="rotate(-90)" filter="url(#goldRingGlow)" />
-    <!-- Center Percentage Text -->
-    <text x="0" y="9" text-anchor="middle" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="28" font-weight="800">
+  <g transform="translate(108, 108)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#161B22" stroke-width="9" />
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#D4AF37" stroke-width="9" stroke-linecap="round" stroke-dasharray="153.93804002589985 219.9114857512855" transform="rotate(-90)" filter="url(#goldRingGlow)" />
+    <text x="0" y="7" text-anchor="middle" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="21" font-weight="800">
       70%
     </text>
   </g>
 
-  <!-- Legend Items -->
   
-    <circle cx="340" cy="90" r="4" fill="#58A6FF" />
-    <text x="358" y="94" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="500">
+    <circle cx="215" cy="68" r="3.5" fill="#58A6FF" />
+    <text x="228" y="71.5" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500">
       Code review
     </text>
-    <circle cx="340" cy="116" r="4" fill="#D4AF37" />
-    <text x="358" y="120" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="500">
+    <circle cx="215" cy="89" r="3.5" fill="#D4AF37" />
+    <text x="228" y="92.5" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500">
       Commits
     </text>
-    <circle cx="340" cy="142" r="4" fill="#3FB950" />
-    <text x="358" y="146" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="500">
+    <circle cx="215" cy="110" r="3.5" fill="#3FB950" />
+    <text x="228" y="113.5" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500">
       Issues
     </text>
-    <circle cx="340" cy="168" r="4" fill="#BC8CFF" />
-    <text x="358" y="172" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="500">
+    <circle cx="215" cy="131" r="3.5" fill="#BC8CFF" />
+    <text x="228" y="134.5" fill="#C9D1D9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500">
       Pull requests
     </text>
 </svg>

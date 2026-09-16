@@ -103,8 +103,8 @@
       "releases_url": "https://api.github.com/repos/Shriyan2407/Shriyan2407/releases{/id}",
       "deployments_url": "https://api.github.com/repos/Shriyan2407/Shriyan2407/deployments",
       "created_at": "2026-09-10T17:37:06Z",
-      "updated_at": "2026-09-10T18:09:31Z",
-      "pushed_at": "2026-09-10T18:09:28Z",
+      "updated_at": "2026-09-16T20:58:46Z",
+      "pushed_at": "2026-09-16T20:58:42Z",
       "git_url": "git://github.com/Shriyan2407/Shriyan2407.git",
       "ssh_url": "git@github.com:Shriyan2407/Shriyan2407.git",
       "clone_url": "https://github.com/Shriyan2407/Shriyan2407.git",
@@ -113,7 +113,7 @@
       "size": 42,
       "stargazers_count": 0,
       "watchers_count": 0,
-      "language": null,
+      "language": "Python",
       "has_issues": true,
       "has_projects": true,
       "has_downloads": false,
@@ -3587,5 +3587,5 @@
       "created_at": "2026-09-10T17:38:57Z"
     }
   ],
-  "updated_at": "2026-09-16T20:45:09.928329+00:00"
+  "updated_at": "2026-09-16T21:02:04.743218+00:00"
 }
