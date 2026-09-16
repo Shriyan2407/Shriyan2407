@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 685 240" width="100%" height="auto">
+  <defs>
+    <linearGradient id="actBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.15" />
+    </linearGradient>
+    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2EA043" />
+      <stop offset="100%" stop-color="#3FB950" />
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#238636" />
+      <stop offset="100%" stop-color="#2EA043" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="685" height="240" rx="14" fill="#080B10" stroke="url(#actBorder)" stroke-width="1.2" />
+
+  <!-- Header -->
+  <g transform="translate(36, 42)">
+    <!-- Clock / Pulse Icon in Gold -->
+    <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -12)" />
+    <text x="32" y="2" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="19" font-weight="700" letter-spacing="0.5">
+      Recent Activity
+    </text>
+  </g>
+
+  <!-- Activity Item 1: Commits -->
+  <g transform="translate(36, 95)">
+    <!-- Commit Node Icon -->
+    <rect width="20" height="20" rx="4" fill="#121720" stroke="#30363D" stroke-width="1" />
+    <circle cx="10" cy="10" r="3" fill="#D4AF37" />
+    <text x="36" y="15" fill="#E6EDF3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="500">
+      Created 38 commits in 2 repositories
+    </text>
+    
+    <!-- Progress Bar -->
+    <rect x="360" y="8" width="150" height="5" rx="2.5" fill="#161B22" />
+    <rect x="360" y="8" width="125" height="5" rx="2.5" fill="url(#barGrad1)" />
+
+    <!-- Timestamp -->
+    <text x="615" y="14" text-anchor="end" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12">
+      3 weeks ago
+    </text>
+  </g>
+
+  <!-- Activity Item 2: Repo Created -->
+  <g transform="translate(36, 145)">
+    <!-- Repo Node Icon -->
+    <rect width="20" height="20" rx="4" fill="#121720" stroke="#30363D" stroke-width="1" />
+    <path d="M6 14V6h8v8H6z" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+    <text x="36" y="15" fill="#E6EDF3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="500">
+      Created 1 repository
+    </text>
+    
+    <!-- Progress Bar -->
+    <rect x="360" y="8" width="150" height="5" rx="2.5" fill="#161B22" />
+    <rect x="360" y="8" width="45" height="5" rx="2.5" fill="url(#barGrad2)" />
+
+    <!-- Timestamp -->
+    <text x="615" y="14" text-anchor="end" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12">
+      Sep 10
+    </text>
+  </g>
+
+  <!-- Bottom Link: View all activity → -->
+  <g transform="translate(615, 204)">
+    <text x="0" y="0" text-anchor="end" fill="#58A6FF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="600">
+      View all activity →
+    </text>
+  </g>
+</svg>

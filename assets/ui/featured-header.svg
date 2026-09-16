@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 42" width="100%" height="auto">
+  <!-- Star icon in gold -->
+  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 8) scale(1.1)" />
+  <text x="38" y="28" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="20" font-weight="700" letter-spacing="0.5">
+    Featured Repositories
+  </text>
+  <text x="1396" y="27" text-anchor="end" fill="#D4AF37" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="13.5" font-weight="600" letter-spacing="0.5">
+    View all →
+  </text>
+</svg>

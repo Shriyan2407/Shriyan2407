@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 685 300" width="100%" height="auto">
+  <defs>
+    <linearGradient id="currBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="685" height="300" rx="14" fill="#080B10" stroke="url(#currBorder)" stroke-width="1.2" />
+
+  <!-- Top Header Section -->
+  <g transform="translate(36, 42)">
+    <!-- Pulse Line Icon in gold -->
+    <path d="M2 12h4l3-9 4 18 3-9h4" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -12)" />
+    <text x="32" y="2" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="19" font-weight="700" letter-spacing="0.5">
+      Currently
+    </text>
+  </g>
+
+  <!-- Item Rows -->
+  
+    <!-- Item 1: Building -->
+    <g transform="translate(36, 82)">
+      <!-- Icon circle -->
+      <circle cx="16" cy="16" r="16" fill="#121720" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6" />
+      <g transform="translate(8, 8) scale(0.65)">
+        <path d="M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      
+      <!-- Key title -->
+      <text x="48" y="14" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14.5" font-weight="700">
+        Building
+      </text>
+      
+      <!-- Text description -->
+      <text x="48" y="30" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="400">
+        Exploring new projects and ideas
+      </text>
+      
+      <!-- Right chevron -->
+      <text x="590" y="22" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="700">
+        ›
+      </text>
+    </g>
+    <!-- Item 2: Learning -->
+    <g transform="translate(36, 130)">
+      <!-- Icon circle -->
+      <circle cx="16" cy="16" r="16" fill="#121720" stroke="#3FB950" stroke-width="1" stroke-opacity="0.6" />
+      <g transform="translate(8, 8) scale(0.65)">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="#3FB950" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      
+      <!-- Key title -->
+      <text x="48" y="14" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14.5" font-weight="700">
+        Learning
+      </text>
+      
+      <!-- Text description -->
+      <text x="48" y="30" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="400">
+        Advanced cybersecurity concepts
+      </text>
+      
+      <!-- Right chevron -->
+      <text x="590" y="22" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="700">
+        ›
+      </text>
+    </g>
+    <!-- Item 3: Exploring -->
+    <g transform="translate(36, 178)">
+      <!-- Icon circle -->
+      <circle cx="16" cy="16" r="16" fill="#121720" stroke="#58A6FF" stroke-width="1" stroke-opacity="0.6" />
+      <g transform="translate(8, 8) scale(0.65)">
+        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" fill="none" stroke="#58A6FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      
+      <!-- Key title -->
+      <text x="48" y="14" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14.5" font-weight="700">
+        Exploring
+      </text>
+      
+      <!-- Text description -->
+      <text x="48" y="30" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="400">
+        AI, system design, and secure architecture
+      </text>
+      
+      <!-- Right chevron -->
+      <text x="590" y="22" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="700">
+        ›
+      </text>
+    </g>
+    <!-- Item 4: Focused on -->
+    <g transform="translate(36, 226)">
+      <!-- Icon circle -->
+      <circle cx="16" cy="16" r="16" fill="#121720" stroke="#F2D06B" stroke-width="1" stroke-opacity="0.6" />
+      <g transform="translate(8, 8) scale(0.65)">
+        <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" fill="none" stroke="#F2D06B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      
+      <!-- Key title -->
+      <text x="48" y="14" fill="#F0F6FC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14.5" font-weight="700">
+        Focused on
+      </text>
+      
+      <!-- Text description -->
+      <text x="48" y="30" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12.5" font-weight="400">
+        Becoming a better developer every day
+      </text>
+      
+      <!-- Right chevron -->
+      <text x="590" y="22" fill="#8B949E" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="700">
+        ›
+      </text>
+    </g>
+</svg>

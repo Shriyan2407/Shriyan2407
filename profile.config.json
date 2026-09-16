@@ -1,0 +1,161 @@
+{
+  "username": "Shriyan2407",
+  "name": "Shriyan Bohra",
+  "display_title_1": "SHRIYAN",
+  "display_title_2": "BOHRA",
+  "roles": [
+    "DEVELOPER",
+    "CYBERSECURITY ENTHUSIAST",
+    "AI EXPLORER"
+  ],
+  "tagline": "BUILD > LEARN > EXPLORE > REPEAT",
+  "callout": "I DON'T JUST WRITE CODE. I ENGINEER SYSTEMS.",
+  "status": {
+    "indicator": "ONLINE",
+    "text": "Building the next..."
+  },
+  "location": "India",
+  "email": "shriyanbohra24077@gmail.com",
+  "website": "https://xr-vision-pro.vercel.app/",
+  "quotes": {
+    "sidebar": "Discipline turns ideas into reality. ★",
+    "banner_quote": "SAME MIND DIFFERENT PERSPECTIVE",
+    "banner_tags": "IDEAS • SECURITY • TECHNOLOGY • IMPACT",
+    "footer": "Let's build what's next.",
+    "footer_sub": "Always learning. Always building. Always improving."
+  },
+  "about": {
+    "title": "About Me",
+    "badge": "02 / WHO AM I",
+    "bio": "I'm a CSE student passionate about cybersecurity, software development, and emerging technologies. I enjoy building practical solutions, learning new things, and exploring the intersection of security, AI, and real-world impact.",
+    "cta_text": "More about me →",
+    "cta_url": "https://www.linkedin.com/in/shriyan-bohra-647057386/"
+  },
+  "currently": [
+    {
+      "key": "Building",
+      "text": "Exploring new projects and ideas",
+      "url": "https://github.com/Shriyan2407"
+    },
+    {
+      "key": "Learning",
+      "text": "Advanced cybersecurity concepts",
+      "url": "https://github.com/Shriyan2407"
+    },
+    {
+      "key": "Exploring",
+      "text": "AI, system design, and secure architecture",
+      "url": "https://github.com/Shriyan2407"
+    },
+    {
+      "key": "Focused on",
+      "text": "Becoming a better developer every day",
+      "url": "https://github.com/Shriyan2407"
+    }
+  ],
+  "tech_stack": [
+    {"name": "Java", "category": "Languages", "icon": "java.svg"},
+    {"name": "JavaScript", "category": "Languages", "icon": "javascript.svg"},
+    {"name": "TypeScript", "category": "Languages", "icon": "typescript.svg"},
+    {"name": "Python", "category": "Languages", "icon": "python.svg"},
+    {"name": "React", "category": "Frameworks", "icon": "react.svg"},
+    {"name": "Node.js", "category": "Frameworks", "icon": "nodejs.svg"},
+    {"name": "HTML5", "category": "Languages", "icon": "html5.svg"},
+    {"name": "CSS3", "category": "Languages", "icon": "css3.svg"},
+    {"name": "Git", "category": "Tools", "icon": "git.svg"},
+    {"name": "Docker", "category": "Tools", "icon": "docker.svg"}
+  ],
+  "featured_repositories": [
+    "nebulavoltage",
+    "sameer",
+    "xrvision",
+    "r-h-t-i-h"
+  ],
+  "repository_overrides": {
+    "nebulavoltage": {
+      "display_name": "nebula-voltage",
+      "description": "Exploring modern web technologies and creative development.",
+      "language": "Java",
+      "topics": ["Web"]
+    },
+    "sameer": {
+      "display_name": "sameer",
+      "description": "A collection of experiments and learning projects.",
+      "language": null,
+      "topics": ["Misc"]
+    },
+    "xrvision": {
+      "display_name": "xrvizion",
+      "description": "Experimental projects and innovative ideas in spatial computing.",
+      "language": null,
+      "topics": ["Misc"]
+    },
+    "r-h-t-i-h": {
+      "display_name": "r-h-i-t-h",
+      "description": "Personal repository for learning and practice.",
+      "language": "TypeScript",
+      "topics": []
+    },
+    "VAUlT-Z": {
+      "display_name": "VAUlT-Z",
+      "description": "Secure workflows and defensive system design.",
+      "language": "Python",
+      "topics": ["Security", "Defense"]
+    },
+    "aerova": {
+      "display_name": "AEROPURE",
+      "description": "Predict tomorrow's air before it becomes dangerous.",
+      "language": "Python",
+      "topics": ["AI", "Environment"]
+    },
+    "DOCCARE": {
+      "display_name": "DOCCARE",
+      "description": "Digital healthcare experience with intelligent support.",
+      "language": "JavaScript",
+      "topics": ["AI", "Healthcare", "Web"]
+    },
+    "Pattern-Mining-System": {
+      "display_name": "PATTERN-MINING",
+      "description": "Turning data noise into structure and insight.",
+      "language": "Python",
+      "topics": ["Data", "Algorithms"]
+    }
+  },
+  "social_links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Shriyan2407",
+      "icon": "github.svg"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/shriyan-bohra-647057386/",
+      "icon": "linkedin.svg"
+    },
+    {
+      "name": "Twitter / X",
+      "url": "https://x.com",
+      "icon": "x.svg"
+    },
+    {
+      "name": "Portfolio",
+      "url": "https://xr-vision-pro.vercel.app/",
+      "icon": "portfolio.svg"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:shriyanbohra24077@gmail.com",
+      "icon": "email.svg"
+    }
+  ],
+  "contribution_stats": {
+    "primary_percent": 70,
+    "primary_label": "Commits",
+    "breakdown": [
+      {"label": "Code review", "color": "#58A6FF"},
+      {"label": "Commits", "color": "#D4AF37"},
+      {"label": "Issues", "color": "#3FB950"},
+      {"label": "Pull requests", "color": "#BC8CFF"}
+    ]
+  }
+}
