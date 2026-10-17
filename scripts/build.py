@@ -19,7 +19,7 @@ USER = "Shriyan2407"
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 OUT = os.path.join(ROOT, "assets", "live")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
-MONO = "'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'SFMono-Regular',Menlo,monospace"
+MONO = "'JBM','JetBrains Mono','Cascadia Code',Consolas,'SFMono-Regular',Menlo,monospace"
 
 # Featured case files: repo -> how it is presented.
 CASES = [
@@ -120,6 +120,7 @@ def fmt_day(iso):
 # ------------------------------------------------------------- helpers ----
 
 _ids = itertools.count()
+FONTS = ""
 
 def plural(n, word):
     return f"{n} {word}{'' if n == 1 else 's'}"
@@ -140,9 +141,20 @@ def wrap(text, width):
     return lines + ([cur] if cur else [])
 
 
+def font_faces():
+    # JetBrains Mono (OFL), subset and embedded so every viewer sees the same type.
+    faces = []
+    for weight in (400, 700, 800):
+        with open(os.path.join(ROOT, "assets", "fonts", f"jbm-{weight}.woff2"), "rb") as f:
+            data = base64.b64encode(f.read()).decode()
+        faces.append(f"@font-face{{font-family:'JBM';font-weight:{weight};src:url(data:font/woff2;base64,{data}) format('woff2')}}")
+    return "\n  ".join(faces)
+
+
 def svg(w, h, body, c, extra_css=""):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" font-family="{MONO}">
 <style>
+  {FONTS}
   .t{{fill:{c['text']}}} .d{{fill:{c['dim']}}} .a{{fill:{c['accent']}}} .a2{{fill:{c['accent2']}}}
   .ok{{fill:{c['ok']}}} .al{{fill:{c['alert']}}}
   .blink{{animation:blink 1s steps(1) infinite}} @keyframes blink{{50%{{opacity:0}}}}
@@ -170,140 +182,187 @@ def appear(inner, begin, dur=0.25):
 
 # ---------------------------------------------------------------- hero ----
 
-# Face position inside the 400px avatar, used for the lock-on box.
+# Face position inside the 400px avatar, used for the lock-on reticle.
 FACE = (158, 52, 278, 178)
 
 
 def portrait(d, c, theme, px, py, size):
-    """The avatar, duotoned, revealed by a scan line through a layer of cipher text."""
+    """The avatar, duotoned, decrypted by a scan line, then locked by a reticle."""
     rng = random.Random(2407)
     k = size / 400
-    if theme == "dark":
-        lo, hi = (0.04, 0.04, 0.045), (0.98, 0.86, 0.52)
-    else:
-        lo, hi = (0.055, 0.165, 0.36), (0.96, 0.95, 0.92)
+    if theme == "dark":   # deep black → warm gold, S-curve for contrast
+        r, g, b = "0.03 0.09 0.42 0.86 1", "0.03 0.07 0.33 0.72 0.95", "0.035 0.04 0.10 0.33 0.70"
+        lock = c["accent"]
+    else:                 # ink navy → paper
+        r, g, b = "0.04 0.09 0.30 0.76 0.97", "0.10 0.19 0.42 0.83 0.96", "0.25 0.38 0.62 0.90 0.94"
+        lock = c["alert"]
     o = [f'''<filter id="duo" color-interpolation-filters="sRGB">
   <feColorMatrix type="saturate" values="0"/>
-  <feComponentTransfer>
-    <feFuncR type="table" tableValues="{lo[0]} {hi[0]}"/><feFuncG type="table" tableValues="{lo[1]} {hi[1]}"/><feFuncB type="table" tableValues="{lo[2]} {hi[2]}"/>
-  </feComponentTransfer></filter>
-<clipPath id="shown"><rect x="{px}" y="{py}" width="{size}" height="0">
-  <animate attributeName="height" from="0" to="{size}" begin="0.7s" dur="2.4s" fill="freeze"/></rect></clipPath>
-<clipPath id="hidden"><rect x="{px}" y="{py}" width="{size}" height="{size}">
-  <animate attributeName="y" from="{py}" to="{py + size}" begin="0.7s" dur="2.4s" fill="freeze"/></rect></clipPath>
-<clipPath id="frame"><rect x="{px}" y="{py}" width="{size}" height="{size}" rx="6"/></clipPath>''',
-         f'<rect x="{px}" y="{py}" width="{size}" height="{size}" rx="6" fill="{c["panel"]}" stroke="{c["line"]}"/>',
-         f'<defs><image id="av" href="{d["avatar"]}" x="{px}" y="{py}" width="{size}" height="{size}"/></defs>',
-         f'<g clip-path="url(#frame)"><use href="#av" filter="url(#duo)" clip-path="url(#shown)"/>']
-    # glitch slices that flicker every few seconds after the reveal
-    for i, (sy, sh, dx, col) in enumerate(((0.30, 0.05, 9, "#FF2E63"), (0.55, 0.035, -11, "#08F7FE"), (0.72, 0.06, 7, c["accent"]))):
+  <feComponentTransfer><feFuncR type="table" tableValues="{r}"/><feFuncG type="table" tableValues="{g}"/><feFuncB type="table" tableValues="{b}"/></feComponentTransfer>
+</filter>
+<pattern id="psl" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" opacity=".28"/></pattern>
+<linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["accent"]}" stop-opacity="0"/><stop offset=".85" stop-color="{c["accent"]}" stop-opacity=".22"/><stop offset="1" stop-color="{c["accent2"]}" stop-opacity=".9"/></linearGradient>
+<clipPath id="shown"><rect x="{px}" y="{py}" width="{size}" height="0"><animate attributeName="height" from="0" to="{size}" begin="0.7s" dur="2.4s" fill="freeze"/></rect></clipPath>
+<clipPath id="hidden"><rect x="{px}" y="{py}" width="{size}" height="{size}"><animate attributeName="y" from="{py}" to="{py + size}" begin="0.7s" dur="2.4s" fill="freeze"/></rect></clipPath>
+<clipPath id="frame"><rect x="{px}" y="{py}" width="{size}" height="{size}" rx="4"/></clipPath>
+<defs><image id="av" href="{d["avatar"]}" x="{px}" y="{py}" width="{size}" height="{size}"/></defs>''',
+         f'<rect x="{px}" y="{py}" width="{size}" height="{size}" rx="4" fill="{c["panel"]}"/>',
+         f'<g clip-path="url(#frame)"><use href="#av" filter="url(#duo)" clip-path="url(#shown)"/>',
+         f'<rect x="{px}" y="{py}" width="{size}" height="{size}" fill="url(#psl)" clip-path="url(#shown)"/>']
+    # glitch slices that tear sideways every few seconds once revealed
+    for i, (sy, sh, dx, col) in enumerate(((0.31, 0.045, 9, "#FF2E63"), (0.56, 0.03, -11, "#08F7FE"), (0.74, 0.055, 7, c["accent"]))):
         o.append(f'<clipPath id="sl{i}"><rect x="{px}" y="{py + size * sy:.0f}" width="{size}" height="{size * sh:.0f}"/></clipPath>'
                  f'<g clip-path="url(#sl{i})" opacity="0"><use href="#av" x="{dx}" filter="url(#duo)"/>'
                  f'<rect x="{px}" y="{py}" width="{size}" height="{size}" fill="{col}" opacity=".35"/>'
                  f'<animate attributeName="opacity" values="0;0;1;0;1;0;0" keyTimes="0;.86;.88;.9;.92;.94;1" dur="{5 + i * 1.3:.1f}s" begin="4s" repeatCount="indefinite"/></g>')
-    # cipher layer: two scrambles alternating, clipped to the not-yet-revealed area
-    rows = size // 12
-    cols = int(size / 6.2)
+    # cipher layer over the part not yet decrypted
+    rows, cols = size // 12, int(size / 6.0)
     for phase in (0, 1):
-        lines = "".join(
-            f'<text x="{px + 4}" y="{py + 11 + r * 12}" font-size="10">{"".join(rng.choice("0123456789abcdef#$%@*") for _ in range(cols))}</text>'
-            for r in range(rows))
-        vals = "1;0" if phase == 0 else "0;1"
-        o.append(f'<g clip-path="url(#hidden)" fill="{c["accent"]}" opacity=".55"><g>{lines}'
-                 f'<animate attributeName="opacity" values="{vals}" dur=".24s" calcMode="discrete" repeatCount="indefinite"/></g></g>')
-    # scan line
-    o.append(f'<rect x="{px}" y="{py}" width="{size}" height="3" fill="{c["accent"]}" opacity="0">'
-             f'<animate attributeName="y" from="{py}" to="{py + size}" begin="0.7s" dur="2.4s" fill="freeze"/>'
-             f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.02;.97;1" begin="0.7s" dur="2.4s" fill="freeze"/></rect>')
+        lines = "".join(f'<text x="{px + 4}" y="{py + 11 + r_ * 12}" font-size="10">{"".join(rng.choice("0123456789abcdef#$%@*") for _ in range(cols))}</text>'
+                        for r_ in range(rows))
+        o.append(f'<g clip-path="url(#hidden)" fill="{c["accent"]}" opacity=".5"><g>{lines}'
+                 f'<animate attributeName="opacity" values="{"1;0" if phase == 0 else "0;1"}" dur=".24s" calcMode="discrete" repeatCount="indefinite"/></g></g>')
+    # the decrypt sweep, then a soft re-scan every 7s
+    o.append(f'<rect x="{px}" y="{py - 40}" width="{size}" height="42" fill="url(#band)" opacity="0">'
+             f'<animate attributeName="y" from="{py - 40}" to="{py + size - 40}" begin="0.7s" dur="2.4s" fill="freeze"/>'
+             f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.03;.96;1" begin="0.7s" dur="2.4s" fill="freeze"/></rect>')
+    o.append(f'<rect x="{px}" y="{py - 40}" width="{size}" height="42" fill="url(#band)" opacity="0">'
+             f'<animate attributeName="y" values="{py - 40};{py + size}" dur="2.2s" begin="6s;rs.end+4.8s" id="rs"/>'
+             f'<animate attributeName="opacity" values="0;.45;.45;0" keyTimes="0;.1;.9;1" dur="2.2s" begin="6s;rs.end+4.8s"/></rect>')
     o.append("</g>")
-    # face lock: box collapses from the full frame onto the face
-    fx, fy = px + FACE[0] * k, py + FACE[1] * k
-    fw, fh = (FACE[2] - FACE[0]) * k, (FACE[3] - FACE[1]) * k
-    lock = c["ok"] if theme == "dark" else c["alert"]
-    o.append(f'<rect x="{px}" y="{py}" width="{size}" height="{size}" fill="none" stroke="{lock}" stroke-width="1.6" stroke-dasharray="6 4" opacity="0">'
-             f'<set attributeName="opacity" to="1" begin="3.2s"/>'
-             f'<animate attributeName="x" from="{px}" to="{fx:.1f}" begin="3.2s" dur=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/>'
-             f'<animate attributeName="y" from="{py}" to="{fy:.1f}" begin="3.2s" dur=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/>'
-             f'<animate attributeName="width" from="{size}" to="{fw:.1f}" begin="3.2s" dur=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/>'
-             f'<animate attributeName="height" from="{size}" to="{fh:.1f}" begin="3.2s" dur=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/></rect>')
-    o.append(appear(f'<rect x="{fx:.1f}" y="{fy - 18:.1f}" width="{fw:.1f}" height="16" fill="{lock}"/>'
-                    f'<text x="{fx + 4:.1f}" y="{fy - 6:.1f}" font-size="10" font-weight="700" fill="{c["bg"]}">MATCH 98.7%</text>', 3.8, 0.1))
-    # HUD corner brackets
-    for cx, cy, sx, sy in ((px, py, 1, 1), (px + size, py, -1, 1), (px, py + size, 1, -1), (px + size, py + size, -1, -1)):
-        o.append(f'<path d="M{cx} {cy + 18 * sy} V{cy} H{cx + 18 * sx}" fill="none" stroke="{c["accent"]}" stroke-width="2.5"/>')
+    o.append(f'<rect x="{px + .5}" y="{py + .5}" width="{size - 1}" height="{size - 1}" rx="4" fill="none" stroke="{c["line"]}"/>')
+
+    # reticle: four corners fly from the frame onto the face
+    fx0, fy0 = px + FACE[0] * k, py + FACE[1] * k
+    fx1, fy1 = px + FACE[2] * k, py + FACE[3] * k
+    arm = 12
+    corners = (((px, py), (fx0, fy0), (1, 1)), ((px + size, py), (fx1, fy0), (-1, 1)),
+               ((px, py + size), (fx0, fy1), (1, -1)), ((px + size, py + size), (fx1, fy1), (-1, -1)))
+    for (sx, sy), (ex, ey), (dx, dy) in corners:
+        o.append(f'<g opacity="0"><set attributeName="opacity" to="1" begin="3.2s"/>'
+                 f'<path d="M0 {arm * dy} V0 H{arm * dx}" fill="none" stroke="{lock}" stroke-width="2.5"/>'
+                 f'<animateTransform attributeName="transform" type="translate" from="{sx} {sy}" to="{ex:.1f} {ey:.1f}" begin="3.2s" dur=".55s" fill="freeze" calcMode="spline" keySplines=".2 .9 .2 1" keyTimes="0;1"/></g>')
+    cx, cy = (fx0 + fx1) / 2, (fy0 + fy1) / 2
+    o.append(appear(f'<path d="M{cx - 5:.1f} {cy:.1f} H{cx + 5:.1f} M{cx:.1f} {cy - 5:.1f} V{cy + 5:.1f}" stroke="{lock}" stroke-width="1" opacity=".7"/>'
+                    f'<rect x="{fx0:.1f}" y="{fy0 - 21:.1f}" width="{fx1 - fx0:.1f}" height="16" fill="{lock}"/>'
+                    f'<text x="{fx0 + 5:.1f}" y="{fy0 - 9:.1f}" font-size="9.5" font-weight="800" fill="{c["bg"]}">MATCH 98.7%</text>'
+                    f'<rect x="{fx0:.1f}" y="{fy1 + 5:.1f}" width="{fx1 - fx0:.1f}" height="14" fill="{c["bg"]}" opacity=".82"/>'
+                    f'<text x="{fx0 + 5:.1f}" y="{fy1 + 15:.1f}" font-size="9" font-weight="700" fill="{lock}">ID SB-2407 · LOCKED</text>', 3.75, 0.12))
+    # frame brackets
+    for bx, by, sx, sy in ((px, py, 1, 1), (px + size, py, -1, 1), (px, py + size, 1, -1), (px + size, py + size, -1, -1)):
+        o.append(f'<path d="M{bx - 6 * sx} {by + 22 * sy} V{by - 6 * sy} H{bx + 22 * sx}" fill="none" stroke="{c["accent"]}" stroke-width="2"/>')
     return "\n".join(o)
 
 
+def decrypt_word(word, x, y, size, begin, fill, frames=7):
+    """Each letter cycles through random glyphs before locking into place."""
+    rng = random.Random(word)
+    adv = size * 0.6  # JetBrains Mono advance width
+    out = []
+    for i, ch in enumerate(word):
+        lx = x + i * adv
+        t0 = begin + i * 0.07
+        for f in range(frames):
+            g = rng.choice("ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#$%@&*")
+            out.append(f'<text x="{lx:.1f}" y="{y}" font-size="{size}" font-weight="800" fill="{fill}" opacity="0">{t(g)}'
+                       f'<set attributeName="opacity" to=".55" begin="{t0 + f * 0.055:.3f}s" dur=".055s"/></text>')
+        out.append(f'<text x="{lx:.1f}" y="{y}" font-size="{size}" font-weight="800" fill="url(#gold)" opacity="0">{t(ch)}'
+                   f'<set attributeName="opacity" to="1" begin="{t0 + frames * 0.055:.3f}s"/></text>')
+    return "".join(out), begin + len(word) * 0.07 + frames * 0.055
+
+
+def led_meter(x, y, pct, begin, c, segs=32):
+    lit = max(1, round(pct / 100 * segs))
+    out = []
+    for j in range(segs):
+        sx = x + j * 10
+        if j < lit:
+            out.append(f'<rect x="{sx}" y="{y - 10}" width="7" height="11" rx="1" fill="{c["accent"]}" opacity="0">'
+                       f'<set attributeName="opacity" to="1" begin="{begin + j * 0.025:.3f}s"/></rect>')
+        else:
+            out.append(f'<rect x="{sx}" y="{y - 10}" width="7" height="11" rx="1" fill="{c["grid"]}" stroke="{c["line"]}" stroke-width=".6"/>')
+    return "".join(out)
+
+
 def hero_dark(d, c):
-    w, h = 880, 600
+    w, h = 880, 560
     v, sh, last = d["vault"], d["shell"], d["last"]
-    o = [f'<rect width="{w}" height="{h}" rx="14" fill="{c["bg"]}"/>',
+    o = [f'<radialGradient id="vig" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></radialGradient>',
+         f'<linearGradient id="crt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{c["accent"]}" stop-opacity="0"/><stop offset=".5" stop-color="{c["accent"]}" stop-opacity=".045"/><stop offset="1" stop-color="{c["accent"]}" stop-opacity="0"/></linearGradient>',
+         f'<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4CC"/><stop offset=".45" stop-color="{c["accent2"]}"/><stop offset=".55" stop-color="{c["accent"]}"/><stop offset="1" stop-color="#9C7A12"/></linearGradient>',
+         f'<filter id="glow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>',
+         f'<rect width="{w}" height="{h}" rx="14" fill="{c["bg"]}"/>',
          f'<pattern id="sl" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="{c["grid"]}"/></pattern>'
-         f'<rect width="{w}" height="{h}" rx="14" fill="url(#sl)" opacity=".55"/>',
-         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{c["line"]}"/>',
-         f'<rect width="{w}" height="38" rx="14" fill="{c["panel"]}"/><rect y="24" width="{w}" height="14" fill="{c["panel"]}"/>']
+         f'<rect width="{w}" height="{h}" rx="14" fill="url(#sl)" opacity=".6"/>',
+         # CRT refresh band rolling down the screen
+         f'<rect x="0" y="-160" width="{w}" height="160" fill="url(#crt)"><animate attributeName="y" values="-160;{h}" dur="7s" repeatCount="indefinite"/></rect>',
+         f'<rect width="{w}" height="38" rx="14" fill="{c["panel"]}"/><rect y="24" width="{w}" height="14" fill="{c["panel"]}"/>',
+         f'<line x1="0" x2="{w}" y1="38" y2="38" stroke="{c["line"]}"/>']
     for i, col in enumerate(("#FF5F57", "#FEBC2E", "#28C840")):
         o.append(f'<circle cx="{24 + i * 20}" cy="19" r="6" fill="{col}"/>')
-    o.append(f'<text x="{w / 2}" y="24" font-size="12" class="d" text-anchor="middle">guest@shriyan: ~ — ssh — encrypted</text>')
-    o.append(f'<text x="{w - 22}" y="24" font-size="11" class="al" text-anchor="end"><tspan class="blink">●</tspan> REC</text>')
+    o.append(f'<text x="{w / 2}" y="24" font-size="12" class="d" text-anchor="middle">guest@shriyan: ~ — ssh — end-to-end encrypted</text>')
+    o.append(f'<text x="{w - 22}" y="24" font-size="11" class="al" text-anchor="end" font-weight="700"><tspan class="blink">●</tspan> REC</text>')
 
-    # left: portrait + identity HUD
-    px, py, size = 28, 62, 300
+    # left column: portrait + identity HUD
+    px, py, size = 30, 62, 280
     o.append(portrait(d, c, "dark", px, py, size))
-    hud = [("SUBJECT", "SHRIYAN BOHRA"), ("ORIGIN", "INDIA · UTC+05:30"), ("STATUS", "ONLINE · BUILDING")]
-    for i, (k, val) in enumerate(hud):
-        o.append(appear(f'<text x="{px}" y="{py + size + 30 + i * 22}" font-size="11" class="d" letter-spacing="1.5">{k:<8}</text>'
-                        f'<text x="{px + 80}" y="{py + size + 30 + i * 22}" font-size="12" class="{"ok" if k == "STATUS" else "a2"}">{t(val)}</text>', 4.0 + i * 0.15))
-    o.append(appear(f'<text x="{px}" y="{py + size + 104}" font-size="11" class="d">identity verified against github.com/{USER}</text>', 4.5))
+    hy = py + size + 30
+    hud = [("SUBJECT", "SHRIYAN BOHRA", "a2"), ("ORIGIN", "INDIA · UTC+05:30", "a2"),
+           ("CLEARANCE", "PUBLIC · LEVEL 5", "a2"), ("STATUS", "ONLINE · BUILDING", "ok")]
+    for i, (k_, val, cls) in enumerate(hud):
+        o.append(appear(f'<text x="{px}" y="{hy + i * 21}" font-size="10" class="d" letter-spacing="1.8">{k_}</text>'
+                        f'<text x="{px + 92}" y="{hy + i * 21}" font-size="12" font-weight="700" class="{cls}">{t(val)}</text>', 4.0 + i * 0.12))
+    uy = hy + 4 * 21 + 8
+    bars = "".join(f'<rect x="{px + 92 + j * 9}" y="{uy - 9 - j * 1.5:.1f}" width="6" height="{10 + j * 1.5:.1f}" fill="{c["ok"] if j < 4 else c["line"]}">'
+                   + (f'<animate attributeName="opacity" values="1;.35;1" dur="{1.1 + j * .2:.1f}s" repeatCount="indefinite"/>' if j < 4 else "") + '</rect>'
+                   for j in range(5))
+    o.append(appear(f'<text x="{px}" y="{uy}" font-size="10" class="d" letter-spacing="1.8">UPLINK</text>{bars}'
+                    f'<text x="{px + 145}" y="{uy}" font-size="11" class="d">secure · 24ms</text>', 4.6))
 
-    # right: the session
-    x, tm = 360, 0.5
-    o.append(typed(x, 78, "$ ssh guest@github.com/Shriyan2407", tm, "a", 13))
+    # right column: the session
+    x, tm = 342, 0.5
+    o.append(typed(x, 72, "$ ssh guest@github.com/Shriyan2407", tm, "a", 13))
     tm += 1.3
-    o.append(appear(f'<text x="{x}" y="100" font-size="12" class="ok">[✓] handshake ok · TLS 1.3 · AES-256-GCM</text>', tm))
+    o.append(appear(f'<text x="{x}" y="93" font-size="12" class="ok">[✓] handshake ok · TLS 1.3 · AES-256-GCM · key pinned</text>', tm))
     tm += 0.4
-    o.append(typed(x, 132, "$ whoami", tm, "a", 13))
+    o.append(typed(x, 124, "$ whoami", tm, "a", 13))
     tm += 0.5
-    o.append(f'<linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="{c["accent2"]}"/><stop offset=".55" stop-color="{c["accent"]}"/><stop offset="1" stop-color="#8A6D0B"/></linearGradient>')
+    # name: glow underlay + per-letter decrypt + RGB-split bursts
     for j, word in enumerate(("SHRIYAN", "BOHRA")):
-        wy = 188 + j * 56
-        o.append(f'''<g opacity="0">
-  <text x="{x - 2}" y="{wy}" font-size="54" font-weight="800" fill="#FF2E63" opacity=".75" class="g1">{word}</text>
-  <text x="{x + 2}" y="{wy}" font-size="54" font-weight="800" fill="#08F7FE" opacity=".6" class="g2">{word}</text>
-  <text x="{x}" y="{wy}" font-size="54" font-weight="800" fill="url(#gold)">{word}</text>
-  <animate attributeName="opacity" from="0" to="1" begin="{tm + j * 0.2:.2f}s" dur=".05s" fill="freeze"/></g>''')
-    o.append(appear(f'<text x="{x}" y="270" font-size="12" class="d">cse student · offensive mind, defensive design · full-stack</text>', tm + 0.5))
-    tm += 1.0
-    o.append(typed(x, 304, "$ ./recon --target=self", tm, "a", 13))
-    tm += 1.0
-    o.append(appear(f'<text x="{x}" y="326" font-size="12" class="t" xml:space="preserve">repos {d["repos"]}  ·  commits/yr {d["commits"]}  ·  contributions/yr {d["contribs"]}</text>', tm))
-    if last:
-        o.append(appear(f'<text x="{x}" y="346" font-size="12" class="d">last push → <tspan class="a2">{t(last["name"])}</tspan> · {fmt_day(last["pushed_at"])}</text>', tm + 0.15))
-    tm += 0.3
-    for i, (lang, pct) in enumerate(d["langs"]):
-        ly = 376 + i * 22
-        bw = 290
-        o.append(appear(
-            f'<text x="{x}" y="{ly}" font-size="12" class="t">{t(lang)}</text>'
-            f'<rect x="{x + 100}" y="{ly - 9}" width="{bw}" height="9" rx="2" fill="{c["grid"]}" stroke="{c["line"]}"/>'
-            f'<rect x="{x + 100}" y="{ly - 9}" width="0" height="9" rx="2" fill="{c["accent"]}">'
-            f'<animate attributeName="width" from="0" to="{max(pct / 100 * bw, 3):.1f}" begin="{tm + 0.1 * i:.2f}s" dur="1.1s" fill="freeze"/></rect>'
-            f'<text x="{x + 400}" y="{ly}" font-size="11" class="d">{pct:4.1f}%</text>', tm + 0.1 * i))
-    tm += 0.8
-    o.append(typed(x, 480, "$ cat /vault/status", tm, "a", 13))
-    tm += 0.8
-    solved = len(v["solvers"])
-    state = f'<tspan class="al">BREACHED ×{solved}</tspan>' if solved else '<tspan class="ok">SECURE</tspan>'
-    o.append(appear(f'<text x="{x}" y="502" font-size="12" class="t">VAULT {state} · {v["attempts"]} attempts · shell: {sh["total"]} cmds by {len(sh["users"])} visitors</text>', tm))
+        wy = 186 + j * 62
+        o.append(f'<text x="{x}" y="{wy}" font-size="62" font-weight="800" fill="{c["accent"]}" opacity="0" filter="url(#glow)">{word}'
+                 f'<animate attributeName="opacity" from="0" to=".35" begin="{tm + 0.7 + j * 0.3:.2f}s" dur=".6s" fill="freeze"/></text>')
+        letters, end = decrypt_word(word, x, wy, 62, tm + j * 0.25, c["accent"])
+        o.append(letters)
+        for col, dx in (("#FF2E63", -4), ("#08F7FE", 4)):
+            o.append(f'<text x="{x + dx}" y="{wy}" font-size="62" font-weight="800" fill="{col}" opacity="0" style="mix-blend-mode:screen">{word}'
+                     f'<animate attributeName="opacity" values="0;0;.75;0;.6;0;0" keyTimes="0;.88;.895;.91;.925;.94;1" dur="{4.2 + j * 0.9 + (dx > 0) * 0.4:.1f}s" begin="{end + 1:.2f}s" repeatCount="indefinite"/></text>')
+    tm += 1.6
+    o.append(appear(f'<text x="{x}" y="276" font-size="12" class="d">cse student · offensive mind, defensive design · full-stack</text>', tm))
     tm += 0.4
-    o.append(appear(f'<text x="{x}" y="530" font-size="13" class="a">$ <tspan class="blink">█</tspan></text>', tm))
-    o.append(f'<line x1="22" x2="{w - 22}" y1="{h - 38}" y2="{h - 38}" stroke="{c["line"]}"/>')
-    o.append(f'<text x="30" y="{h - 16}" font-size="11" class="al">◆ RED TEAM VIEW</text>')
-    o.append(f'<text x="{w - 30}" y="{h - 16}" font-size="11" class="d" text-anchor="end">same mind // different perspective — switch GitHub to light theme ☀</text>')
-    css = """.g1{animation:g1 3.2s infinite steps(1)} .g2{animation:g2 2.7s infinite steps(1)}
-  @keyframes g1{0%,86%,100%{transform:translate(0,0)}88%{transform:translate(-5px,2px)}91%{transform:translate(4px,-2px)}94%{transform:translate(-2px,0)}}
-  @keyframes g2{0%,80%,100%{transform:translate(0,0)}83%{transform:translate(5px,-1px)}87%{transform:translate(-4px,2px)}90%{transform:translate(2px,0)}}"""
-    return svg(w, h, "\n".join(o), c, css)
+    o.append(typed(x, 308, "$ ./recon --target=self", tm, "a", 13))
+    tm += 1.0
+    o.append(appear(f'<text x="{x}" y="330" font-size="12" class="t" xml:space="preserve">repos <tspan class="a2" font-weight="700">{d["repos"]}</tspan>  ·  commits/yr <tspan class="a2" font-weight="700">{d["commits"]}</tspan>  ·  contributions/yr <tspan class="a2" font-weight="700">{d["contribs"]}</tspan></text>', tm))
+    if last:
+        o.append(appear(f'<text x="{x}" y="350" font-size="12" class="d">last push → <tspan class="a2">{t(last["name"])}</tspan> · {fmt_day(last["pushed_at"])}</text>', tm + 0.15))
+    tm += 0.35
+    for i, (lang, pct) in enumerate(d["langs"]):
+        ly = 384 + i * 23
+        o.append(appear(f'<text x="{x}" y="{ly}" font-size="12" class="t">{t(lang)}</text>'
+                        f'<text x="{x + 476}" y="{ly}" font-size="11" class="d" text-anchor="end">{pct:.1f}%</text>', tm + 0.1 * i))
+        o.append(appear(led_meter(x + 100, ly, pct, tm + 0.1 * i, c), tm + 0.1 * i, 0.1))
+    tm += 1.2
+    solved = len(v["solvers"])
+    state = f'<tspan class="al" font-weight="700">BREACHED ×{solved}</tspan>' if solved else '<tspan class="ok" font-weight="700">SECURE</tspan>'
+    o.append(appear(f'<text x="{x}" y="484" font-size="12" class="t">vault {state} · {plural(v["attempts"], "attempt")} · shell {plural(sh["total"], "cmd")} by {plural(len(sh["users"]), "visitor")}</text>', tm))
+    tm += 0.3
+    o.append(appear(f'<text x="{x}" y="510" font-size="13" class="a">guest@shriyan:~$ <tspan class="blink">█</tspan></text>', tm))
+    o.append(f'<rect width="{w}" height="{h}" rx="14" fill="url(#vig)" pointer-events="none"/>')
+    o.append(f'<line x1="22" x2="{w - 22}" y1="{h - 30}" y2="{h - 30}" stroke="{c["line"]}"/>')
+    o.append(f'<text x="30" y="{h - 11}" font-size="10.5" class="al" font-weight="700" letter-spacing="1">◆ RED TEAM VIEW</text>')
+    o.append(f'<text x="{w - 30}" y="{h - 11}" font-size="10.5" class="d" text-anchor="end">same mind // different perspective · switch GitHub to light theme</text>')
+    o.append(f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{c["line"]}"/>')
+    return svg(w, h, "\n".join(o), c)
 
 
 def hero_light(d, c):
@@ -594,6 +653,8 @@ def write(name, content):
 
 
 def main():
+    global FONTS
+    FONTS = font_faces()
     os.makedirs(OUT, exist_ok=True)
     d = collect()
     for theme, c in THEMES.items():
