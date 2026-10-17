@@ -95,58 +95,61 @@
   <img src="./assets/live/vault-dark.svg" width="100%" alt="Vault status: live attempt and breach counter" />
 </picture>
 
-I hid a key on this page. Recruiters can scroll past. Hackers can't.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/transmission-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/transmission-light.svg" />
+  <img src="./assets/live/transmission-dark.svg" width="100%" alt="Intercepted transmission: a hex payload and three layer hints" />
+</picture>
+
+<details><summary><a name="payload"><img src="./assets/live/key-payload.svg" height="38" alt="Copy the raw payload" /></a></summary>
 
 ```text
-──────────────── INTERCEPTED TRANSMISSION ────────────────
 546c4251556b5a4749466853544341394945457758305a4d
 526b6453576c3957526c3947546c4e53
-───────────────────────────────────────────────────────────
-layer 3 ▸ sixteen symbols are enough to say anything.
-layer 2 ▸ sixty-four symbols. sometimes padded, not today.
-layer 1 ▸ caesar took thirteen steps and called it a day.
 ```
 
-**Prove it without leaking it.** Don't post the key. Post a hash that only works for *your* username:
+</details>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/steps-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/steps-light.svg" />
+  <img src="./assets/live/steps-dark.svg" width="100%" alt="Three steps: decode the layers, hash your-username:KEY, submit" />
+</picture>
 
 ```bash
 printf '%s' "your-github-username:THE_KEY" | sha256sum
 ```
 
-**[ ▶ Submit your hash ](https://github.com/Shriyan2407/Shriyan2407/issues/new?title=vault%3A%20PASTE_YOUR_SHA256_HERE&body=Replace%20the%20title%20with%20%60vault%3A%20%3Cyour%20sha256%3E%60%20and%20submit.%20A%20bot%20will%20judge%20your%20attempt%20in%20about%20a%20minute.)**. A bot judges it in about a minute, replies, and the vault above updates for everyone.
+<div align="center">
 
-#### 🏆 Hall of Fame
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=vault%3A%20PASTE_YOUR_SHA256_HERE&body=Replace%20the%20title%20with%20%60vault%3A%20%3Cyour%20sha256%3E%60%20and%20submit.%20A%20bot%20will%20judge%20your%20attempt%20in%20about%20a%20minute."><img src="./assets/live/key-submit.svg" height="38" alt="Submit your hash" /></a>
 
-<!--HALL:START-->
-| # | Hacker | Cracked at |
-|:--:|:--|:--|
-| — | _nobody yet. the vault is undefeated._ | — |
-<!--HALL:END-->
+</div>
 
-<details>
-<summary><b>📜 <code>tail -f /var/log/shriyan.log</code></b>: what I've been doing lately</summary>
-<br/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/hall-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/hall-light.svg" />
+  <img src="./assets/live/hall-dark.svg" width="100%" alt="Hall of fame: everyone who cracked the vault" />
+</picture>
 
-<!--LOG:START-->
-- `2026-10-14 17:57` PUSH     10× → `feat/equitylens-ai-v2` · [**r-h-t-i-h**](https://github.com/Shriyan2407/r-h-t-i-h)
-- `2026-10-13 19:47` PR       opened [#1](https://github.com/Shriyan2407/r-h-t-i-h/pull/1) · [**r-h-t-i-h**](https://github.com/Shriyan2407/r-h-t-i-h)
-- `2026-10-13 19:47` CREATE   branch `feat/equitylens-ai-v2` · [**r-h-t-i-h**](https://github.com/Shriyan2407/r-h-t-i-h)
-- `2026-10-10 06:14` RELEASE  open-sourced [**CIRCUIT-X**](https://github.com/Shriyan2407/CIRCUIT-X)
-- `2026-10-02 18:41` PUSH     20× → `main` · [**SathyaMaragani/26087-ERP**](https://github.com/SathyaMaragani/26087-ERP)
-- `2026-09-29 15:18` JOIN     collaborator on [**SathyaMaragani/26087-ERP**](https://github.com/SathyaMaragani/26087-ERP)
-- `2026-09-25 16:04` FORK     [**hydra-db/hydradb**](https://github.com/hydra-db/hydradb)
-- `2026-09-25 16:04` STAR     [**hydra-db/hydradb**](https://github.com/hydra-db/hydradb)
-- `2026-09-25 16:03` FORK     [**rocketride-org/rocketride-server**](https://github.com/rocketride-org/rocketride-server)
-- `2026-09-25 16:02` STAR     [**rocketride-org/rocketride-server**](https://github.com/rocketride-org/rocketride-server)
-<!--LOG:END-->
+<details><summary><a name="log"><img src="./assets/live/key-log.svg" height="38" alt="tail -f /var/log/shriyan.log: what I've been doing lately" /></a></summary>
+
+<a name="log-panel"><img src="./assets/live/log.svg" width="100%" alt="Recent public GitHub activity" /></a>
 
 </details>
 
-<div align="center">
 <br/>
 
-<!--UPDATED:START-->
-<sub><code>last sync 17 Oct 2026 12:32 UTC · rebuilt every 6h by a bot I wrote</code></sub>
-<!--UPDATED:END-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/footer-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/footer-light.svg" />
+  <img src="./assets/live/footer-dark.svg" width="100%" alt="Connection closed. Last sync time and rebuild schedule" />
+</picture>
+
+<div align="center">
+
+<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="./assets/live/btn-linkedin.svg" height="38" alt="LinkedIn" /></a>
+<a href="mailto:shriyanbohra24077@gmail.com"><img src="./assets/live/btn-email.svg" height="38" alt="Email" /></a>
+<a href="https://github.com/Shriyan2407"><img src="./assets/live/key-top.svg" height="38" alt="Back to top" /></a>
 
 </div>

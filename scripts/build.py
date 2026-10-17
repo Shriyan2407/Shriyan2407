@@ -737,6 +737,160 @@ def section_header(num, title, tag, theme):
     return svg(w, h, "\n".join(o), c, weights=(700, 800))
 
 
+# ------------------------------------------------- vault, log, footer ----
+
+PAYLOAD = ["546c4251556b5a4749466853544341394945457758305a4d", "526b6453576c3957526c3947546c4e53"]
+LAYERS = [("LAYER 3", "sixteen symbols are enough to say anything."),
+          ("LAYER 2", "sixty-four symbols. sometimes padded, not today."),
+          ("LAYER 1", "caesar took thirteen steps and called it a day.")]
+
+
+def transmission(theme):
+    c = THEMES[theme]
+    w, h = 880, 300
+    o = [f'<rect width="{w}" height="{h}" rx="14" fill="{c["bg"]}"/>',
+         f'<pattern id="tsl" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="{c["grid"]}"/></pattern>',
+         f'<rect width="{w}" height="{h}" rx="14" fill="url(#tsl)" opacity=".5"/>',
+         f'<circle cx="30" cy="30" r="5" fill="{c["alert"]}"><animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite"/></circle>',
+         f'<text x="44" y="35" font-size="13" font-weight="800" class="a" letter-spacing="2.5">INTERCEPTED TRANSMISSION</text>',
+         f'<text x="{w - 104}" y="35" font-size="10.5" class="d" text-anchor="end">FREQ 24.07 MHz · 3-LAYER CIPHER · SIGNAL</text>']
+    for j in range(5):
+        lit = j < 4
+        o.append(f'<rect x="{w - 92 + j * 9}" y="{36 - 6 - j * 2.5:.1f}" width="6" height="{6 + j * 2.5:.1f}" fill="{c["ok"] if lit else c["line"]}">'
+                 + (f'<animate attributeName="opacity" values="1;.4;1" dur="{0.9 + j * .25:.2f}s" repeatCount="indefinite"/>' if lit else "") + '</rect>')
+    o.append(f'<line x1="24" x2="{w - 24}" y1="50" y2="50" stroke="{c["line"]}"/>')
+    o.append(f'<text x="30" y="78" font-size="12.5" class="d">I hid a key on this page. Recruiters can scroll past. Hackers can\'t.</text>')
+    # payload with a decoding sweep
+    o.append(f'<linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{c["accent"]}" stop-opacity="0"/><stop offset=".5" stop-color="{c["accent"]}" stop-opacity=".22"/><stop offset="1" stop-color="{c["accent"]}" stop-opacity="0"/></linearGradient>')
+    o.append(f'<rect x="24" y="92" width="{w - 48}" height="70" rx="8" fill="{c["panel"]}" stroke="{c["line"]}"/>')
+    for i, line in enumerate(PAYLOAD):
+        o.append(f'<text x="44" y="{122 + i * 28}" font-size="17" font-weight="700" class="a2" letter-spacing="1.2">{line}</text>')
+    o.append(f'<clipPath id="pbox"><rect x="24" y="92" width="{w - 48}" height="70" rx="8"/></clipPath>')
+    o.append(f'<g clip-path="url(#pbox)"><rect x="24" y="92" width="140" height="70" fill="url(#sweep)"><animate attributeName="x" values="-116;{w - 24}" dur="3.5s" repeatCount="indefinite"/></rect></g>')
+    # radio waveform
+    pts = " ".join(f"{30 + k * 4},{184 + 7 * math.sin(k / 3.2) * math.sin(k / 17):.1f}" for k in range((w - 60) // 4))
+    o.append(f'<polyline points="{pts}" fill="none" stroke="{c["accent"]}" stroke-width="1.4" opacity=".55" stroke-dasharray="6 3">'
+             f'<animate attributeName="stroke-dashoffset" values="0;-90" dur="2s" repeatCount="indefinite"/></polyline>')
+    # cipher legend
+    cw = (w - 48 - 2 * 14) / 3
+    for i, (label, hint) in enumerate(LAYERS):
+        x = 24 + i * (cw + 14)
+        o.append(f'<rect x="{x:.0f}" y="206" width="{cw:.0f}" height="72" rx="8" fill="{c["panel"]}" stroke="{c["line"]}"/>')
+        o.append(f'<rect x="{x:.0f}" y="206" width="4" height="72" rx="2" fill="{c["accent"]}"/>')
+        o.append(f'<text x="{x + 18:.0f}" y="228" font-size="10.5" font-weight="800" class="a" letter-spacing="2">{label}</text>')
+        for j, part in enumerate(wrap(hint, 32)):
+            o.append(f'<text x="{x + 18:.0f}" y="{248 + j * 16}" font-size="12" class="t">{t(part)}</text>')
+    o.append(f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{c["line"]}"/>')
+    return svg(w, h, "\n".join(o), c)
+
+
+def vault_steps(theme):
+    c = THEMES[theme]
+    w, h = 880, 104
+    steps = [("01", "DECODE", "peel the three layers above"),
+             ("02", "HASH", "sha256 of your-username:KEY"),
+             ("03", "SUBMIT", "a bot judges it in ~1 minute")]
+    cw = (w - 2 * 40) / 3
+    o = []
+    for i, (n, title, sub) in enumerate(steps):
+        x = i * (cw + 40)
+        o.append(f'<rect x="{x + .5:.1f}" y="10.5" width="{cw - 1:.0f}" height="{h - 21}" rx="10" fill="{c["panel"]}" stroke="{c["line"]}"/>')
+        o.append(f'<circle cx="{x + 34:.0f}" cy="{h / 2:.0f}" r="17" fill="none" stroke="{c["accent"]}" stroke-width="2"/>')
+        o.append(f'<text x="{x + 34:.0f}" y="{h / 2 + 5:.0f}" font-size="13" font-weight="800" class="a" text-anchor="middle">{n}</text>')
+        o.append(f'<text x="{x + 62:.0f}" y="{h / 2 - 4:.0f}" font-size="14" font-weight="800" class="a2" letter-spacing="2">{title}</text>')
+        o.append(f'<text x="{x + 62:.0f}" y="{h / 2 + 15:.0f}" font-size="11" class="d">{t(sub)}</text>')
+        if i < 2:
+            ax = x + cw + 6
+            o.append(f'<path d="M{ax:.0f} {h / 2:.0f} H{ax + 26:.0f} M{ax + 20:.0f} {h / 2 - 5:.0f} L{ax + 27:.0f} {h / 2:.0f} L{ax + 20:.0f} {h / 2 + 5:.0f}" fill="none" stroke="{c["accent"]}" stroke-width="2">'
+                     f'<animate attributeName="opacity" values=".3;1;.3" dur="1.6s" begin="{i * .4}s" repeatCount="indefinite"/></path>')
+    return svg(w, h, "\n".join(o), c, weights=(400, 700, 800))
+
+
+def podium(v, theme):
+    c = THEMES[theme]
+    w, h = 880, 250
+    solvers = v["solvers"]
+    medals = [("#D4AF37", "1ST"), ("#C0C6CF", "2ND"), ("#CD7F32", "3RD")]
+    o = [f'<rect width="{w}" height="{h}" rx="14" fill="{c["bg"]}"/>',
+         f'<text x="28" y="38" font-size="13" font-weight="800" class="a" letter-spacing="2.5">HALL OF FAME</text>',
+         f'<text x="{w - 28}" y="38" font-size="11" class="d" text-anchor="end">{plural(len(solvers), "breach")} · {plural(v["attempts"], "attempt")} · ranked by time cracked</text>',
+         f'<line x1="24" x2="{w - 24}" y1="52" y2="52" stroke="{c["line"]}"/>']
+    base = h - 24
+    slots = [(1, 300, 92), (0, 440, 128), (2, 580, 70)]  # (rank index, centre x, block height)
+    for k, (rank, cx, bh) in enumerate(slots):
+        col, label = medals[rank]
+        name = f"@{solvers[rank]['login']}" if rank < len(solvers) else "vacant"
+        when = fmt_day(solvers[rank]["at"]) if rank < len(solvers) else "could be you"
+        bw = 128
+        o.append(f'<rect x="{cx - bw / 2:.0f}" y="{base}" width="{bw}" height="0" rx="6" fill="{c["panel"]}" stroke="{col}" stroke-width="1.5">'
+                 f'<animate attributeName="y" from="{base}" to="{base - bh}" begin="{0.2 + k * 0.15:.2f}s" dur=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/>'
+                 f'<animate attributeName="height" from="0" to="{bh}" begin="{0.2 + k * 0.15:.2f}s" dur=".6s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/></rect>')
+        top = base - bh
+        o.append(appear(f'<text x="{cx}" y="{top + 30}" font-size="20" font-weight="800" fill="{col}" text-anchor="middle">{label}</text>', 0.8 + k * 0.15))
+        o.append(appear(f'<text x="{cx}" y="{top - 30}" font-size="13" font-weight="800" class="{"a2" if rank < len(solvers) else "d"}" text-anchor="middle">{t(name)}</text>'
+                        f'<text x="{cx}" y="{top - 13}" font-size="10" class="d" text-anchor="middle">{t(when)}</text>', 1.0 + k * 0.15))
+    rest = solvers[3:8]
+    o.append(f'<text x="{w - 170}" y="88" font-size="10" class="d" letter-spacing="1.5">ALSO CRACKED</text>')
+    if rest:
+        for i, s_ in enumerate(rest):
+            o.append(f'<text x="{w - 170}" y="{112 + i * 20}" font-size="12" class="t">#{i + 4} @{t(s_["login"])}</text>')
+    else:
+        o.append(f'<text x="{w - 170}" y="112" font-size="12" class="d">— nobody yet</text>')
+    o.append(f'<text x="28" y="88" font-size="10" class="d" letter-spacing="1.5">STATUS</text>')
+    o.append(f'<text x="28" y="114" font-size="20" font-weight="800" class="{"al" if solvers else "ok"}">{"BREACHED" if solvers else "UNDEFEATED"}</text>')
+    o.append(f'<text x="28" y="134" font-size="11" class="d">{"the vault has fallen." if solvers else "no one has cracked it. yet."}</text>')
+    o.append(f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{c["line"]}"/>')
+    return svg(w, h, "\n".join(o), c)
+
+
+def log_panel(md_lines):
+    c = THEMES["dark"]
+    rows = []
+    for line in md_lines.splitlines():
+        m = re.match(r"- `([^`]+)` (\S+)\s+(.*)", line)
+        if not m:
+            continue
+        rest = re.sub(r"\[\*\*(.+?)\*\*\]\([^)]*\)", r"\1", m.group(3))
+        rest = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", rest).replace("`", "")
+        rows.append((m.group(1), m.group(2), rest))
+    w, lh = 880, 22
+    h = 64 + max(len(rows), 1) * lh + 34
+    kind_col = {"PUSH": c["accent"], "PR": "#08F7FE", "CREATE": c["ok"], "JOIN": c["ok"], "RELEASE": c["ok"],
+                "FORK": c["dim"], "STAR": c["dim"], "ISSUE": c["alert"]}
+    o = [f'<rect width="{w}" height="{h}" rx="12" fill="{c["bg"]}"/>',
+         f'<rect width="{w}" height="36" rx="12" fill="{c["panel"]}"/><rect y="24" width="{w}" height="12" fill="{c["panel"]}"/>',
+         f'<line x1="0" x2="{w}" y1="36" y2="36" stroke="{c["line"]}"/>']
+    for i, col in enumerate(("#FF5F57", "#FEBC2E", "#28C840")):
+        o.append(f'<circle cx="{22 + i * 18}" cy="18" r="5.5" fill="{col}"/>')
+    o.append(f'<text x="{w / 2}" y="23" font-size="12" class="d" text-anchor="middle">tail -f /var/log/shriyan.log</text>')
+    y = 62
+    for i, (ts, kind, rest) in enumerate(rows):
+        o.append(appear(f'<text x="22" y="{y}" font-size="12" xml:space="preserve"><tspan class="d">{t(ts)}</tspan>  '
+                        f'<tspan fill="{kind_col.get(kind, c["text"])}" font-weight="700">{t(kind):<7}</tspan> <tspan class="t">{t(rest[:78])}</tspan></text>', 0.1 + i * 0.08, 0.15))
+        y += lh
+    if not rows:
+        o.append(f'<text x="22" y="{y}" font-size="12" class="d">quiet. too quiet.</text>')
+        y += lh
+    o.append(f'<text x="22" y="{y + 8}" font-size="12" class="a"><tspan class="blink">█</tspan></text>')
+    o.append(f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="12" fill="none" stroke="{c["line"]}"/>')
+    return svg(w, h, "\n".join(o), c)
+
+
+def footer(theme):
+    c = THEMES[theme]
+    w, h = 880, 120
+    stamp = datetime.now(timezone.utc).strftime("%d %b %Y · %H:%M UTC")
+    o = [f'<line x1="0" x2="{w}" y1="14" y2="14" stroke="{c["line"]}"/>',
+         f'<rect x="0" y="12" width="0" height="4" fill="{c["accent"]}"><animate attributeName="width" from="0" to="120" dur="1s" fill="freeze"/></rect>',
+         f'<text x="0" y="56" font-size="20" font-weight="800" class="a2" letter-spacing="2">CONNECTION CLOSED</text>',
+         f'<text x="0" y="80" font-size="12" class="d">thanks for visiting · same mind // different perspective</text>',
+         f'<text x="0" y="104" font-size="12" class="a">guest@shriyan:~$ logout <tspan class="blink">█</tspan></text>',
+         f'<text x="{w}" y="56" font-size="10" class="d" text-anchor="end" letter-spacing="1.5">LAST SYNC</text>',
+         f'<text x="{w}" y="78" font-size="14" font-weight="700" class="t" text-anchor="end">{stamp}</text>',
+         f'<text x="{w}" y="100" font-size="11" class="d" text-anchor="end">rebuilt every 6h by a bot I wrote</text>']
+    return svg(w, h, "\n".join(o), c)
+
+
 # -------------------------------------------------------------- readme ----
 
 def repo_link(full_name):
@@ -797,14 +951,6 @@ def activity(limit=10):
     return "\n".join(lines) or "- _quiet. too quiet._"
 
 
-def hall(v):
-    if not v["solvers"]:
-        return "| # | Hacker | Cracked at |\n|:--:|:--|:--|\n| — | _nobody yet. the vault is undefeated._ | — |"
-    rows = [f"| {'🥇🥈🥉'[i] if i < 3 else i + 1} | [@{s['login']}](https://github.com/{s['login']}) | {s['at'][:16].replace('T', ' ')} UTC |"
-            for i, s in enumerate(v["solvers"])]
-    return "| # | Hacker | Cracked at |\n|:--:|:--|:--|\n" + "\n".join(rows)
-
-
 def replace(text, name, body):
     pattern = re.compile(rf"(<!--{name}:START-->).*?(<!--{name}:END-->)", re.S)
     return pattern.sub(lambda m: f"{m.group(1)}\n{body}\n{m.group(2)}", text)
@@ -830,6 +976,16 @@ def main():
     for key, prefix, label in NAV:
         write(f"btn-{key}.svg", key_button(prefix, label))
     write("key-custom.svg", key_button(">", "type your own command", primary=True))
+    write("key-submit.svg", key_button("▶", "SUBMIT YOUR HASH", primary=True))
+    write("key-payload.svg", key_button("#", "copy the raw payload"))
+    write("key-log.svg", key_button("$", "tail -f /var/log/shriyan.log"))
+    write("key-top.svg", key_button("^", "BACK TO TOP"))
+    for theme in THEMES:
+        write(f"transmission-{theme}.svg", transmission(theme))
+        write(f"steps-{theme}.svg", vault_steps(theme))
+        write(f"hall-{theme}.svg", podium(d["vault"], theme))
+        write(f"footer-{theme}.svg", footer(theme))
+    write("log.svg", log_panel(activity()))
     for i, case in enumerate(CASES, 1):
         write(f"case-{i}.svg", case_file(i, case, d["repo_meta"].get(case[0], {}), THEMES["dark"]))
 
@@ -844,11 +1000,7 @@ def main():
     path = os.path.join(ROOT, "README.md")
     with open(path, encoding="utf-8") as f:
         text = f.read()
-    text = replace(text, "LOG", activity())
     text = replace(text, "KEYS", instant_commands(d, stats))
-    text = replace(text, "HALL", hall(d["vault"]))
-    stamp = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
-    text = replace(text, "UPDATED", f"<sub><code>last sync {stamp} · rebuilt every 6h by a bot I wrote</code></sub>")
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(text)
 
