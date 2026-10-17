@@ -110,8 +110,10 @@ def run(raw, login, state, stats, seed):
     if cmd == "help":
         return "help", HELP
     if cmd == "whoami":
-        return "whoami", [f"you: @{login}, running command #{state['total'] + 1} on this shell.",
-                          "me:  Shriyan Bohra. CSE student, security-minded builder."]
+        # login is None for the instant, pre-rendered output shown on the profile itself.
+        you = (f"you: @{login}, running command #{state['total'] + 1} on this shell." if login else
+               "you: an anonymous visitor. press the gold key to put your @name on the big screen.")
+        return "whoami", [you, "me:  Shriyan Bohra. CSE student, security-minded builder."]
     if cmd == "pwd":
         return "pwd", ["/home/shriyan"]
     if cmd == "ls":
@@ -146,7 +148,7 @@ def run(raw, login, state, stats, seed):
     if cmd == "projects":
         return "projects", [f"{k:<22} {v[0]}" for k, v in PROJECTS.items()]
     if cmd == "neofetch":
-        return "neofetch", neofetch(stats, state)
+        return "neofetch", neofetch(stats, state, live=login is not None)
     if cmd == "uptime":
         days = (datetime.now(timezone.utc).date() - datetime.strptime(stats.get("since", "2025-06-10"), "%Y-%m-%d").date()).days
         return "uptime", [f"up {days} days on GitHub · {stats.get('contribs', '?')} contributions this year · load: high"]
@@ -161,10 +163,10 @@ def run(raw, login, state, stats, seed):
         return "ping shriyan", ["PING shriyan: 64 bytes, time=~24h", "faster route: linkedin.com/in/shriyan-bohra-647057386"]
     if cmd == "sudo":
         if re.fullmatch(r"hire\s+shriyan.*", arg.lower()):
-            return "sudo hire shriyan", [f"[sudo] password for {login}: ********",
+            return "sudo hire shriyan", [f"[sudo] password for {login or 'guest'}: ********",
                                          "✓ permission granted. excellent judgement.",
                                          "→ shriyanbohra24077@gmail.com · linkedin.com/in/shriyan-bohra-647057386"]
-        return "sudo <redacted>", [f"{login} is not in the sudoers file. This incident will be reported."]
+        return "sudo <redacted>", [f"{login or 'guest'} is not in the sudoers file. This incident will be reported."]
     if cmd == "rm":
         return "rm <redacted>", ["rm: refusing to delete what took this long to build."]
     if cmd == "hack":
@@ -188,7 +190,8 @@ def project_lines(name):
     return out
 
 
-def neofetch(stats, state):
+def neofetch(stats, state, live=True):
+    served = state["total"] + (1 if live else 0)
     langs = " · ".join(f"{n} {p}%" for n, p in stats.get("langs", [])[:3])
     return [
         "   ▄▄▄▄▄▄     shriyan@github",
@@ -197,7 +200,7 @@ def neofetch(stats, state):
         "  █▄▄▄▄▄█     repos   " + str(stats.get("repos", "?")) + " public",
         "   ▀▀▀▀▀      commits " + str(stats.get("commits", "?")) + " this year",
         "              langs   " + langs,
-        "              shell   " + f"{state['total'] + 1} command{'' if state['total'] == 0 else 's'} served",
+        "              shell   " + f"{served} command{'' if served == 1 else 's'} served",
     ]
 
 

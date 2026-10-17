@@ -40,21 +40,117 @@
   <img src="./assets/live/shell-dark.svg" width="100%" alt="A shared terminal showing the latest commands run by visitors" />
 </picture>
 
-<div align="center">
+<!--KEYS:START-->
+<details>
+<summary><code>guest@shriyan:~$ neofetch</code> <sub>system info</sub></summary>
 
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20neofetch&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-0.svg" height="38" alt="$ neofetch" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20whoami&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-1.svg" height="38" alt="$ whoami" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20ls%20-la&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-2.svg" height="38" alt="$ ls -la" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20cat%20about.txt&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-3.svg" height="38" alt="$ cat about.txt" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20projects&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-4.svg" height="38" alt="$ projects" /></a>
+```text
+   ▄▄▄▄▄▄     shriyan@github
+  █ ▄▄▄ █     ──────────────
+  █ ███ █     os      shriyan-os 1.0 (multiplayer)
+  █▄▄▄▄▄█     repos   11 public
+   ▀▀▀▀▀      commits 162 this year
+              langs   TypeScript 79.4% · JavaScript 6.9% · CSS 6.1%
+              shell   1 command served
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ whoami</code> <sub>who&#x27;s there?</sub></summary>
+
+```text
+you: an anonymous visitor. press the gold key to put your @name on the big screen.
+me:  Shriyan Bohra. CSE student, security-minded builder.
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ ls -la</code> <sub>list files, even hidden ones</sub></summary>
+
+```text
+.bash_history  .vault/  about.txt  contact.txt  now.txt  projects/  skills.txt
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ cat about.txt</code> <sub>who I am</sub></summary>
+
+```text
+Shriyan Bohra. CSE student from India.
+I build things that are fast, useful and hard to break:
+AI products, full-stack apps, and the occasional network that heals itself.
+Offensive mind, defensive design.
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ projects</code> <sub>what I&#x27;ve built</sub></summary>
+
+```text
+market-ka-baadshah     Multi-agent AI equity-research terminal for NSE & BSE.
+doccare                Healthcare OS: records, appointments, specialists, AI insights.
+circuit-x              Network failure-recovery simulator: BFS/DFS, Dijkstra, hand-built min-heap.
+space-mission-control  Mission-ops console on custom linked lists, queues and stacks.
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ skills</code> <sub>tech stack</sub></summary>
+
+```text
+lang   TypeScript · JavaScript · Java · Python · C/C++
+web    React · Next.js · Node · Express · Tailwind
+data   PostgreSQL · Prisma · MongoDB
+ops    Git · Docker · Linux · Vercel
+sec    threat modelling · secure design · CTFs
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ contact</code> <sub>reach me</sub></summary>
+
+```text
+linkedin  linkedin.com/in/shriyan-bohra-647057386
+email     shriyanbohra24077@gmail.com
+github    github.com/Shriyan2407
+open to   internships · hackathons · collaborations
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ fortune</code> <sub>a random line of wisdom</sub></summary>
+
+```text
+The S in IoT stands for security.
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ history</code> <sub>what other visitors ran</sub></summary>
+
+```text
+@Shriyan2407: whoami
+```
+
+</details>
+<details>
+<summary><code>guest@shriyan:~$ sudo hire shriyan</code> <sub>you know you want to</sub></summary>
+
+```text
+[sudo] password for guest: ********
+✓ permission granted. excellent judgement.
+→ shriyanbohra24077@gmail.com · linkedin.com/in/shriyan-bohra-647057386
+```
+
+</details>
+<!--KEYS:END-->
+
+<div align="center">
 <br/>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20skills&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-5.svg" height="38" alt="$ skills" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20contact&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-6.svg" height="38" alt="$ contact" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20fortune&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-7.svg" height="38" alt="$ fortune" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20history&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-8.svg" height="38" alt="$ history" /></a>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20sudo%20hire%20shriyan&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-9.svg" height="38" alt="$ sudo hire shriyan" /></a>
-<br/>
+
 <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-custom.svg" height="38" alt="Type your own command" /></a>
+
+<sub>▲ click any command above and its output opens right here · the gold key runs one for real: a bot replies in ~30s and puts your @username on the big screen</sub>
 
 </div>
 
@@ -146,7 +242,7 @@ printf '%s' "your-github-username:THE_KEY" | sha256sum
 <br/>
 
 <!--UPDATED:START-->
-<sub><code>last sync 17 Oct 2026 12:18 UTC · rebuilt every 6h by a bot I wrote</code></sub>
+<sub><code>last sync 17 Oct 2026 12:23 UTC · rebuilt every 6h by a bot I wrote</code></sub>
 <!--UPDATED:END-->
 
 </div>

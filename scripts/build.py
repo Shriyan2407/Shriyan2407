@@ -436,7 +436,8 @@ def shell_scene(d, c, theme):
                            f'<text x="230" y="{y + 18}" font-size="12" fill="{dim}">v1.0 · multiplayer edition · tty1</text>', 0.2))
         y += 52
         motd = [("→", "this terminal is shared by everyone who visits this profile."),
-                ("→", "press a key below. a bot runs it and your @username lands here."),
+                ("→", "click any command below and its output opens instantly."),
+                ("→", "the gold key runs one for real: a bot puts your @username up here."),
                 ("→", "there are hidden files. `help` won't list everything.")]
         for i, (m, line) in enumerate(motd):
             body.append(appear(f'<text x="26" y="{y}" font-size="13" xml:space="preserve"><tspan fill="{acc}">{m}</tspan> <tspan fill="{txt}">{t(line)}</tspan></text>', 0.5 + i * 0.15))
@@ -640,8 +641,24 @@ def case_file(idx, case, meta, c):
 
 NAV = [("linkedin", "in", "LINKEDIN"), ("email", "@", "EMAIL"), ("demo", "▶", "LIVE DEMO"),
        ("shell", "$", "SHARED SHELL"), ("vault", "#", "THE VAULT")]
-KEYS = ["neofetch", "whoami", "ls -la", "cat about.txt", "projects",
-        "skills", "contact", "fortune", "history", "sudo hire shriyan"]
+# Commands shown as click-to-expand prompts. The README can't run code, so each
+# output is pre-rendered by the same engine the multiplayer bot uses.
+INSTANT = [("neofetch", "system info"), ("whoami", "who's there?"), ("ls -la", "list files, even hidden ones"),
+           ("cat about.txt", "who I am"), ("projects", "what I've built"), ("skills", "tech stack"),
+           ("contact", "reach me"), ("fortune", "a random line of wisdom"),
+           ("history", "what other visitors ran"), ("sudo hire shriyan", "you know you want to")]
+
+
+def instant_commands(d, stats):
+    import shell  # scripts/shell.py, the same engine the bot runs
+    seed = datetime.now(timezone.utc).timetuple().tm_yday  # fortune changes daily
+    blocks = []
+    for cmd, hint in INSTANT:
+        display, out = shell.run(cmd, None, d["shell"], stats, seed)
+        body = "\n".join(out).replace("```", "'''")
+        blocks.append(f"<details>\n<summary><code>guest@shriyan:~$ {cmd}</code> <sub>{escape(hint)}</sub></summary>\n\n"
+                      f"```text\n{body}\n```\n\n</details>")
+    return "\n".join(blocks)
 
 
 def key_button(prefix, label, primary=False):
@@ -765,8 +782,6 @@ def main():
             write(f"head-{key}-{theme}.svg", section_header(num, title, tag, theme))
     for key, prefix, label in NAV:
         write(f"btn-{key}.svg", key_button(prefix, label))
-    for i, cmd in enumerate(KEYS):
-        write(f"key-{i}.svg", key_button("$", cmd))
     write("key-custom.svg", key_button(">", "type your own command", primary=True))
     for i, case in enumerate(CASES, 1):
         write(f"case-{i}.svg", case_file(i, case, d["repo_meta"].get(case[0], {}), THEMES["dark"]))
@@ -783,6 +798,7 @@ def main():
     with open(path, encoding="utf-8") as f:
         text = f.read()
     text = replace(text, "LOG", activity())
+    text = replace(text, "KEYS", instant_commands(d, stats))
     text = replace(text, "HALL", hall(d["vault"]))
     stamp = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
     text = replace(text, "UPDATED", f"<sub><code>last sync {stamp} · rebuilt every 6h by a bot I wrote</code></sub>")
