@@ -120,7 +120,6 @@ def fmt_day(iso):
 # ------------------------------------------------------------- helpers ----
 
 _ids = itertools.count()
-FONTS = ""
 
 def plural(n, word):
     return f"{n} {word}{'' if n == 1 else 's'}"
@@ -141,20 +140,25 @@ def wrap(text, width):
     return lines + ([cur] if cur else [])
 
 
-def font_faces():
+
+_FONT_CACHE = {}
+
+
+def font_faces(weights=(400, 700, 800)):
     # JetBrains Mono (OFL), subset and embedded so every viewer sees the same type.
     faces = []
-    for weight in (400, 700, 800):
-        with open(os.path.join(ROOT, "assets", "fonts", f"jbm-{weight}.woff2"), "rb") as f:
-            data = base64.b64encode(f.read()).decode()
-        faces.append(f"@font-face{{font-family:'JBM';font-weight:{weight};src:url(data:font/woff2;base64,{data}) format('woff2')}}")
+    for weight in weights:
+        if weight not in _FONT_CACHE:
+            with open(os.path.join(ROOT, "assets", "fonts", f"jbm-{weight}.woff2"), "rb") as f:
+                _FONT_CACHE[weight] = base64.b64encode(f.read()).decode()
+        faces.append(f"@font-face{{font-family:'JBM';font-weight:{weight};src:url(data:font/woff2;base64,{_FONT_CACHE[weight]}) format('woff2')}}")
     return "\n  ".join(faces)
 
 
-def svg(w, h, body, c, extra_css=""):
+def svg(w, h, body, c, extra_css="", weights=(400, 700, 800)):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" font-family="{MONO}">
 <style>
-  {FONTS}
+  {font_faces(weights)}
   .t{{fill:{c['text']}}} .d{{fill:{c['dim']}}} .a{{fill:{c['accent']}}} .a2{{fill:{c['accent2']}}}
   .ok{{fill:{c['ok']}}} .al{{fill:{c['alert']}}}
   .blink{{animation:blink 1s steps(1) infinite}} @keyframes blink{{50%{{opacity:0}}}}
@@ -414,91 +418,148 @@ def hero_light(d, c):
 
 # --------------------------------------------------------------- shell ----
 
+
 def shell_scene(d, c, theme):
     w = 880
     sh = d["shell"]
-    lines = []  # (kind, text, login)
+    dark = theme == "dark"
+    bg, bar = (c["bg"], c["panel"]) if dark else ("#0F1729", "#16223A")
+    acc = c["accent"] if dark else "#79A8FF"
+    txt = c["text"] if dark else "#DCE6F7"
+    dim = c["dim"] if dark else "#7D8BA5"
+    green = "#3FB950"
     entries = sh["history"][-4:]
+    y = 64
+    body = []
     if not entries:
-        lines += [("out", "shriyan-os 1.0 (tty1) · multiplayer edition", None),
-                  ("out", "", None),
-                  ("out", "this terminal is shared by everyone who visits this profile.", None),
-                  ("out", "click a command below. a bot runs it and the output lands here.", None),
-                  ("out", "", None),
-                  ("out", "no one has connected yet. be the first name on this screen.", None)]
-    for e in entries:
-        lines.append(("cmd", e["display"], e["login"]))
-        out = e["out"][:5]
-        lines += [("out", l, None) for l in out]
-        if len(e["out"]) > 5:
-            lines.append(("dim", f"… {len(e['out']) - 5} more lines in the issue", None))
-    lines = lines[-22:]
-    h = 92 + len(lines) * 18 + 40
-    o = [f'<rect width="{w}" height="{h}" rx="12" fill="{c["bg"] if theme == "dark" else "#0F1729"}"/>',
-         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="none" stroke="{c["line"]}"/>',
-         f'<rect width="{w}" height="36" rx="12" fill="{c["panel"] if theme == "dark" else "#16223A"}"/><rect y="24" width="{w}" height="12" fill="{c["panel"] if theme == "dark" else "#16223A"}"/>']
+        body.append(appear(f'<text x="26" y="{y + 18}" font-size="30" font-weight="800" fill="{acc}" letter-spacing="1">shriyan-os</text>'
+                           f'<text x="230" y="{y + 18}" font-size="12" fill="{dim}">v1.0 · multiplayer edition · tty1</text>', 0.2))
+        y += 52
+        motd = [("→", "this terminal is shared by everyone who visits this profile."),
+                ("→", "press a key below. a bot runs it and your @username lands here."),
+                ("→", "there are hidden files. `help` won't list everything.")]
+        for i, (m, line) in enumerate(motd):
+            body.append(appear(f'<text x="26" y="{y}" font-size="13" xml:space="preserve"><tspan fill="{acc}">{m}</tspan> <tspan fill="{txt}">{t(line)}</tspan></text>', 0.5 + i * 0.15))
+            y += 22
+        y += 8
+        body.append(appear(f'<text x="26" y="{y}" font-size="13" font-weight="700" fill="{acc}">no one has connected yet. be the first name on this screen.</text>', 1.1))
+        y += 30
+    else:
+        n = 0
+        for e in entries:
+            body.append(appear(f'<text x="26" y="{y}" font-size="13" xml:space="preserve"><tspan fill="{green}" font-weight="700">@{t(e["login"])}</tspan>'
+                               f'<tspan fill="{dim}">@shriyan:~$ </tspan><tspan fill="{acc}" font-weight="700">{t(e["display"])}</tspan></text>', 0.3 + n * 0.06, 0.15))
+            y += 19
+            n += 1
+            out = e["out"][:5] + ([f"… {len(e['out']) - 5} more lines in the issue"] if len(e["out"]) > 5 else [])
+            for j, line in enumerate(out):
+                faded = j == 5
+                body.append(appear(f'<text x="26" y="{y}" font-size="12.5" fill="{dim if faded else txt}" xml:space="preserve">{t(line)}</text>', 0.3 + n * 0.06, 0.15))
+                y += 18
+                n += 1
+            y += 8
+        y += 6
+    body.append(appear(f'<text x="26" y="{y}" font-size="13" xml:space="preserve"><tspan fill="{green}" font-weight="700">@you</tspan>'
+                       f'<tspan fill="{dim}">@shriyan:~$ </tspan><tspan fill="{acc}" class="blink">█</tspan></text>', 1.3))
+    y += 22
+    h = y + 30
+    last = sh["history"][-1] if sh["history"] else None
+    right = f"last: @{last['login']} · {fmt_day(last['at'])}" if last else "waiting for the first visitor"
+    o = [f'<rect width="{w}" height="{h}" rx="12" fill="{bg}"/>',
+         f'<pattern id="ssl" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#FFFFFF" opacity=".018"/></pattern>',
+         f'<rect width="{w}" height="{h}" rx="12" fill="url(#ssl)"/>',
+         f'<rect width="{w}" height="36" rx="12" fill="{bar}"/><rect y="24" width="{w}" height="12" fill="{bar}"/>',
+         f'<line x1="0" x2="{w}" y1="36" y2="36" stroke="{c["line"] if dark else "#24324F"}"/>']
     for i, col in enumerate(("#FF5F57", "#FEBC2E", "#28C840")):
         o.append(f'<circle cx="{22 + i * 18}" cy="18" r="5.5" fill="{col}"/>')
-    acc = c["accent"] if theme == "dark" else "#79A8FF"
-    txt = c["text"] if theme == "dark" else "#DCE6F7"
-    dim = c["dim"] if theme == "dark" else "#7D8BA5"
-    o.append(f'<text x="{w / 2}" y="23" font-size="12" fill="{dim}" text-anchor="middle">shared shell — {plural(sh["total"], "command")} · {plural(len(sh["users"]), "visitor")} connected</text>')
-    o.append(f'<text x="{w - 20}" y="23" font-size="11" fill="#3FB950" text-anchor="end"><tspan class="blink">●</tspan> LIVE</text>')
-    y = 66
-    for i, (kind, text, login) in enumerate(lines):
-        delay = 0.3 + i * 0.06
-        if kind == "cmd":
-            row = (f'<text x="24" y="{y}" font-size="13" xml:space="preserve"><tspan fill="#3FB950">@{t(login)}</tspan>'
-                   f'<tspan fill="{dim}">@shriyan:~$ </tspan><tspan fill="{acc}" font-weight="700">{t(text)}</tspan></text>')
-        else:
-            row = f'<text x="24" y="{y}" font-size="12.5" fill="{dim if kind == "dim" else txt}" xml:space="preserve">{t(text)}</text>'
-        o.append(appear(row, delay, 0.15))
-        y += 18
-    o.append(appear(f'<text x="24" y="{y + 10}" font-size="13" xml:space="preserve"><tspan fill="#3FB950">@you</tspan>'
-                    f'<tspan fill="{dim}">@shriyan:~$ </tspan><tspan fill="{acc}" class="blink">█</tspan></text>', 0.3 + len(lines) * 0.06))
+    o.append(f'<text x="{w / 2}" y="23" font-size="12" fill="{dim}" text-anchor="middle">guest@shriyan: ~ — shared session</text>')
+    o.append(f'<text x="{w - 20}" y="23" font-size="11" font-weight="700" fill="{green}" text-anchor="end"><tspan class="blink">●</tspan> LIVE</text>')
+    o += body
+    # tmux-style status line
+    sy = h - 26
+    o.append(f'<path d="M0 {sy} H{w} V{h - 12} Q{w} {h} {w - 12} {h} H12 Q0 {h} 0 {h - 12} Z" fill="{bar}"/>')
+    o.append(f'<path d="M0 {sy} H150 V{h} H12 Q0 {h} 0 {h - 12} Z" fill="{acc}"/>')
+    o.append(f'<text x="14" y="{sy + 17}" font-size="11" font-weight="800" fill="{bg}">[tty1] shriyan-os</text>')
+    o.append(f'<text x="170" y="{sy + 17}" font-size="11" fill="{txt}">{plural(sh["total"], "command")} · {plural(len(sh["users"]), "visitor")}</text>')
+    o.append(f'<text x="{w - 16}" y="{sy + 17}" font-size="11" fill="{dim}" text-anchor="end">{t(right)}</text>')
+    o.append(f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="none" stroke="{c["line"] if dark else "#24324F"}"/>')
     return svg(w, h, "\n".join(o), c)
 
 
 # --------------------------------------------------------------- pulse ----
 
+
 def pulse(d, c, theme):
-    w, h = 880, 190
+    w, h = 880, 236
+    dark = theme == "dark"
     days = d["days"][-60:]
     counts = [x["contributionCount"] for x in days]
     peak = max(counts) or 1
-    base, top = 118, 50
-    step = (w - 60) / len(days)
-    pts = [f"M30 {base}"]
+    x0, x1, top, bot = 24, 628, 50, 190
+    base = 140
+    step = (x1 - x0) / len(days)
+    pts = [f"M{x0} {base}"]
     for i, n in enumerate(counts):
-        x0 = 30 + i * step
+        a = x0 + i * step
         if n == 0:
-            pts.append(f"L{x0 + step:.1f} {base}")
+            pts.append(f"L{a + step:.1f} {base}")
             continue
-        amp = (base - top) * (0.25 + 0.75 * math.sqrt(n / peak))
-        pts += [f"L{x0 + step * .25:.1f} {base}", f"L{x0 + step * .35:.1f} {base + 6}",
-                f"L{x0 + step * .5:.1f} {base - amp:.1f}", f"L{x0 + step * .65:.1f} {base + amp * .35:.1f}",
-                f"L{x0 + step * .78:.1f} {base}", f"L{x0 + step:.1f} {base}"]
+        amp = (base - top - 6) * (0.22 + 0.78 * math.sqrt(n / peak))
+        # P wave, QRS complex, T wave
+        pts += [f"L{a + step * .10:.1f} {base}", f"Q{a + step * .17:.1f} {base - 5} {a + step * .24:.1f} {base}",
+                f"L{a + step * .33:.1f} {base + 4}", f"L{a + step * .43:.1f} {base - amp:.1f}",
+                f"L{a + step * .53:.1f} {base + amp * .28 + 4:.1f}", f"L{a + step * .62:.1f} {base}",
+                f"Q{a + step * .78:.1f} {base - 9} {a + step * .92:.1f} {base}", f"L{a + step:.1f} {base}"]
     path = " ".join(pts)
     last30 = sum(counts[-30:])
     active = sum(1 for n in counts if n)
-    line_col = c["accent"] if theme == "dark" else c["alert"]
+    alive = last30 > 0
+    trace = c["accent"] if dark else c["alert"]
+    cyan = "#08F7FE" if dark else c["accent"]
+    grid_minor = c["grid"]
+    grid_major = c["line"]
+    dur = 6
     o = [f'<rect width="{w}" height="{h}" rx="14" fill="{c["bg"]}"/>',
-         f'<pattern id="eg" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="{c["grid"]}"/></pattern>',
-         f'<rect x="20" y="40" width="{w - 40}" height="110" fill="url(#eg)"/>',
-         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{c["line"]}"/>',
-         f'<text x="30" y="28" font-size="12" class="a" font-weight="700" letter-spacing="2">♥ SYSTEM VITALS</text>',
-         f'<text x="{w - 30}" y="28" font-size="11" class="d" text-anchor="end">commit pulse · last 60 days · live from GitHub</text>',
-         f'<filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
-         f'<path id="ecg" d="{path}" fill="none" stroke="{line_col}" stroke-opacity=".18" stroke-width="2"/>',
-         f'<path d="{path}" fill="none" stroke="{line_col}" stroke-width="2.2" filter="url(#glow)" pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="1000">'
-         f'<animate attributeName="stroke-dashoffset" values="1000;0;0" keyTimes="0;.8;1" dur="7s" repeatCount="indefinite"/></path>',
-         f'<circle r="4" fill="{line_col}" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.8;1" calcMode="linear"><mpath href="#ecg"/></animateMotion></circle>',
-         ]
-    status = "ALIVE" if last30 else "FLATLINE — send help"
-    o.append(f'<text x="30" y="176" font-size="12" class="t">30-day bpm <tspan class="a" font-weight="700">{last30}</tspan>'
-             f'   ·   active days <tspan class="a" font-weight="700">{active}/60</tspan>'
-             f'   ·   peak <tspan class="a" font-weight="700">{peak}</tspan> in a day'
-             f'   ·   status <tspan class="{"ok" if last30 else "al"}" font-weight="700">{status}</tspan></text>')
+         f'<pattern id="gmin" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M6 0H0V6" fill="none" stroke="{grid_minor}" stroke-width=".6"/></pattern>',
+         f'<pattern id="gmaj" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="{grid_major}" stroke-width=".8" opacity=".6"/></pattern>',
+         f'<filter id="glow" x="-5%" y="-30%" width="110%" height="160%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
+         f'<linearGradient id="scan" x1="0" x2="1"><stop offset="0" stop-color="{trace}" stop-opacity="0"/><stop offset="1" stop-color="{trace}" stop-opacity=".35"/></linearGradient>',
+         f'<clipPath id="rev"><rect x="{x0}" y="{top - 10}" width="0" height="{bot - top + 20}">'
+         f'<animate attributeName="width" values="0;{x1 - x0}" dur="{dur}s" repeatCount="indefinite"/></rect></clipPath>',
+         f'<rect x="{x0}" y="{top}" width="{x1 - x0}" height="{bot - top}" fill="url(#gmin)"/>',
+         f'<rect x="{x0}" y="{top}" width="{x1 - x0}" height="{bot - top}" fill="url(#gmaj)"/>',
+         f'<path d="{path}" fill="none" stroke="{trace}" stroke-opacity=".16" stroke-width="1.6" stroke-linejoin="round"/>',
+         f'<path d="{path}" fill="none" stroke="{trace}" stroke-width="2" stroke-linejoin="round" filter="url(#glow)" clip-path="url(#rev)"/>',
+         f'<rect x="{x0 - 40}" y="{top}" width="40" height="{bot - top}" fill="url(#scan)">'
+         f'<animate attributeName="x" values="{x0 - 40};{x1 - 40}" dur="{dur}s" repeatCount="indefinite"/></rect>',
+         f'<rect x="{x0}" y="{top}" width="2" height="{bot - top}" fill="{trace}" opacity=".9">'
+         f'<animate attributeName="x" values="{x0};{x1}" dur="{dur}s" repeatCount="indefinite"/></rect>']
+    # date axis
+    for i in range(0, len(days), 10):
+        tx = x0 + i * step
+        o.append(f'<line x1="{tx:.1f}" x2="{tx:.1f}" y1="{bot}" y2="{bot + 5}" stroke="{c["dim"]}"/>'
+                 f'<text x="{tx:.1f}" y="{bot + 18}" font-size="10" class="d">{fmt_day(days[i]["date"])[:6]}</text>')
+    o.append(f'<text x="{x1}" y="{bot + 18}" font-size="10" class="d" text-anchor="end">today</text>')
+    # header
+    o.append(f'<circle cx="32" cy="27" r="4.5" fill="{c["alert"]}"><animate attributeName="opacity" values="1;.2;1" dur=".9s" repeatCount="indefinite"/></circle>')
+    o.append(f'<text x="44" y="31" font-size="12" font-weight="800" class="a" letter-spacing="2.5">SYSTEM VITALS</text>')
+    o.append(f'<text x="{x1}" y="31" font-size="10.5" class="d" text-anchor="end">lead II · commit activity · 60 days · @{USER}</text>')
+    # readouts panel
+    px = 652
+    o.append(f'<line x1="{px - 8}" x2="{px - 8}" y1="20" y2="{h - 20}" stroke="{c["line"]}"/>')
+    o.append(f'<text x="{px + 8}" y="40" font-size="10" class="d" letter-spacing="1.5">HR · COMMITS / 30D</text>')
+    o.append(f'<text x="{px + 6}" y="96" font-size="56" font-weight="800" fill="{trace}" filter="url(#glow)">{last30}</text>')
+    o.append(f'<text x="{w - 22}" y="62" font-size="18" fill="{c["alert"]}" text-anchor="end">♥<animate attributeName="opacity" values="1;.25;1" dur=".9s" repeatCount="indefinite"/></text>')
+    o.append(f'<line x1="{px + 8}" x2="{w - 22}" y1="114" y2="114" stroke="{c["line"]}"/>')
+    o.append(f'<text x="{px + 8}" y="134" font-size="10" class="d" letter-spacing="1.5">ACTIVE</text>'
+             f'<text x="{px + 8}" y="162" font-size="24" font-weight="800" fill="{cyan}">{active}<tspan font-size="13" class="d">/60</tspan></text>')
+    o.append(f'<text x="{px + 112}" y="134" font-size="10" class="d" letter-spacing="1.5">PEAK/DAY</text>'
+             f'<text x="{px + 112}" y="162" font-size="24" font-weight="800" class="ok">{peak}</text>')
+    pill = c["ok"] if alive else c["alert"]
+    label = "● ALIVE · STABLE" if alive else "● FLATLINE"
+    o.append(f'<rect x="{px + 8}" y="182" width="{w - 22 - px - 8}" height="26" rx="5" fill="none" stroke="{pill}" stroke-width="1.5"/>'
+             f'<text x="{(px + 8 + w - 22) / 2:.0f}" y="199" font-size="11.5" font-weight="800" fill="{pill}" text-anchor="middle" letter-spacing="1.5">{label}</text>')
+    o.append(f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="{c["line"]}"/>')
     return svg(w, h, "\n".join(o), c)
 
 
@@ -572,6 +633,44 @@ def case_file(idx, case, meta, c):
              f'<animate attributeName="opacity" from="0" to="1" begin="{2.4 + idx * 0.25:.2f}s" dur=".12s" fill="freeze"/></g>')
     o.append(f'<text x="{w - 18}" y="236" font-size="10" class="a" text-anchor="end">open file →</text>')
     return svg(w, h, "\n".join(o), c)
+
+
+# ------------------------------------------------- buttons & headers ----
+
+
+NAV = [("linkedin", "in", "LINKEDIN"), ("email", "@", "EMAIL"), ("demo", "▶", "LIVE DEMO"),
+       ("shell", "$", "SHARED SHELL"), ("vault", "#", "THE VAULT")]
+KEYS = ["neofetch", "whoami", "ls -la", "cat about.txt", "projects",
+        "skills", "contact", "fortune", "history", "sudo hire shriyan"]
+
+
+def key_button(prefix, label, primary=False):
+    c = THEMES["dark"]
+    text_w = (len(prefix) + 1 + len(label)) * 7.8
+    w, h = int(text_w + 32), 38
+    face = c["accent"] if primary else "#141416"
+    edge = "#8A6D0B" if primary else "#2C2718"
+    fg = c["bg"] if primary else c["text"]
+    pre = c["bg"] if primary else c["accent"]
+    o = [f'<rect x="1" y="4" width="{w - 2}" height="{h - 5}" rx="8" fill="{edge}"/>',
+         f'<rect x="1" y="1" width="{w - 2}" height="{h - 6}" rx="8" fill="{face}" stroke="{edge}"/>',
+         f'<line x1="9" x2="{w - 9}" y1="2.5" y2="2.5" stroke="#FFFFFF" stroke-opacity="{.35 if primary else .07}"/>',
+         f'<text x="16" y="{h / 2 + 1:.0f}" font-size="13" font-weight="700" xml:space="preserve">'
+         f'<tspan fill="{pre}">{t(prefix)}</tspan><tspan fill="{fg}"> {t(label)}</tspan></text>']
+    return svg(w, h, "\n".join(o), c, weights=(700,))
+
+
+def section_header(num, title, tag, theme):
+    c = THEMES[theme]
+    w, h = 880, 54
+    tw = len(title) * (19 * 0.6 + 2)  # advance + letter-spacing
+    o = [f'<text x="2" y="36" font-size="13" font-weight="700" class="d">{num}</text>',
+         f'<text x="30" y="36" font-size="13" font-weight="700" class="a">//</text>',
+         f'<text x="56" y="37" font-size="19" font-weight="800" class="a2" letter-spacing="2">{t(title)}</text>',
+         f'<line x1="{56 + tw + 18:.0f}" x2="{w - len(tag) * 7.2 - 22:.0f}" y1="31" y2="31" stroke="{c["line"]}"/>',
+         f'<rect x="{56 + tw + 18:.0f}" y="29" width="0" height="3" fill="{c["accent"]}"><animate attributeName="width" from="0" to="60" dur=".8s" fill="freeze"/></rect>',
+         f'<text x="{w - 2}" y="35" font-size="11" class="d" text-anchor="end">{t(tag)}</text>']
+    return svg(w, h, "\n".join(o), c, weights=(700, 800))
 
 
 # -------------------------------------------------------------- readme ----
@@ -653,8 +752,6 @@ def write(name, content):
 
 
 def main():
-    global FONTS
-    FONTS = font_faces()
     os.makedirs(OUT, exist_ok=True)
     d = collect()
     for theme, c in THEMES.items():
@@ -662,6 +759,15 @@ def main():
         write(f"pulse-{theme}.svg", pulse(d, c, theme))
         write(f"vault-{theme}.svg", vault(d, c, theme))
         write(f"shell-{theme}.svg", shell_scene(d, c, theme))
+        for num, key, title, tag in (("02", "shell", "SHARED SHELL", "multiplayer · live"),
+                                     ("03", "cases", "DECLASSIFIED", "4 case files · clearance: public"),
+                                     ("04", "vault", "THE VAULT", "capture the flag · 1 key")):
+            write(f"head-{key}-{theme}.svg", section_header(num, title, tag, theme))
+    for key, prefix, label in NAV:
+        write(f"btn-{key}.svg", key_button(prefix, label))
+    for i, cmd in enumerate(KEYS):
+        write(f"key-{i}.svg", key_button("$", cmd))
+    write("key-custom.svg", key_button(">", "type your own command", primary=True))
     for i, case in enumerate(CASES, 1):
         write(f"case-{i}.svg", case_file(i, case, d["repo_meta"].get(case[0], {}), THEMES["dark"]))
 

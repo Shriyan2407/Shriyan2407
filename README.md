@@ -18,15 +18,21 @@
   <img src="./assets/live/pulse-dark.svg" width="100%" alt="Live heartbeat chart of my commits over the last 60 days" />
 </picture>
 
-<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><code>⟩ linkedin</code></a>&nbsp;&nbsp;
-<a href="mailto:shriyanbohra24077@gmail.com"><code>⟩ email</code></a>&nbsp;&nbsp;
-<a href="https://r-h-t-i-h.vercel.app"><code>⟩ live demo</code></a>&nbsp;&nbsp;
-<a href="#%EF%B8%8F-shared-shell"><code>⟩ shared shell</code></a>&nbsp;&nbsp;
-<a href="#-the-vault"><code>⟩ the vault</code></a>
+<a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="./assets/live/btn-linkedin.svg" height="38" alt="LinkedIn" /></a>
+<a href="mailto:shriyanbohra24077@gmail.com"><img src="./assets/live/btn-email.svg" height="38" alt="Email" /></a>
+<a href="https://r-h-t-i-h.vercel.app"><img src="./assets/live/btn-demo.svg" height="38" alt="Live demo" /></a>
+<a href="#shell"><img src="./assets/live/btn-shell.svg" height="38" alt="Shared shell" /></a>
+<a href="#vault"><img src="./assets/live/btn-vault.svg" height="38" alt="The vault" /></a>
 
 </div>
 
-## 🖥️ Shared Shell
+<a name="shell"></a>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/head-shell-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/head-shell-light.svg" />
+  <img src="./assets/live/head-shell-dark.svg" width="100%" alt="02 // Shared shell" />
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/live/shell-dark.svg" />
@@ -36,15 +42,29 @@
 
 <div align="center">
 
-**This terminal is multiplayer.** Click a command. A bot runs it, replies to you, and your username shows up on this screen for every visitor.
-
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20neofetch&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ neofetch</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20whoami&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ whoami</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20ls%20-la&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ ls -la</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20cat%20about.txt&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ cat about.txt</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20projects&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ projects</code></a><br/>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20skills&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ skills</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20contact&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ contact</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20fortune&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ fortune</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20history&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ history</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20sudo%20hire%20shriyan&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ sudo hire shriyan</code></a><br/><br/>
-<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><b>⌨️ type your own command</b></a> · there are hidden files. <code>help</code> won't list everything.
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20neofetch&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-0.svg" height="38" alt="$ neofetch" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20whoami&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-1.svg" height="38" alt="$ whoami" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20ls%20-la&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-2.svg" height="38" alt="$ ls -la" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20cat%20about.txt&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-3.svg" height="38" alt="$ cat about.txt" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20projects&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-4.svg" height="38" alt="$ projects" /></a>
+<br/>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20skills&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-5.svg" height="38" alt="$ skills" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20contact&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-6.svg" height="38" alt="$ contact" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20fortune&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-7.svg" height="38" alt="$ fortune" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20history&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-8.svg" height="38" alt="$ history" /></a>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20sudo%20hire%20shriyan&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-9.svg" height="38" alt="$ sudo hire shriyan" /></a>
+<br/>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><img src="./assets/live/key-custom.svg" height="38" alt="Type your own command" /></a>
 
 </div>
 
-## 📁 Declassified
+<a name="cases"></a>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/head-cases-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/head-cases-light.svg" />
+  <img src="./assets/live/head-cases-dark.svg" width="100%" alt="03 // Declassified" />
+</picture>
 
 <div align="center">
 
@@ -61,7 +81,13 @@
 
 </div>
 
-## 🔐 The Vault
+<a name="vault"></a>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/head-vault-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/head-vault-light.svg" />
+  <img src="./assets/live/head-vault-dark.svg" width="100%" alt="04 // The vault" />
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/live/vault-dark.svg" />
@@ -120,7 +146,7 @@ printf '%s' "your-github-username:THE_KEY" | sha256sum
 <br/>
 
 <!--UPDATED:START-->
-<sub><code>last sync 17 Oct 2026 12:04 UTC · rebuilt every 6h by a bot I wrote</code></sub>
+<sub><code>last sync 17 Oct 2026 12:09 UTC · rebuilt every 6h by a bot I wrote</code></sub>
 <!--UPDATED:END-->
 
 </div>
