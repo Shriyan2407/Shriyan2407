@@ -543,11 +543,11 @@ def pulse(d, c, theme):
     # header
     o.append(f'<circle cx="32" cy="27" r="4.5" fill="{c["alert"]}"><animate attributeName="opacity" values="1;.2;1" dur=".9s" repeatCount="indefinite"/></circle>')
     o.append(f'<text x="44" y="31" font-size="12" font-weight="800" class="a" letter-spacing="2.5">SYSTEM VITALS</text>')
-    o.append(f'<text x="{x1}" y="31" font-size="10.5" class="d" text-anchor="end">lead II · commit activity · 60 days · @{USER}</text>')
+    o.append(f'<text x="{x1}" y="31" font-size="10.5" class="d" text-anchor="end">lead II · contribution activity · 60 days · @{USER}</text>')
     # readouts panel
     px = 652
     o.append(f'<line x1="{px - 8}" x2="{px - 8}" y1="20" y2="{h - 20}" stroke="{c["line"]}"/>')
-    o.append(f'<text x="{px + 8}" y="40" font-size="10" class="d" letter-spacing="1.5">HR · COMMITS / 30D</text>')
+    o.append(f'<text x="{px + 8}" y="40" font-size="10" class="d" letter-spacing="1.5">HR · CONTRIBUTIONS / 30D</text>')
     o.append(f'<text x="{px + 6}" y="96" font-size="56" font-weight="800" fill="{trace}" filter="url(#glow)">{last30}</text>')
     o.append(f'<text x="{w - 22}" y="62" font-size="18" fill="{c["alert"]}" text-anchor="end">♥<animate attributeName="opacity" values="1;.25;1" dur=".9s" repeatCount="indefinite"/></text>')
     o.append(f'<line x1="{px + 8}" x2="{w - 22}" y1="114" y2="114" stroke="{c["line"]}"/>')

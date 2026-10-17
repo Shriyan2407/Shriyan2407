@@ -15,7 +15,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/live/pulse-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/live/pulse-light.svg" />
-  <img src="./assets/live/pulse-dark.svg" width="100%" alt="Live heartbeat chart of my commits over the last 60 days" />
+  <img src="./assets/live/pulse-dark.svg" width="100%" alt="Live heartbeat chart of my GitHub contributions over the last 60 days" />
 </picture>
 
 <a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><img src="./assets/live/btn-linkedin.svg" height="38" alt="LinkedIn" /></a>
@@ -146,7 +146,7 @@ printf '%s' "your-github-username:THE_KEY" | sha256sum
 <br/>
 
 <!--UPDATED:START-->
-<sub><code>last sync 17 Oct 2026 12:17 UTC · rebuilt every 6h by a bot I wrote</code></sub>
+<sub><code>last sync 17 Oct 2026 12:16 UTC · rebuilt every 6h by a bot I wrote</code></sub>
 <!--UPDATED:END-->
 
 </div>

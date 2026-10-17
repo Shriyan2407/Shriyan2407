@@ -29,10 +29,10 @@
 <text x="628" y="208" font-size="10" class="d" text-anchor="end">today</text>
 <circle cx="32" cy="27" r="4.5" fill="#C62828"><animate attributeName="opacity" values="1;.2;1" dur=".9s" repeatCount="indefinite"/></circle>
 <text x="44" y="31" font-size="12" font-weight="800" class="a" letter-spacing="2.5">SYSTEM VITALS</text>
-<text x="628" y="31" font-size="10.5" class="d" text-anchor="end">lead II · commit activity · 60 days · @Shriyan2407</text>
+<text x="628" y="31" font-size="10.5" class="d" text-anchor="end">lead II · contribution activity · 60 days · @Shriyan2407</text>
 <line x1="644" x2="644" y1="20" y2="216" stroke="#C9CFDA"/>
-<text x="660" y="40" font-size="10" class="d" letter-spacing="1.5">HR · COMMITS / 30D</text>
-<text x="658" y="96" font-size="56" font-weight="800" fill="#C62828" filter="url(#glow)">312</text>
+<text x="660" y="40" font-size="10" class="d" letter-spacing="1.5">HR · CONTRIBUTIONS / 30D</text>
+<text x="658" y="96" font-size="56" font-weight="800" fill="#C62828" filter="url(#glow)">311</text>
 <text x="858" y="62" font-size="18" fill="#C62828" text-anchor="end">♥<animate attributeName="opacity" values="1;.25;1" dur=".9s" repeatCount="indefinite"/></text>
 <line x1="660" x2="858" y1="114" y2="114" stroke="#C9CFDA"/>
 <text x="660" y="134" font-size="10" class="d" letter-spacing="1.5">ACTIVE</text><text x="660" y="162" font-size="24" font-weight="800" fill="#1F5FD1">29<tspan font-size="13" class="d">/60</tspan></text>
