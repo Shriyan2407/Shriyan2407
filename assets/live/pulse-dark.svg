@@ -32,7 +32,7 @@
 <text x="628" y="31" font-size="10.5" class="d" text-anchor="end">lead II · contribution activity · 60 days · @Shriyan2407</text>
 <line x1="644" x2="644" y1="20" y2="216" stroke="#2A2618"/>
 <text x="660" y="40" font-size="10" class="d" letter-spacing="1.5">HR · CONTRIBUTIONS / 30D</text>
-<text x="658" y="96" font-size="56" font-weight="800" fill="#D4AF37" filter="url(#glow)">311</text>
+<text x="658" y="96" font-size="56" font-weight="800" fill="#D4AF37" filter="url(#glow)">312</text>
 <text x="858" y="62" font-size="18" fill="#FF4D4D" text-anchor="end">♥<animate attributeName="opacity" values="1;.25;1" dur=".9s" repeatCount="indefinite"/></text>
 <line x1="660" x2="858" y1="114" y2="114" stroke="#2A2618"/>
 <text x="660" y="134" font-size="10" class="d" letter-spacing="1.5">ACTIVE</text><text x="660" y="162" font-size="24" font-weight="800" fill="#08F7FE">29<tspan font-size="13" class="d">/60</tspan></text>
