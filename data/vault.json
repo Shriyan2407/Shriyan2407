@@ -1,14 +1,5 @@
 {
-  "attempts": 1,
-  "solvers": [
-    {
-      "login": "Shriyan2407",
-      "at": "2026-10-17T07:47:13Z"
-    }
-  ],
-  "last": {
-    "login": "Shriyan2407",
-    "at": "2026-10-17T07:47:13Z",
-    "ok": true
-  }
+  "attempts": 0,
+  "solvers": [],
+  "last": null
 }

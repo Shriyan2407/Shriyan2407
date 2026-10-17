@@ -42,7 +42,7 @@
 <clipPath id="ty3"><rect x="30" y="412" height="22.400000000000002" width="0">
   <animate attributeName="width" values="0.0;8.7;17.4;26.0;34.7;43.4;52.1;60.8;69.4;78.1;86.8;95.5;104.2;112.8;121.5;130.2;138.9;147.6;156.2;164.9" calcMode="discrete" begin="6.90s" dur="0.68s" fill="freeze"/></rect></clipPath>
 <text x="30" y="426" font-size="14" class="a" clip-path="url(#ty3)" xml:space="preserve">$ cat /vault/status</text>
-<g opacity="0"><text x="30" y="452" font-size="14" class="t">VAULT: <tspan class="al">BREACHED ×1</tspan> · 1 attempts · scroll down if you think you can.</text><animate attributeName="opacity" from="0" to="1" begin="7.80s" dur="0.25s" fill="freeze"/></g>
+<g opacity="0"><text x="30" y="452" font-size="14" class="t">VAULT: <tspan class="ok">SECURE</tspan> · 0 attempts · scroll down if you think you can.</text><animate attributeName="opacity" from="0" to="1" begin="7.80s" dur="0.25s" fill="freeze"/></g>
 <g opacity="0"><text x="30" y="484" font-size="14" class="a">$ <tspan class="blink">█</tspan></text><animate attributeName="opacity" from="0" to="1" begin="8.30s" dur="0.25s" fill="freeze"/></g>
 <line x1="22" x2="858" y1="522" y2="522" stroke="#2A2618"/>
 <text x="30" y="544" font-size="11" class="al">◆ RED TEAM VIEW</text>

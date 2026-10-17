@@ -75,7 +75,7 @@ printf '%s' "your-github-username:THE_KEY" | sha256sum
 <!--HALL:START-->
 | # | Hacker | Cracked at |
 |:--:|:--|:--|
-| 🥇 | [@Shriyan2407](https://github.com/Shriyan2407) | 2026-10-17 07:47 UTC |
+| — | _nobody yet. the vault is undefeated._ | — |
 <!--HALL:END-->
 
 <details>
