@@ -1,5 +1,20 @@
 {
-  "total": 0,
+  "total": 1,
   "users": [],
-  "history": []
+  "history": [
+    {
+      "login": "Shriyan2407",
+      "display": "neofetch",
+      "out": [
+        "   ▄▄▄▄▄▄     shriyan@github",
+        "  █ ▄▄▄ █     ──────────────",
+        "  █ ███ █     os      shriyan-os 1.0 (multiplayer)",
+        "  █▄▄▄▄▄█     repos   11 public",
+        "   ▀▀▀▀▀      commits 162 this year",
+        "              langs   TypeScript 79.8% · JavaScript 6.9% · CSS 6.2%",
+        "              shell   1 commands served"
+      ],
+      "at": "2026-10-17T11:47:35Z"
+    }
+  ]
 }
