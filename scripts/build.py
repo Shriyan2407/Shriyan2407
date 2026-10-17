@@ -641,24 +641,71 @@ def case_file(idx, case, meta, c):
 
 NAV = [("linkedin", "in", "LINKEDIN"), ("email", "@", "EMAIL"), ("demo", "▶", "LIVE DEMO"),
        ("shell", "$", "SHARED SHELL"), ("vault", "#", "THE VAULT")]
-# Commands shown as click-to-expand prompts. The README can't run code, so each
+# Commands shown as a click-to-open grid. The README can't run code, so each
 # output is pre-rendered by the same engine the multiplayer bot uses.
-INSTANT = [("neofetch", "system info"), ("whoami", "who's there?"), ("ls -la", "list files, even hidden ones"),
-           ("cat about.txt", "who I am"), ("projects", "what I've built"), ("skills", "tech stack"),
-           ("contact", "reach me"), ("fortune", "a random line of wisdom"),
-           ("history", "what other visitors ran"), ("sudo hire shriyan", "you know you want to")]
+INSTANT = [("neofetch", "system info"), ("ls -la", "even the hidden files"),
+           ("cat about.txt", "who I am"), ("projects", "what I've built"),
+           ("contact", "reach me"), ("history", "what visitors ran"),
+           ("fortune", "today's wisdom"), ("sudo hire shriyan", "you know you want to")]
+CELL = 400  # every bar and panel shares one width so the grid never jumps
+
+
+def cmd_bar(cmd, hint):
+    c = THEMES["dark"]
+    w, h = CELL, 44
+    o = [f'<rect x="1" y="5" width="{w - 2}" height="{h - 6}" rx="8" fill="#2C2718"/>',
+         f'<rect x="1" y="1" width="{w - 2}" height="{h - 7}" rx="8" fill="#141416" stroke="#2C2718"/>',
+         f'<line x1="9" x2="{w - 9}" y1="2.5" y2="2.5" stroke="#FFFFFF" stroke-opacity=".07"/>',
+         f'<text x="16" y="24" font-size="13.5" font-weight="700" xml:space="preserve"><tspan class="a">$</tspan><tspan class="t"> {t(cmd)}</tspan></text>',
+         f'<text x="{w - 16}" y="23" font-size="11" class="d" text-anchor="end">{t(hint)}</text>']
+    return svg(w, h, "\n".join(o), c, weights=(400, 700))
+
+
+def wrap_line(line, width):
+    """Wrap like a terminal: keep spacing, continue under the value column."""
+    # "label  value" lines (short label, or padded column) continue under the value
+    m = re.match(r"(\s*\S{1,9}\s{2,}|\s*\S+\s{3,})", line)
+    hang = " " * (len(m.group(1)) if m else len(line) - len(line.lstrip()))
+    out = []
+    while len(line) > width:
+        cut = line.rfind(" ", len(hang) + 1, width + 1)
+        if cut <= len(hang):
+            cut = width
+        out.append(line[:cut].rstrip())
+        line = hang + line[cut:].lstrip()
+    return out + [line]
+
+
+def out_panel(cmd, out):
+    c = THEMES["dark"]
+    lines = [l for line in out for l in wrap_line(line, 52)]
+    w, lh = CELL, 17
+    h = 46 + len(lines) * lh + 30
+    o = [f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="8" fill="{c["bg"]}" stroke="{c["line"]}"/>',
+         f'<text x="14" y="26" font-size="12" font-weight="700" xml:space="preserve"><tspan class="ok">guest</tspan><tspan class="d">@shriyan:~$ </tspan><tspan class="a">{t(cmd)}</tspan></text>',
+         f'<line x1="14" x2="{w - 14}" y1="38" y2="38" stroke="{c["line"]}"/>']
+    y = 58
+    for line in lines:
+        o.append(f'<text x="14" y="{y}" font-size="11.5" class="t" xml:space="preserve">{t(line)}</text>')
+        y += lh
+    o.append(f'<text x="14" y="{y + 8}" font-size="12" class="a" xml:space="preserve"><tspan class="ok">guest</tspan><tspan class="d">@shriyan:~$ </tspan><tspan class="blink">█</tspan></text>')
+    return svg(w, h, "\n".join(o), c, weights=(400, 700))
 
 
 def instant_commands(d, stats):
     import shell  # scripts/shell.py, the same engine the bot runs
     seed = datetime.now(timezone.utc).timetuple().tm_yday  # fortune changes daily
-    blocks = []
-    for cmd, hint in INSTANT:
-        display, out = shell.run(cmd, None, d["shell"], stats, seed)
-        body = "\n".join(out).replace("```", "'''")
-        blocks.append(f"<details>\n<summary><code>guest@shriyan:~$ {cmd}</code> <sub>{escape(hint)}</sub></summary>\n\n"
-                      f"```text\n{body}\n```\n\n</details>")
-    return "\n".join(blocks)
+    cells = []
+    for i, (cmd, hint) in enumerate(INSTANT):
+        _, out = shell.run(cmd, None, d["shell"], stats, seed)
+        write(f"cmd-{i}.svg", cmd_bar(cmd, hint))
+        write(f"out-{i}.svg", out_panel(cmd, out))
+        # The name-only anchors stop GitHub wrapping each image in a link to the
+        # SVG, which would steal the click that should open the command.
+        cells.append(f'<td valign="top"><details><summary><a name="cmd-{i}"><img src="./assets/live/cmd-{i}.svg" width="{CELL - 28}" alt="$ {escape(cmd)}: {escape(hint)}" /></a></summary>'
+                     f'<a name="out-{i}"><img src="./assets/live/out-{i}.svg" width="{CELL}" alt="Output of {escape(cmd)}" /></a></details></td>')
+    rows = ["<tr>" + "".join(cells[i:i + 2]) + "</tr>" for i in range(0, len(cells), 2)]
+    return '<table align="center">\n' + "\n".join(rows) + "\n</table>"
 
 
 def key_button(prefix, label, primary=False):

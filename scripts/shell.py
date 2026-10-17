@@ -146,7 +146,7 @@ def run(raw, login, state, stats, seed):
     if cmd in ("skills", "contact", "now", "about"):
         return cmd, FILES[f"{cmd}.txt"]
     if cmd == "projects":
-        return "projects", [f"{k:<22} {v[0]}" for k, v in PROJECTS.items()]
+        return "projects", [line for k, v in PROJECTS.items() for line in (f"{k}/", f"  {v[0]}")]
     if cmd == "neofetch":
         return "neofetch", neofetch(stats, state, live=login is not None)
     if cmd == "uptime":

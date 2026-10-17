@@ -41,108 +41,12 @@
 </picture>
 
 <!--KEYS:START-->
-<details>
-<summary><code>guest@shriyan:~$ neofetch</code> <sub>system info</sub></summary>
-
-```text
-   ▄▄▄▄▄▄     shriyan@github
-  █ ▄▄▄ █     ──────────────
-  █ ███ █     os      shriyan-os 1.0 (multiplayer)
-  █▄▄▄▄▄█     repos   11 public
-   ▀▀▀▀▀      commits 162 this year
-              langs   TypeScript 79.4% · JavaScript 6.9% · CSS 6.1%
-              shell   1 command served
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ whoami</code> <sub>who&#x27;s there?</sub></summary>
-
-```text
-you: an anonymous visitor. press the gold key to put your @name on the big screen.
-me:  Shriyan Bohra. CSE student, security-minded builder.
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ ls -la</code> <sub>list files, even hidden ones</sub></summary>
-
-```text
-.bash_history  .vault/  about.txt  contact.txt  now.txt  projects/  skills.txt
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ cat about.txt</code> <sub>who I am</sub></summary>
-
-```text
-Shriyan Bohra. CSE student from India.
-I build things that are fast, useful and hard to break:
-AI products, full-stack apps, and the occasional network that heals itself.
-Offensive mind, defensive design.
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ projects</code> <sub>what I&#x27;ve built</sub></summary>
-
-```text
-market-ka-baadshah     Multi-agent AI equity-research terminal for NSE & BSE.
-doccare                Healthcare OS: records, appointments, specialists, AI insights.
-circuit-x              Network failure-recovery simulator: BFS/DFS, Dijkstra, hand-built min-heap.
-space-mission-control  Mission-ops console on custom linked lists, queues and stacks.
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ skills</code> <sub>tech stack</sub></summary>
-
-```text
-lang   TypeScript · JavaScript · Java · Python · C/C++
-web    React · Next.js · Node · Express · Tailwind
-data   PostgreSQL · Prisma · MongoDB
-ops    Git · Docker · Linux · Vercel
-sec    threat modelling · secure design · CTFs
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ contact</code> <sub>reach me</sub></summary>
-
-```text
-linkedin  linkedin.com/in/shriyan-bohra-647057386
-email     shriyanbohra24077@gmail.com
-github    github.com/Shriyan2407
-open to   internships · hackathons · collaborations
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ fortune</code> <sub>a random line of wisdom</sub></summary>
-
-```text
-The S in IoT stands for security.
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ history</code> <sub>what other visitors ran</sub></summary>
-
-```text
-@Shriyan2407: whoami
-```
-
-</details>
-<details>
-<summary><code>guest@shriyan:~$ sudo hire shriyan</code> <sub>you know you want to</sub></summary>
-
-```text
-[sudo] password for guest: ********
-✓ permission granted. excellent judgement.
-→ shriyanbohra24077@gmail.com · linkedin.com/in/shriyan-bohra-647057386
-```
-
-</details>
+<table align="center">
+<tr><td valign="top"><details><summary><a name="cmd-0"><img src="./assets/live/cmd-0.svg" width="372" alt="$ neofetch: system info" /></a></summary><a name="out-0"><img src="./assets/live/out-0.svg" width="400" alt="Output of neofetch" /></a></details></td><td valign="top"><details><summary><a name="cmd-1"><img src="./assets/live/cmd-1.svg" width="372" alt="$ ls -la: even the hidden files" /></a></summary><a name="out-1"><img src="./assets/live/out-1.svg" width="400" alt="Output of ls -la" /></a></details></td></tr>
+<tr><td valign="top"><details><summary><a name="cmd-2"><img src="./assets/live/cmd-2.svg" width="372" alt="$ cat about.txt: who I am" /></a></summary><a name="out-2"><img src="./assets/live/out-2.svg" width="400" alt="Output of cat about.txt" /></a></details></td><td valign="top"><details><summary><a name="cmd-3"><img src="./assets/live/cmd-3.svg" width="372" alt="$ projects: what I&#x27;ve built" /></a></summary><a name="out-3"><img src="./assets/live/out-3.svg" width="400" alt="Output of projects" /></a></details></td></tr>
+<tr><td valign="top"><details><summary><a name="cmd-4"><img src="./assets/live/cmd-4.svg" width="372" alt="$ contact: reach me" /></a></summary><a name="out-4"><img src="./assets/live/out-4.svg" width="400" alt="Output of contact" /></a></details></td><td valign="top"><details><summary><a name="cmd-5"><img src="./assets/live/cmd-5.svg" width="372" alt="$ history: what visitors ran" /></a></summary><a name="out-5"><img src="./assets/live/out-5.svg" width="400" alt="Output of history" /></a></details></td></tr>
+<tr><td valign="top"><details><summary><a name="cmd-6"><img src="./assets/live/cmd-6.svg" width="372" alt="$ fortune: today&#x27;s wisdom" /></a></summary><a name="out-6"><img src="./assets/live/out-6.svg" width="400" alt="Output of fortune" /></a></details></td><td valign="top"><details><summary><a name="cmd-7"><img src="./assets/live/cmd-7.svg" width="372" alt="$ sudo hire shriyan: you know you want to" /></a></summary><a name="out-7"><img src="./assets/live/out-7.svg" width="400" alt="Output of sudo hire shriyan" /></a></details></td></tr>
+</table>
 <!--KEYS:END-->
 
 <div align="center">
@@ -242,7 +146,7 @@ printf '%s' "your-github-username:THE_KEY" | sha256sum
 <br/>
 
 <!--UPDATED:START-->
-<sub><code>last sync 17 Oct 2026 12:24 UTC · rebuilt every 6h by a bot I wrote</code></sub>
+<sub><code>last sync 17 Oct 2026 12:29 UTC · rebuilt every 6h by a bot I wrote</code></sub>
 <!--UPDATED:END-->
 
 </div>
