@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="250" viewBox="0 0 430 250" font-family="'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'SFMono-Regular',Menlo,monospace">
+<style>
+  .t{fill:#E9E4D4} .d{fill:#7D7766} .a{fill:#D4AF37} .a2{fill:#F5E6B3}
+  .ok{fill:#3FB950} .al{fill:#FF4D4D}
+  .blink{animation:blink 1s steps(1) infinite} @keyframes blink{50%{opacity:0}}
+  
+</style>
+<rect width="430" height="250" rx="12" fill="#111214"/>
+<rect x="0.5" y="0.5" width="429" height="249" rx="12" fill="none" stroke="#2A2618"/>
+<path d="M0 12 Q0 0 12 0 H150 L166 18 H418 Q430 18 430 30 V34 H0 Z" fill="#2A2618" opacity=".7"/>
+<text x="16" y="15" font-size="10" class="a" letter-spacing="2" font-weight="700">CASE FILE #02</text>
+<text x="414" y="29" font-size="9" class="d" text-anchor="end" letter-spacing="1.5">CLEARANCE: PUBLIC</text>
+<text x="18" y="68" font-size="22" font-weight="800" class="a2">DOCCARE</text>
+<text x="18" y="88" font-size="11" class="a" letter-spacing="1.5">OPERATION: LIFELINE</text>
+<text x="18" y="116" font-size="12" class="t">Healthcare operating system: records, appointments,</text>
+<rect x="15" y="104" width="388" height="16" fill="#000" rx="1"><animate attributeName="width" from="388" to="0" begin="1.30s" dur=".45s" fill="freeze"/></rect>
+<text x="18" y="134" font-size="12" class="t">specialists and AI insights behind one secure front</text>
+<rect x="15" y="122" width="388" height="16" fill="#000" rx="1"><animate attributeName="width" from="388" to="0" begin="1.65s" dur=".45s" fill="freeze"/></rect>
+<text x="18" y="152" font-size="12" class="t">door.</text>
+<rect x="15" y="140" width="44" height="16" fill="#000" rx="1"><animate attributeName="width" from="44" to="0" begin="2.00s" dur=".45s" fill="freeze"/></rect>
+<line x1="18" x2="412" y1="198" y2="198" stroke="#2A2618"/>
+<text x="18" y="218" font-size="10" class="d">React · Vite · JavaScript</text>
+<text x="18" y="236" font-size="10" class="d">last activity 19 Jun 2026</text>
+<g opacity="0" transform="rotate(-8 364 66)"><rect x="310" y="52" width="106" height="28" rx="4" fill="none" stroke="#3FB950" stroke-width="2"/><text x="363" y="71" font-size="11" font-weight="800" fill="#3FB950" text-anchor="middle" letter-spacing="1.5">LIVE ●</text><animate attributeName="opacity" from="0" to="1" begin="2.90s" dur=".12s" fill="freeze"/></g>
+<text x="412" y="236" font-size="10" class="a" text-anchor="end">open file →</text>
+</svg>
