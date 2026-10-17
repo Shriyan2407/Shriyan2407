@@ -1,0 +1,51 @@
+name: Interact
+
+# Visitors play with the profile by opening issues:
+#   "shell: <command>"  runs a command in the shared shell
+#   "vault: <sha256>"   attempts to crack the vault
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  respond:
+    if: startsWith(github.event.issue.title, 'shell') || startsWith(github.event.issue.title, 'vault')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Untrusted issue data is only ever passed through env vars.
+      # Runs are retried on a fresh checkout so simultaneous visitors never clobber each other.
+      - name: Run, render and commit
+        env:
+          TITLE: ${{ github.event.issue.title }}
+          LOGIN: ${{ github.event.issue.user.login }}
+          NUMBER: ${{ github.event.issue.number }}
+          VAULT_KEY: ${{ secrets.VAULT_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          case "$TITLE" in vault*) script=vault ;; *) script=shell ;; esac
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 "scripts/$script.py"
+            python3 scripts/build.py
+            git add data assets/live README.md
+            git commit -qm "$script: @$LOGIN" || break
+            git push -q origin HEAD:main && break
+            sleep $((RANDOM % 6 + 2))
+          done
+
+      - name: Reply and close
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$NUMBER" --body-file vault-reply.md
+          gh issue close "$NUMBER"

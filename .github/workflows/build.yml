@@ -21,16 +21,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Render scenes and README
-        run: python3 scripts/build.py
+      - name: Render, commit and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/live
-          git diff --cached --quiet && exit 0
-          git commit -m "chore: sync live profile"
-          git pull --rebase && git push
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 scripts/build.py
+            git add README.md assets/live data/stats.json
+            git commit -qm "chore: sync live profile" || break
+            git push -q origin HEAD:main && break
+            sleep $((RANDOM % 6 + 2))
+          done

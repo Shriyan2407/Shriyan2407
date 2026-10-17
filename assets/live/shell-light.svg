@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" font-family="'JetBrains Mono','Fira Code','Cascadia Code',Consolas,'SFMono-Regular',Menlo,monospace">
+<style>
+  .t{fill:#16233F} .d{fill:#6B778C} .a{fill:#1F5FD1} .a2{fill:#0E2A5C}
+  .ok{fill:#1A7F37} .al{fill:#C62828}
+  .blink{animation:blink 1s steps(1) infinite} @keyframes blink{50%{opacity:0}}
+  
+</style>
+<rect width="880" height="240" rx="12" fill="#0F1729"/>
+<rect x="0.5" y="0.5" width="879" height="239" rx="12" fill="none" stroke="#C9CFDA"/>
+<rect width="880" height="36" rx="12" fill="#16223A"/><rect y="24" width="880" height="12" fill="#16223A"/>
+<circle cx="22" cy="18" r="5.5" fill="#FF5F57"/>
+<circle cx="40" cy="18" r="5.5" fill="#FEBC2E"/>
+<circle cx="58" cy="18" r="5.5" fill="#28C840"/>
+<text x="440.0" y="23" font-size="12" fill="#7D8BA5" text-anchor="middle">shared shell — 0 commands · 0 visitors connected</text>
+<text x="860" y="23" font-size="11" fill="#3FB950" text-anchor="end"><tspan class="blink">●</tspan> LIVE</text>
+<g opacity="0"><text x="24" y="66" font-size="12.5" fill="#DCE6F7" xml:space="preserve">shriyan-os 1.0 (tty1) · multiplayer edition</text><animate attributeName="opacity" from="0" to="1" begin="0.30s" dur="0.15s" fill="freeze"/></g>
+<g opacity="0"><text x="24" y="84" font-size="12.5" fill="#DCE6F7" xml:space="preserve"></text><animate attributeName="opacity" from="0" to="1" begin="0.36s" dur="0.15s" fill="freeze"/></g>
+<g opacity="0"><text x="24" y="102" font-size="12.5" fill="#DCE6F7" xml:space="preserve">this terminal is shared by everyone who visits this profile.</text><animate attributeName="opacity" from="0" to="1" begin="0.42s" dur="0.15s" fill="freeze"/></g>
+<g opacity="0"><text x="24" y="120" font-size="12.5" fill="#DCE6F7" xml:space="preserve">click a command below. a bot runs it and the output lands here.</text><animate attributeName="opacity" from="0" to="1" begin="0.48s" dur="0.15s" fill="freeze"/></g>
+<g opacity="0"><text x="24" y="138" font-size="12.5" fill="#DCE6F7" xml:space="preserve"></text><animate attributeName="opacity" from="0" to="1" begin="0.54s" dur="0.15s" fill="freeze"/></g>
+<g opacity="0"><text x="24" y="156" font-size="12.5" fill="#DCE6F7" xml:space="preserve">no one has connected yet. be the first name on this screen.</text><animate attributeName="opacity" from="0" to="1" begin="0.60s" dur="0.15s" fill="freeze"/></g>
+<g opacity="0"><text x="24" y="184" font-size="13" xml:space="preserve"><tspan fill="#3FB950">@you</tspan><tspan fill="#7D8BA5">@shriyan:~$ </tspan><tspan fill="#79A8FF" class="blink">█</tspan></text><animate attributeName="opacity" from="0" to="1" begin="0.66s" dur="0.25s" fill="freeze"/></g>
+</svg>

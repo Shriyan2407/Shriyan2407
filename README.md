@@ -21,7 +21,26 @@
 <a href="https://www.linkedin.com/in/shriyan-bohra-647057386/"><code>⟩ linkedin</code></a>&nbsp;&nbsp;
 <a href="mailto:shriyanbohra24077@gmail.com"><code>⟩ email</code></a>&nbsp;&nbsp;
 <a href="https://r-h-t-i-h.vercel.app"><code>⟩ live demo</code></a>&nbsp;&nbsp;
+<a href="#%EF%B8%8F-shared-shell"><code>⟩ shared shell</code></a>&nbsp;&nbsp;
 <a href="#-the-vault"><code>⟩ the vault</code></a>
+
+</div>
+
+## 🖥️ Shared Shell
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/live/shell-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/live/shell-light.svg" />
+  <img src="./assets/live/shell-dark.svg" width="100%" alt="A shared terminal showing the latest commands run by visitors" />
+</picture>
+
+<div align="center">
+
+**This terminal is multiplayer.** Click a command. A bot runs it, replies to you, and your username shows up on this screen for every visitor.
+
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20neofetch&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ neofetch</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20whoami&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ whoami</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20ls%20-la&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ ls -la</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20cat%20about.txt&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ cat about.txt</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20projects&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ projects</code></a><br/>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20skills&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ skills</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20contact&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ contact</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20fortune&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ fortune</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20history&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ history</code></a> <a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20sudo%20hire%20shriyan&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><code>$ sudo hire shriyan</code></a><br/><br/>
+<a href="https://github.com/Shriyan2407/Shriyan2407/issues/new?title=shell%3A%20&body=Just%20press%20%2A%2ACreate%2A%2A.%20A%20bot%20runs%20your%20command%20in%20about%2030%20seconds%2C%20replies%20here%2C%20and%20puts%20it%20on%20the%20profile%20for%20everyone%20to%20see."><b>⌨️ type your own command</b></a> · there are hidden files. <code>help</code> won't list everything.
 
 </div>
 
@@ -101,7 +120,7 @@ printf '%s' "your-github-username:THE_KEY" | sha256sum
 <br/>
 
 <!--UPDATED:START-->
-<sub><code>last sync 17 Oct 2026 07:47 UTC · rebuilt every 6h by a bot I wrote</code></sub>
+<sub><code>last sync 17 Oct 2026 11:32 UTC · rebuilt every 6h by a bot I wrote</code></sub>
 <!--UPDATED:END-->
 
 </div>

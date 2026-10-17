@@ -1,0 +1,25 @@
+{
+  "since": "2025-06-10",
+  "repos": 11,
+  "commits": 162,
+  "contribs": 437,
+  "langs": [
+    [
+      "TypeScript",
+      80.5
+    ],
+    [
+      "JavaScript",
+      7.0
+    ],
+    [
+      "CSS",
+      6.2
+    ],
+    [
+      "Java",
+      4.8
+    ]
+  ],
+  "last": "r-h-t-i-h"
+}
