@@ -121,6 +121,10 @@ def fmt_day(iso):
 
 _ids = itertools.count()
 
+def plural(n, word):
+    return f"{n} {word}{'' if n == 1 else 's'}"
+
+
 def t(s):
     return escape(str(s), quote=True)
 
@@ -379,7 +383,7 @@ def shell_scene(d, c, theme):
     acc = c["accent"] if theme == "dark" else "#79A8FF"
     txt = c["text"] if theme == "dark" else "#DCE6F7"
     dim = c["dim"] if theme == "dark" else "#7D8BA5"
-    o.append(f'<text x="{w / 2}" y="23" font-size="12" fill="{dim}" text-anchor="middle">shared shell — {sh["total"]} commands · {len(sh["users"])} visitors connected</text>')
+    o.append(f'<text x="{w / 2}" y="23" font-size="12" fill="{dim}" text-anchor="middle">shared shell — {plural(sh["total"], "command")} · {plural(len(sh["users"]), "visitor")} connected</text>')
     o.append(f'<text x="{w - 20}" y="23" font-size="11" fill="#3FB950" text-anchor="end"><tspan class="blink">●</tspan> LIVE</text>')
     y = 66
     for i, (kind, text, login) in enumerate(lines):

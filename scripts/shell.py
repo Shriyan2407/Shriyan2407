@@ -197,7 +197,7 @@ def neofetch(stats, state):
         "  █▄▄▄▄▄█     repos   " + str(stats.get("repos", "?")) + " public",
         "   ▀▀▀▀▀      commits " + str(stats.get("commits", "?")) + " this year",
         "              langs   " + langs,
-        "              shell   " + f"{state['total'] + 1} commands served",
+        "              shell   " + f"{state['total'] + 1} command{'' if state['total'] == 0 else 's'} served",
     ]
 
 
