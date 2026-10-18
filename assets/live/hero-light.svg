@@ -13,7 +13,7 @@
 <rect x="0.5" y="0.5" width="879" height="599" rx="14" fill="none" stroke="#C9CFDA"/>
 <rect width="880" height="44" rx="14" fill="#0E2A5C"/><rect y="30" width="880" height="14" fill="#0E2A5C"/>
 <text x="28" y="28" font-size="13" font-weight="700" fill="#FFFFFF" letter-spacing="2">THREAT ASSESSMENT // SUBJECT PROFILE</text>
-<text x="852" y="28" font-size="12" fill="#AFC3E8" text-anchor="end">REF SB-2407 · GENERATED 17 OCT 2026</text>
+<text x="852" y="28" font-size="12" fill="#AFC3E8" text-anchor="end">REF SB-2407 · GENERATED 18 OCT 2026</text>
 <filter id="duo" color-interpolation-filters="sRGB">
   <feColorMatrix type="saturate" values="0"/>
   <feComponentTransfer><feFuncR type="table" tableValues="0.04 0.09 0.30 0.76 0.97"/><feFuncG type="table" tableValues="0.10 0.19 0.42 0.83 0.96"/><feFuncB type="table" tableValues="0.25 0.38 0.62 0.90 0.94"/></feComponentTransfer>
