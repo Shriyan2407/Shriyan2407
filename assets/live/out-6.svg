@@ -10,6 +10,6 @@
 <rect x=".5" y=".5" width="399" height="92" rx="8" fill="#0A0A0B" stroke="#2A2618"/>
 <text x="14" y="26" font-size="12" font-weight="700" xml:space="preserve"><tspan class="ok">guest</tspan><tspan class="d">@shriyan:~$ </tspan><tspan class="a">fortune</tspan></text>
 <line x1="14" x2="386" y1="38" y2="38" stroke="#2A2618"/>
-<text x="14" y="58" font-size="11.5" class="t" xml:space="preserve">It works on my machine. Ship the machine.</text>
+<text x="14" y="58" font-size="11.5" class="t" xml:space="preserve">The S in IoT stands for security.</text>
 <text x="14" y="83" font-size="12" class="a" xml:space="preserve"><tspan class="ok">guest</tspan><tspan class="d">@shriyan:~$ </tspan><tspan class="blink">█</tspan></text>
 </svg>
