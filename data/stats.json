@@ -1,25 +1,25 @@
 {
   "since": "2025-06-10",
-  "repos": 11,
-  "commits": 162,
+  "repos": 10,
+  "commits": 145,
   "contribs": 439,
   "langs": [
     [
-      "TypeScript",
-      78.9
-    ],
-    [
       "JavaScript",
-      6.8
-    ],
-    [
-      "CSS",
-      6.1
+      28.5
     ],
     [
       "Java",
-      4.7
+      19.8
+    ],
+    [
+      "CSS",
+      19.5
+    ],
+    [
+      "TypeScript",
+      17.6
     ]
   ],
-  "last": "r-h-t-i-h"
+  "last": "CIRCUIT-X"
 }
